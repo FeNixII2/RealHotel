@@ -1,0 +1,124 @@
+<!-- The modal container -->
+<div id="myModal" class="booking-modal">
+    <!-- Modal content -->
+    <div class="booking-modal-content">
+        <!-- Modal header -->
+        <div class="booking-modal-header">
+            <span class="close">&times;</span>
+            <h2>รายละเอียดผู้เข้าพัก</h2>
+        </div>
+
+        <!-- Modal body -->
+        <div class="booking-modal-body">
+            <div class="cus-info">
+                <br />
+                <div class="left-side-info">
+                    <input type="text" id="firstName" name="firstName" placeholder="ชื่อ" required="required" />
+                    <br />
+                    <br />
+                    <input type="number" id="p_number" name="p_number" placeholder="โทรศัพท์" />
+                    <br />
+                    <br />
+                    <input type="email" id="email" name="email" placeholder="อีเมลล์" required="required" />
+                </div>
+                <div class="right-side-info">
+                    <input type="text" id="lastName" name="lastName" placeholder="นามสกุล" required="required" />
+                    <br />
+                    <br />
+                    <input type="number" id="card_id" name="card_id" placeholder="เลขบัตรประชาชน" required="required" />
+                </div>
+            </div>
+            <br /> ข้อมูลเพิ่มเติม
+            <br />
+            <textarea class="more-info-text" name="more_info" id="more_info" cols="50" rows="10"></textarea>
+            <br />
+            <p class="total-price" id="total-price">0</p>
+            <% for(var i=0;i< payment_type.length;i++){ %>
+                <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
+                <label for="option<%=i%>" class="payment-opt">
+                    <%=payment_type[i].pay_type%>
+                </label><br />
+                <%}%>
+
+                    <button onclick="confirm()">ยืนยันการจอง</button>
+        </div>
+    </div>
+</div>
+<script>
+    // Get the modal
+    const modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    const btn = document.getElementById("confirm-btn");
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    };
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    function confirm() {
+        var firstName = document.getElementById("firstName").value;
+        var p_number = document.getElementById("p_number").value;
+        var email = document.getElementById("email").value;
+        var lastName = document.getElementById("lastName").value;
+        var card_id = document.getElementById("card_id").value;
+        var more_info = document.getElementById("more_info").value;
+        var checkin = document.getElementById("checkin").value;
+        var checkout = document.getElementById("checkout").value;
+
+        const selectedOption = document.querySelector('input[name="myGroup"]:checked');
+        const selectedOptionId = selectedOption.value;
+
+
+        fetch("/confirm_booking_room", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                firstName,
+                p_number,
+                email,
+                lastName,
+                card_id,
+                more_info,
+                booking_room,
+                checkin,
+                checkout,
+                selectedOptionId
+            })
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        }).then((data) => {
+            Swal.fire({
+                icon: 'success',
+                title: 'จองห้องสำเร็จแล้ว',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            location.reload()
+                // modal.style.display = "none";
+                // process the response data
+        }).catch((error) => {
+            console.error("There was a problem with the fetch operation:", error);
+            // display an error message to the user
+        });
+    }
+</script>

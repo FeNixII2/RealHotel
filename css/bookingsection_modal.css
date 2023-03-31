@@ -1,0 +1,75 @@
+/* The modal (background) */
+
+.booking-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 3;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+}
+
+
+/* Modal content */
+
+.booking-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* Modal header */
+
+.booking-modal-header {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Close button */
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cus-info {
+    display: grid;
+    grid-template-columns: 50%;
+}
+
+.left-side-info {
+    grid-column: 1;
+}
+
+.right-side-info {
+    grid-column: 2;
+}
+
+.payment-opt {}

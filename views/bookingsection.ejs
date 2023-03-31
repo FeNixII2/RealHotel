@@ -1,0 +1,342 @@
+<section id="booking" style="padding-top: 50px">
+    <br>
+
+    <div id="my-cards"></div>
+
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ยืนยันการจองห้องพัก</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="cus-info">
+                        <br />
+                        <div class="left-side-info">
+                            <input type="text" id="firstName" name="firstName" placeholder="ชื่อ" required="required" />
+                            <br />
+                            <br />
+                            <input type="number" id="p_number" name="p_number" placeholder="โทรศัพท์" />
+                            <br />
+                            <br />
+                            <input type="email" id="email" name="email" placeholder="อีเมลล์" required="required" />
+                        </div>
+                        <div class="right-side-info">
+                            <input type="text" id="lastName" name="lastName" placeholder="นามสกุล" required="required" />
+                            <br />
+                            <br />
+                            <input type="number" id="card_id" name="card_id" placeholder="เลขบัตรประชาชน" required="required" />
+                        </div>
+                    </div>
+                    <br /> ข้อมูลเพิ่มเติม
+                    <br />
+                    <textarea class="more-info-text" name="more_info" id="more_info" cols="50" rows="10"></textarea>
+                    <br />
+                    <p class="total-price" id="total-price">0</p>
+                    <% for(var i=0;i< payment_type.length;i++){ %>
+                        <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
+                        <label for="option<%=i%>" class="payment-opt">
+                            <%=payment_type[i].pay_type%>
+                        </label><br />
+                        <%}%>
+
+                            <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            dateTimepicker()
+        })
+
+        function booking_search() {
+            const myCards = document.getElementById('my-cards');
+
+            myCards.innerHTML = '';
+            var checkin = document.getElementById('checkin').value
+            var checkout = document.getElementById('checkout').value
+            var roomtype = document.getElementById('roomstype').value
+            fetch("/booking_search", {
+                method: "post",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    checkin,
+                    checkout,
+                    roomtype
+                })
+            }).then((response) => response.json()).then((body) => {
+                var available_room = body.count_available_rooms
+                var room_type = body.roomtype
+                var success = body.success
+                if (success == true) {
+                    if (available_room.length > 1) {
+                        for (i = 0; i < room_type.length; i++) {
+                            for (j = 0; j < available_room.length; j++) {
+                                if (available_room[j].count_available_rooms != 0) {
+                                    if (available_room[j].id_typeroom == room_type[i].id) {
+
+                                        const cardDiv = document.createElement('div');
+                                        cardDiv.setAttribute('class', 'card');
+
+                                        const row = document.createElement('div');
+                                        row.setAttribute('class', 'row g-0');
+
+                                        const col1 = document.createElement('div');
+                                        col1.setAttribute('class', 'col-md-4');
+
+                                        const img = document.createElement('img');
+                                        img.setAttribute('src', './rooms/' + room_type[i].id + '.jpg');
+                                        img.setAttribute('class', 'rounded-start img-fluid w-100');
+                                        img.setAttribute('alt', '');
+
+                                        col1.appendChild(img);
+
+                                        const col2 = document.createElement('div');
+                                        col2.setAttribute('class', 'col-md-8');
+
+                                        const cardBody = document.createElement('div');
+                                        cardBody.setAttribute('class', 'card-body');
+
+                                        const h5 = document.createElement('h5');
+                                        h5.setAttribute('class', 'card-title');
+                                        h5.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
+
+                                        const br1 = document.createElement('br');
+
+                                        const p = document.createElement('p');
+                                        p.setAttribute('class', 'card-text');
+                                        p.textContent = room_type[i].rm_dct;
+
+                                        const br2 = document.createElement('br');
+
+                                        const p2 = document.createElement('p');
+                                        p2.setAttribute('class', 'card-text');
+                                        p2.textContent = 'ว่างทั้งหมด ' + available_room[j].count_available_rooms + ' ห้อง';
+
+                                        const button = document.createElement('button');
+                                        button.setAttribute('class', 'btn btn-primary');
+                                        button.textContent = 'จองห้องนี้';
+                                        button.value = room_type[i].id
+                                        button.onclick = function(i, j, event) {
+                                            reserv_modal(available_room[j], room_type[i]);
+                                        }.bind(this, i, j, event);
+
+                                        cardBody.appendChild(h5);
+                                        cardBody.appendChild(br1);
+                                        cardBody.appendChild(p);
+                                        cardBody.appendChild(br2);
+                                        cardBody.appendChild(p2);
+                                        cardBody.appendChild(button);
+
+                                        col2.appendChild(cardBody);
+
+                                        row.appendChild(col1);
+                                        row.appendChild(col2);
+
+                                        cardDiv.appendChild(row);
+
+                                        myCards.appendChild(cardDiv);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        const cardDiv = document.createElement('div');
+                        cardDiv.setAttribute('class', 'card');
+
+                        const row = document.createElement('div');
+                        row.setAttribute('class', 'row g-0');
+
+                        const col1 = document.createElement('div');
+                        col1.setAttribute('class', 'col-md-4');
+
+                        const img = document.createElement('img');
+                        img.setAttribute('src', './rooms/' + room_type[0].id + '.jpg');
+                        img.setAttribute('class', 'rounded-start img-fluid w-100');
+                        img.setAttribute('alt', '');
+
+                        col1.appendChild(img);
+
+                        const col2 = document.createElement('div');
+                        col2.setAttribute('class', 'col-md-8');
+
+                        const cardBody = document.createElement('div');
+                        cardBody.setAttribute('class', 'card-body');
+
+                        const h5 = document.createElement('h5');
+                        h5.setAttribute('class', 'card-title');
+                        h5.textContent = room_type[0].name_th + ' ' + room_type[0].bed;
+
+                        const br1 = document.createElement('br');
+
+                        const p = document.createElement('p');
+                        p.setAttribute('class', 'card-text');
+                        p.textContent = room_type[0].rm_dct;
+
+                        const br2 = document.createElement('br');
+
+                        const p2 = document.createElement('p');
+                        p2.setAttribute('class', 'card-text');
+                        p2.textContent = 'ว่างทั้งหมด ' + available_room + ' ห้อง';
+
+                        const button = document.createElement('button');
+                        button.setAttribute('class', 'btn btn-primary');
+                        button.textContent = 'จองห้องนี้';
+                        button.value = room_type[0].id
+                        button.onclick = function(event) {
+                            reserv_modal(available_room[0], room_type[0]);
+
+                        }
+
+
+                        cardBody.appendChild(h5);
+                        cardBody.appendChild(br1);
+                        cardBody.appendChild(p);
+                        cardBody.appendChild(br2);
+                        cardBody.appendChild(p2);
+                        cardBody.appendChild(button);
+
+                        col2.appendChild(cardBody);
+
+                        row.appendChild(col1);
+                        row.appendChild(col2);
+
+                        cardDiv.appendChild(row);
+
+                        myCards.appendChild(cardDiv);
+                    }
+                } else {
+                    const cardContainer = document.createElement('div');
+                    cardContainer.setAttribute('class', 'd-flex justify-content-center align-items-center vh-100');
+
+                    const cardDiv = document.createElement('div');
+                    cardDiv.setAttribute('class', 'card p-3');
+
+                    // ... add elements to cardDiv
+
+                    cardContainer.appendChild(cardDiv);
+                    myCards.appendChild(cardContainer);
+
+                }
+            });
+        }
+
+        function reserv_modal(available_rooms, roomtype) {
+            const modal = document.getElementById('exampleModal');
+
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
+
+            document.getElementById('total-price').innerHTML = 'ราคา ' + roomtype.price + ' บาท'
+            document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+
+            document.getElementById('con_reserv').value = roomtype.id
+        }
+
+        function confirm() {
+            Swal.fire({
+                title: 'ต้องการจองห้องนี้หรือไม่',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'ไม่',
+                confirmButtonText: 'ใช่'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var firstName = document.getElementById('firstName').value
+                    var p_number = document.getElementById('p_number').value
+                    var email = document.getElementById('email').value
+                    var lastName = document.getElementById('lastName').value
+                    var card_id = document.getElementById('card_id').value
+                    var more_info = document.getElementById('more_info').value
+                    var checkin = document.getElementById('checkin').value
+                    var checkout = document.getElementById('checkout').value
+                    var room_type = document.getElementById('con_reserv').value
+
+                    const radioButtons = document.getElementsByName('myGroup');
+                    let payment;
+
+                    for (let i = 0; i < radioButtons.length; i++) {
+                        if (radioButtons[i].checked) {
+                            payment = radioButtons[i].value;
+                            break;
+                        }
+                    }
+
+                    fetch("/confirm_booking_room", {
+                        method: "post",
+                        headers: {
+                            Accept: "application/json",
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            firstName,
+                            p_number,
+                            email,
+                            lastName,
+                            card_id,
+                            more_info,
+                            payment,
+                            checkin,
+                            checkout,
+                            room_type
+                        })
+                    }).then((response) => response.json()).then((body) => {
+                        Swal.fire({
+                            title: 'ทำรายการสำเร็จ',
+                            text: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
+                            icon: 'success'
+                        }).then(() => {
+                            showSection('home')
+                        });
+                    })
+
+                }
+            })
+        }
+
+        function dateTimepicker() { // date time picker
+            const checkin = document.querySelector("#checkin");
+            const checkout = document.querySelector("#checkout");
+
+            flatpickr(checkin, {
+                defaultDate: new Date(),
+                locale: "th",
+                dateFormat: "d-m-Y",
+                minDate: new Date(),
+                onChange: function(selectedDates, dateStr, instance) {
+
+                    if (checkout.value) {
+                        if (checkout.value < dateStr) {
+                            checkout.value = dateStr;
+                        }
+                    }
+                    checkout.flatpickr({
+                        locale: "th",
+                        dateFormat: "d-m-Y",
+                        minDate: selectedDates[0].fp_incr(1),
+                        defaultDate: selectedDates[0].fp_incr(1)
+                    });
+
+                }
+            });
+            flatpickr(checkout, {
+                locale: "th",
+                dateFormat: "d-m-Y",
+                defaultDate: new Date(Date.now() + 86400000),
+                minDate: new Date(Date.now() + 86400000)
+            });
+        }
+    </script>
+</section>
