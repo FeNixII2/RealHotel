@@ -27,6 +27,11 @@ con.connect((err) => {
 app.use(express.static("public"));
 app.use(express.static("public/icons"));
 app.use(express.static("public/attraction"));
+app.use(express.static("public/deluxe"));
+app.use(express.static("public/rechotel"));
+app.use(express.static("public/standard"));
+app.use(express.static("public/superior"));
+app.use(express.static("public/suite"));
 app.use(express.static("css"));
 app.use(express.static("app"));
 app.use(express.static("views"));
@@ -73,5 +78,4 @@ app.get("/", (req, res) => {
 
 require("./app/empty.js")(app, con);
 require("./app/bookingsection.js")(app, con, moment, transporter); //js ของหน้า bookingsection
-require("./app/roomsection.js")(app, con);//js ของหน้า roomsection
-
+require("./app/roomsection.js")(app, con); //js ของหน้า roomsection

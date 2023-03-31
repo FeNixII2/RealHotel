@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="bookingsection.css">
     <link rel="stylesheet" href="bookingsection_modal.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom-homepage.css">
+    <link rel="stylesheet" href="css/custom-rooms.css">
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/component.js"></script>
@@ -39,8 +41,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#home" onclick="showSection('home')">Hotel BS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li>
@@ -51,94 +53,94 @@
                         <label style="color:white">ประเภทห้อง:</label>
                         <div class="select-container">
                             <select id="roomstype">
-                                    <option value="all" selected="selected">ทั้งหมด</option>
-                                    <%for(var i=0 ;i<roomstype.length;i++){%>
-                                        <option value="<%= roomstype[i].id %>">
-                                            <%= roomstype[i].name %>
+                                <option value="all" selected="selected">ทั้งหมด</option>
+                                <%for(var i=0 ;i<roomstype.length;i++){%>
+                                    <option value="<%= roomstype[i].id %>">
+                                        <%= roomstype[i].name %>
                                             <%= roomstype[i].bed %>
-                                        </option>
+                                    </option>
                                     <%}%>
-                                </select>
+                            </select>
                         </div>
-                        <button type="button" class="search-icon" onclick="booking_search(),showSection('booking')">
-                                <i class="fa fa-search"></i>
+                        <button type="button" class="search-icon" id="searchbtn" onclick="booking_search(),showSection('booking')">
+                            <i class="fa fa-search"></i>
                             </input>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto justify-content-end">
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">ภาษา</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                        <li>
-                                            <a class="dropdown-item" href="#">ไทย</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">อังกฤษ</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto justify-content-end">
+                    <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">ภาษา</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                    <li>
+                                        <a class="dropdown-item" href="#">ไทย</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">อังกฤษ</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                            </ul>
+                        </ul>
 
-                        </div>
                     </div>
-                </nav>
-                <main>
-                    <%- include('homesection.ejs') %>
-                    <%- include('roomssection.ejs') %>
-                    <%- include('bookingsection.ejs') %>
-                </main>
-            </body>
+            </div>
+    </nav>
+    <main>
+        <%- include('homesection.ejs') %>
+            <%- include('roomssection.ejs') %>
+                <%- include('bookingsection.ejs') %>
+    </main>
+</body>
 
-            <script>
-                // fix show section when you refresh webpage
-                window.addEventListener('load', function () {
-                    let hash = location.hash; // get current hash location
-                    let id = hash.substring(1); // remove # from location
-                    if (id != (null || '' || "")) {
-                        document.querySelectorAll('section').forEach(function (element) {
-                            element.style.display = 'none';
-                        });
-                        showSection(id)
-                    } else {
-                        showSection('home')
-                    }
-                });
+<script>
+    // fix show section when you refresh webpage
+    window.addEventListener('load', function () {
+        let hash = location.hash; // get current hash location
+        let id = hash.substring(1); // remove # from location
+        if (id != (null || '' || "")) {
+            document.querySelectorAll('section').forEach(function (element) {
+                element.style.display = 'none';
+            });
+            showSection(id)
+        } else {
+            showSection('home')
+        }
+    });
 
-                // JavaScript function to show a specific section
-                function showSection(id) { // hide all sections
-                    document.querySelectorAll('section').forEach(function (element) {
-                        element.style.display = 'none';
-                    });
-                    // show the selected section
-                    document.getElementById(id).style.display = 'block';
-                }
+    // JavaScript function to show a specific section
+    function showSection(id) { // hide all sections
+        document.querySelectorAll('section').forEach(function (element) {
+            element.style.display = 'none';
+        });
+        // show the selected section
+        document.getElementById(id).style.display = 'block';
+    }
 
-                // fix topnav and section is override
-                window.onload = function () {
-                    var topnav = document.getElementById("topnav"); // get the topnav element
-                    var topnavHeight = topnav.offsetHeight;
-                    // get the height of the topnav element
-                    // var section = document.querySelector("section"); //get the section element
+    // fix topnav and section is override
+    // window.onload = function () {
+    //     var topnav = document.getElementById("topnav"); // get the topnav element
+    //     var topnavHeight = topnav.offsetHeight;
+    //     // get the height of the topnav element
+    //     // var section = document.querySelector("section"); //get the section element
 
-                    document.querySelectorAll('section').forEach(function (element) {
-                        element.style.transform = 'translateY(' + topnavHeight + 'px)';
-                    }); // assign the topnav height as margin-top to the section
-                }
-            </script>
+    //     document.querySelectorAll('section').forEach(function (element) {
+    //         element.style.transform = 'translateY(' + topnavHeight + 'px)';
+    //     }); // assign the topnav height as margin-top to the section
+    // }
+</script>
 
-        </html>
-    </body>
+</html>
+</body>
 
 </html>
