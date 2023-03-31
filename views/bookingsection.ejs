@@ -300,7 +300,18 @@
                             text: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
                             icon: 'success'
                         }).then(() => {
-                            showSection('home')
+                            // Get a reference to the Bootstrap modal element
+                            const modalElement = document.getElementById('exampleModal');
+
+                            // Create a new Modal instance using the modal element
+                            const modalInstance = new bootstrap.Modal(modalElement);
+
+                            // Hide the modal explicitly
+                            modalInstance.hide();
+
+                            window.location.hash = 'home';
+                            location.reload()
+
                         });
                     })
 
