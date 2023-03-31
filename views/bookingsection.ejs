@@ -50,7 +50,7 @@
     </div>
 
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             dateTimepicker()
         })
 
@@ -126,7 +126,7 @@
                                         button.setAttribute('class', 'btn btn-primary');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function(i, j, event) {
+                                        button.onclick = function (i, j, event) {
                                             reserv_modal(available_room[j], room_type[i]);
                                         }.bind(this, i, j, event);
 
@@ -192,7 +192,7 @@
                         button.setAttribute('class', 'btn btn-primary');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function(event) {
+                        button.onclick = function (event) {
                             reserv_modal(available_room[0], room_type[0]);
 
                         }
@@ -298,7 +298,18 @@
                             text: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
                             icon: 'success'
                         }).then(() => {
-                            showSection('home')
+                            // Get a reference to the Bootstrap modal element
+                            const modalElement = document.getElementById('exampleModal');
+
+                            // Create a new Modal instance using the modal element
+                            const modalInstance = new bootstrap.Modal(modalElement);
+
+                            // Hide the modal explicitly
+                            modalInstance.hide();
+
+                            window.location.hash = 'home';
+                            location.reload()
+
                         });
                     })
 
@@ -315,7 +326,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function(selectedDates, dateStr, instance) {
+                onChange: function (selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {
