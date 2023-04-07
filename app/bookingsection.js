@@ -1,4 +1,4 @@
-module.exports = function(app, con, moment, transporter) {
+module.exports = function (app, con, moment, transporter) {
     app.post("/booking_search", (req, res) => {
         var { checkin, checkout, roomtype } = req.body;
         if (roomtype != 'all') {
@@ -29,15 +29,15 @@ module.exports = function(app, con, moment, transporter) {
 
 
     app.post('/confirm_booking_room', (req, res) => {
-        var { firstName, p_number, email, lastName, card_id, more_info, payment, checkin, checkout, room_type } = req.body
-        con.query("select id from customer where f_name = ? and l_name = ? and card_num = ? and p_num = ? and email = ?", [firstName, lastName, card_id, p_number, email], (err, cus_id) => {
+        var { firstName, p_number, email, lastName, more_info, payment, checkin, checkout, room_type } = req.body
+        con.query("select id from customer where f_name = ? and l_name = ? and card_num = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
             if (err) throw err
             if (cus_id.length != 0) {
                 reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id)
                 res.send({})
             } else if (cus_id.length == 0) {
-                con.query("insert into customer values ('',?,?,?,?,?)", [firstName, lastName, card_id, p_number, email], (err, result) => {
-                    con.query("select id from customer where f_name = ? and l_name = ? and card_num = ? and p_num = ? and email = ?", [firstName, lastName, card_id, p_number, email], (err, cus_id) => {
+                con.query("insert into customer values ('',?,?,?,?,?)", [firstName, lastName, p_number, email], (err, result) => {
+                    con.query("select id from customer where f_name = ? and l_name = ? and card_num = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
                         if (err) throw err
                         reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id)
                         res.send({})
