@@ -1,47 +1,51 @@
 <section id="booking" style="padding-top: 50px">
-    <br>
+    <div class="container">
+        <br>
 
-    <div id="my-cards"></div>
+        <div id="my-cards"></div>
 
-    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ยืนยันการจองห้องพัก</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="cus-info">
-                        <br />
-                        <div class="left-side-info">
-                            <input type="text" id="firstName" name="firstName" placeholder="ชื่อ" required="required" />
-                            <br />
-                            <br />
-                            <input type="number" id="p_number" name="p_number" placeholder="โทรศัพท์" />
-                            <br />
-                            <br />
-                        </div>
-                        <div class="right-side-info">
-                            <input type="text" id="lastName" name="lastName" placeholder="นามสกุล" required="required" />
-                            <br />
-                            <br />
-                            <input type="email" id="email" name="email" placeholder="อีเมลล์" required="required" />
-
-                        </div>
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ยืนยันการจองห้องพัก</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <br /> ข้อมูลเพิ่มเติม
-                    <br />
-                    <textarea class="more-info-text" name="more_info" id="more_info" cols="50" rows="10"></textarea>
-                    <br />
-                    <p class="total-price" id="total-price">0</p>
-                    <% for(var i=0;i< payment_type.length;i++){ %>
-                        <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
-                        <label for="option<%=i%>" class="payment-opt">
-                            <%=payment_type[i].pay_type%>
-                        </label><br />
-                        <%}%>
+                    <div class="modal-body">
 
-                            <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button>
+
+                        <div class="cus-info">
+                            <br />
+                            <div class="left-side-info">
+                                <input type="text" id="firstName" name="firstName" placeholder="ชื่อ" required="required" />
+                                <br />
+                                <br />
+                                <input type="number" id="p_number" name="p_number" placeholder="โทรศัพท์" />
+                                <br />
+                                <br />
+                            </div>
+                            <div class="right-side-info">
+                                <input type="text" id="lastName" name="lastName" placeholder="นามสกุล" required="required" />
+                                <br />
+                                <br />
+                                <input type="email" id="email" name="email" placeholder="อีเมลล์" required="required" />
+
+                            </div>
+                        </div>
+                        <br /> ข้อมูลเพิ่มเติม
+                        <br />
+                        <textarea class="more-info-text" name="more_info" id="more_info" cols="50" rows="10"></textarea>
+                        <br />
+                        <p class="total-price" id="total-price">0</p>
+                        <% for(var i=0;i< payment_type.length;i++){ %>
+                            <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
+                            <label for="option<%=i%>" class="payment-opt">
+                                <%=payment_type[i].pay_type%>
+                            </label><br />
+                            <%}%>
+
+                                <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button>
+                    </div>
                 </div>
             </div>
         </div>

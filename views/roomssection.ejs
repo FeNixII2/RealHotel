@@ -1,55 +1,605 @@
 <section id="rooms" style="padding-top: 50px">
-    <div class="row-card">
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card">
-                <img src="standard.jpg" class="img-fluid" alt="...">
-                <div class="box-padding">
-                    <h5 class="card-title">สแตนดาร์ด</h5>
-                    <p class="card-text"> เป็นห้องพักแบบมาตรฐานทั่วไป
-                        มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน ห้องน้ำ
-                        ทีวี
-                        แอร์</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <div class="container">
+        <!-- attraction -->
+        <div class="row gy-2 py-4">
+            <div class="col-sm-12 col-md-12 col-lg-12 carousel-fade">
+                <div class="">
+                    <h2 style="text-align:center; padding-top: 1rem">ห้องแสตนดาร์ด</h2>
+                    <div class="containerroom">
+                        <div class="box-padding">
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">1 / 6</div>
+                                <img src="standard1.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">2 / 6</div>
+                                <img src="standard2.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">3 / 6</div>
+                                <img src="standard3.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">4 / 6</div>
+                                <img src="standard4.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">5 / 6</div>
+                                <img src="standard5.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides rounded-2">
+                                <div class="numbertext">6 / 6</div>
+                                <img src="standard6.jpg" style="width:100%">
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
+
+                        <div class="row px-2">
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor rounded-2" src="standard6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="detailsroom box-padding fw-semibold fs-5">
+                        รายละเอียดห้องพัก สแตนดาร์ด เป็นห้องพักแบบมาตรฐานทั่วไป มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน ห้องน้ำ ขนาดของห้องสแตนดาร์ด จะมีขนาดเล็กที่สุดถ้าเทียบกับห้องอื่น แต่สำหรับท่านต้องการที่พักราคาประหยัด ห้องนี้ถือว่าเป็นห้องที่ราคาประหยัดที่สุด
+                        <div class="facilities trd_color  fw-semibold fs-5">
+                            สิ่งอำนวยความสะดวก
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    Wifi
+                                    <ic class="fa-solid fa-wifi"></ic>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    ตู้เย็น
+                                    <ic class="fa-solid fa-temperature-half"></ic>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    เครื่องทำน้ำอุ่น
+                                    <ic class="fa-solid fa-shower"></ic>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    อาหารเช้า
+                                    <ic class="fa-solid fa-utensils"></ic>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box-padding mt-auto d-flex justify-content-center">
+                        <a href="#" class=" btn btn-primary fw-semibold fs-5 " onclick="sign_room('1')">
+                            จองห้องพัก
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card">
-                <img src="superior.jpeg" class="img-fluid" alt="...">
-                <div class="box-padding">
-                    <h5 class="card-title">ซูพีเรีย</h5>
-                    <p class="card-text">เป็นห้องพักที่มีขนาดกว้างกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย
-                        มีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="">
+                    <h2 style="text-align:center; padding-top: 1rem">ห้องซูพีเรีย</h2>
+                    <div class="containerroom">
+
+
+
+
+                        <div class="row gy-2 px-2">
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior1">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior2">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior3">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior4">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior5">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="superior6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior6">
+                            </div>
+
+
+                        </div>
+                        <div class="detailsroom box-padding fw-semibold fs-5">
+                            รายละเอียดห้องพัก ซูพีเรีย จะเป็นห้องพักที่มีขนาดกว้างมากกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย อาจจะมีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น บางรีสอร์ทอาจจะเริ่มต้นที่ห้อง ซูพีเรีย เพื่อความสะดวกสบายของแขกที่เข้าพัก
+                            <div class="facilities trd_color  fw-semibold fs-5">
+                                สิ่งอำนวยความสะดวก
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        Wifi
+                                        <ic class="fa-solid fa-wifi"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องปรับอากาศ
+                                        <ic class="fa-solid fa-wind"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ตู้เย็น
+                                        <ic class="fa-solid fa-temperature-half"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องทำน้ำอุ่น
+                                        <ic class="fa-solid fa-shower"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        อาหารเช้า
+                                        <ic class="fa-solid fa-utensils"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ทีวี
+                                        <ic class="fa-solid fa-tv"></ic>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-padding mt-auto d-flex justify-content-center">
+                            <div button type="button" class="btn btn-primary fw-semibold fs-5" onclick="sign_room('2')">จองห้องพัก</a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="superior1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior1.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="superior2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior2.jpg" style="width: 100%;height: 600px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="superior3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior3.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="superior4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior4.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="superior5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior5.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="superior6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="superior6.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card">
-                <img src="deluxe.jpeg" class="img-fluid" alt="...">
-                <div class="box-padding">
-                    <h5 class="card-title">ดีลักซ์</h5>
-                    <p class="card-text">เป็นห้องที่หรูหราขึ้นมา
-                        มีการตกแต่งที่สวยงาม เตียงขนาดใหญ่
-                        พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="">
+                    <h2 style="text-align:center; padding-top: 1rem">ห้องดีลักซ์</h2>
+                    <div class="containerroom">
+
+
+
+
+                        <div class="row gy-2 px-2">
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe1">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe2">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe3">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe4">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe5">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="deluxe6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe6">
+                            </div>
+
+
+                        </div>
+                        <div class="detailsroom box-padding fw-semibold fs-5">
+                            รายละเอียดห้องพัก ดีลักซ์ จะเป็นห้องที่หรูหราขึ้นมา มีการตกแต่งที่สวยงาม เตียงขนาดใหญ่ พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน
+                            <div class="facilities trd_color  fw-semibold fs-5">
+                                สิ่งอำนวยความสะดวก
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        Wifi
+                                        <ic class="fa-solid fa-wifi"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องปรับอากาศ
+                                        <ic class="fa-solid fa-wind"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ตู้เย็น
+                                        <ic class="fa-solid fa-temperature-half"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        อ่างอาบน้ำ
+                                        <ic class="fa-solid fa-bath"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องทำน้ำอุ่น
+                                        <ic class="fa-solid fa-shower"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ฟิตเนส
+                                        <ic class="fa-solid fa-dumbbell"></ic>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        อาหารเช้า
+                                        <ic class="fa-solid fa-utensils"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ทีวี
+                                        <ic class="fa-solid fa-tv"></ic>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-padding mt-auto d-flex justify-content-center"><a href="#" class=" btn btn-primary fw-semibold fs-5" onclick="sign_room('3')">จองห้องพัก</a></div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deluxe1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe1.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="deluxe2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe2.jpg" style="width: 100%;height: 600px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="deluxe3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe3.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="deluxe4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe4.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="deluxe5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe5.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="deluxe6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="deluxe6.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card">
-                <img src="suite.jpeg" class="img-fluid" alt="...">
-                <div class="box-padding">
-                    <h5 class="card-title">สวีท</h5>
-                    <p class="card-text">เป็นห้องพักที่มีห้องนั่งเล่น
-                        สิ่งอำนวยความสะดวกต่างๆครบครัน
-                        พื้นที่กว้างมากกว่า มีการตกแต่งที่หรูหรา</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="">
+                    <h2 style="text-align:center; padding-top: 1rem">ห้องสวีท</h2>
+                    <div class="containerroom">
+
+
+
+
+                        <div class="row gy-2 px-2">
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite1">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite2">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite3">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite4">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite5">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <img class="cursor h-100 rounded-2" src="suite6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite6">
+                            </div>
+
+
+                        </div>
+                        <div class="detailsroom box-padding fw-semibold fs-5">
+                            รายละเอียดห้องพัก สวีท เป็นห้องพักที่มีเอกลักษณ์เฉพาะตัว โดยจะมีห้องนั่งเล่นอยู่ด้วย มีการแบ่งสัดส่วนชัดเจน ซึ่งเฟอร์นิเจอร์และสิ่งอำนวยความสะดวกต่าง ๆ ก็จะครบครันกว่าห้องพักประเภทอื่น ๆ ขนาดพื้นที่ก็กว้างมากกว่า มีการตกแต่งที่หรูหรา จึงเหมาะกับคู่รัก
+                            หรือครอบครัว
+                            <div class="facilities trd_color  fw-semibold fs-5">
+                                สิ่งอำนวยความสะดวก
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        Wifi
+                                        <ic class="fa-solid fa-wifi"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องปรับอากาศ
+                                        <ic class="fa-solid fa-wind"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ตู้เย็น
+                                        <ic class="fa-solid fa-temperature-half"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        อ่างอาบน้ำ
+                                        <ic class="fa-solid fa-bath"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        เครื่องทำน้ำอุ่น
+                                        <ic class="fa-solid fa-shower"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ฟิตเนส
+                                        <ic class="fa-solid fa-dumbbell"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        สระว่ายน้ำ
+                                        <ic class="fa-solid fa-water-ladder"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        อาหารเช้า
+                                        <ic class="fa-solid fa-utensils"></ic>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        ทีวี
+                                        <ic class="fa-solid fa-tv"></ic>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-padding mt-auto d-flex justify-content-center"><a href="#" class=" btn btn-primary fw-semibold fs-5" onclick="sign_room('4')">จองห้องพัก</a></div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="suite1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite1.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="suite2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite2.jpg" style="width: 100%;height: 600px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="suite3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite3.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="suite4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite4.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="suite5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite5.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="suite6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="suite6.jpg" style="width: 100%;height: 600px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
                 </div>
             </div>
+            <!-- attraction -->
+
+            <!-- footer -->
+            <footer-component></footer-component>
+            <!-- footer -->
+
+
         </div>
 
-    </div>
 
 
 </section>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+    }
+</script>
