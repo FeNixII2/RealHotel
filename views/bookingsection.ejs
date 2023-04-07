@@ -49,6 +49,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- footer -->
+        <footer-component></footer-component>
+        <!-- footer -->
     </div>
 
     <script>
@@ -308,9 +312,12 @@
 
                             // Hide the modal explicitly
                             modalInstance.hide();
+                            setTimeout(() => {
+                                window.location.hash = 'home';
+                                location.reload()
+                            }, 500);
 
-                            window.location.hash = 'home';
-                            location.reload()
+
 
                         });
                     })

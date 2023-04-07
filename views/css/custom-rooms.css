@@ -112,3 +112,8 @@ img {
 .trd_color {
     color: #626161;
 }
+
+.btn-primary:hover {
+    color: #0d6efd;
+    background-color: white;
+}
