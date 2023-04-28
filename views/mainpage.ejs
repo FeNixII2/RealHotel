@@ -88,16 +88,16 @@
                         <button type="button" class="btn btn-secondary mx-3" id="searchbtn" onclick="booking_search(),showSection('booking')">ค้นหา</button>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link" id="closenav" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                        <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="closenav" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
+                        <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="closenav" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
+                        <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="closenav" href="#checkbooking" onclick="showSection('checkbooking'),booking_search()">เช็คห้องพัก</a>
+                        <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking'),booking_search()">เช็คห้องพัก</a>
                     </li>
                     <li class="nav-item dropdown d-flex justify-content-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,10 +105,10 @@
                         </a>
                         <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item" id="closenav" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-controls="Toggle navigation">ไทย TH</a>
+                                <a class="dropdown-item" href="#">ไทย</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" id="closenav" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-controls="Toggle navigation">อังกฤษ EN</a>
+                                <a class="dropdown-item" href="#">อังกฤษ</a>
                             </li>
                         </ul>
                     </li>
@@ -150,31 +150,37 @@
 
     function handleScreenSizeChange() {
         if (window.innerWidth <= 576) {
-
             document.getElementById('searchbar1').classList.remove('d-flex');
             document.getElementById('padding-searchbar').classList.add('mt-3');
             document.getElementById('psb').classList.add('mb-2');
             document.getElementById('psb2').classList.add('mb-2');
-            document.getElementById('searchbtn').className('data-bs-toggle').add('collapse');
-            document.getElementById('searchbtn').className('data-bs-target').add('#navbarNavDropdown');
-            document.getElementById('searchbtn').className('aria-expanded').add('false');
-            document.getElementById('searchbtn').className('aria-controls').add('Toggle navigation');
-            document.getElementById('closenav').className('data-bs-toggle').add('collapse');
-            document.getElementById('closenav').className('data-bs-target').add('#navbarNavDropdown');
-            document.getElementById('closenav').className('aria-expanded').add('false');
-            document.getElementById('closenav').className('aria-controls').add('Toggle navigation');
-
-
-
+            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+                navLink.setAttribute('data-bs-toggle', 'collapse');
+                navLink.setAttribute('data-bs-target', '#navbarNavDropdown');
+                navLink.setAttribute('aria-expanded', 'false');
+                navLink.setAttribute('aria-controls', 'Toggle navigation');
+            });
+            var searchBtn = document.getElementById('searchbtn');
+            searchBtn.setAttribute('data-bs-toggle', 'collapse');
+            searchBtn.setAttribute('data-bs-target', '#navbarNavDropdown');
+            searchBtn.setAttribute('aria-expanded', 'false');
+            searchBtn.setAttribute('aria-controls', 'Toggle navigation');
         } else {
             document.getElementById('searchbar1').classList.add('d-flex');
             document.getElementById('padding-searchbar').classList.remove('mt-3');
             document.getElementById('psb').classList.remove('mb-2');
             document.getElementById('psb2').classList.remove('mb-2');
-            document.getElementById('closenav').className('data-bs-toggle').remove('collapse');
-            document.getElementById('closenav').className('data-bs-target').remove('#navbarNavDropdown');
-            document.getElementById('closenav').className('aria-expanded').remove('false');
-            document.getElementById('closenav').className('aria-controls').remove('Toggle navigation');
+            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+                navLink.removeAttribute('data-bs-toggle');
+                navLink.removeAttribute('data-bs-target');
+                navLink.removeAttribute('aria-expanded');
+                navLink.removeAttribute('aria-controls');
+            });
+            var searchBtn = document.getElementById('searchbtn');
+            searchBtn.removeAttribute('data-bs-toggle');
+            searchBtn.removeAttribute('data-bs-target');
+            searchBtn.removeAttribute('aria-expanded');
+            searchBtn.removeAttribute('aria-controls');
         }
     }
     handleScreenSizeChange();
