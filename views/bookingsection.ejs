@@ -87,7 +87,7 @@
     </div>
 
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             dateTimepicker()
         })
 
@@ -454,7 +454,7 @@
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function (i, j, event) {
+                                        button.onclick = function(i, j, event) {
                                             // const roomtypeLabel = document.getElementById('roomtype-label');
                                             // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
@@ -659,7 +659,7 @@
                         button.setAttribute('class', 'btn btn-primary mt-auto');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function (event) {
+                        button.onclick = function(event) {
                             reserv_modal(available_room[0], room_type[0]);
 
                         }
@@ -709,7 +709,7 @@
             modalInstance.show();
 
             document.getElementById('total-price').innerHTML = 'ราคา ' + roomtype.price + ' บาท'
-            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+                // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
             document.getElementById('con_reserv').value = roomtype.id
         }
@@ -725,7 +725,7 @@
             var room_type = document.getElementById('con_reserv').value
 
             const radioButtons = document.getElementsByName('myGroup');
-            if ((firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == '' && (firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == null) {
+            if (!firstName || !p_number || !email || !lastName || !more_info || !checkin || !checkout || !room_type) {
                 Swal.fire({
                     title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
                 });
@@ -811,7 +811,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function (selectedDates, dateStr, instance) {
+                onChange: function(selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {
