@@ -1,7 +1,12 @@
 <section id="booking" style="padding-top: 50px">
     <div class="container">
         <br>
-
+        <style>
+            .swal-backdrop-blur {
+                backdrop-filter: blur(5px);
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        </style>
         <div id="my-cards"></div>
 
         <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -728,7 +733,12 @@
             if (!firstName || !p_number || !email || !lastName || !more_info || !checkin || !checkout || !room_type) {
                 Swal.fire({
                     title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                    backdrop: true,
+                    customClass: {
+                        backdrop: 'swal-backdrop-blur',
+                    },
                 });
+
             } else {
                 Swal.fire({
                     title: 'ต้องการจองห้องนี้หรือไม่',
