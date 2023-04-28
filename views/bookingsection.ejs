@@ -768,7 +768,7 @@
                         })
                     }).then((response) => response.json()).then((body) => {
                         Swal.fire({
-                            title: 'ทำรายการสำเร็จ รบกวนรอการยืนยันห้องทางอีเมลล์',
+                            title: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
                             text: 'รหัสการจองห้องคือ ' + body.reserved_custom_id + ' สามารถใช้ค้นหาในเมนูเช็คห้องพักได้',
                             icon: 'success',
                             showConfirmButton: true,
@@ -783,18 +783,18 @@
                                 });
                             }
                         }).then(() => {
-                            // Get a reference to the Bootstrap modal element
-                            const modalElement = document.getElementById('exampleModal');
 
-                            // Create a new Modal instance using the modal element
-                            const modalInstance = new bootstrap.Modal(modalElement);
+                            const modal = document.getElementById('exampleModal');
+                            const modalInstance = new bootstrap.Modal(modal);
 
-                            // Hide the modal explicitly
+                            // To hide the modal
                             modalInstance.hide();
+
                             window.location.hash = 'home';
                             location.reload();
                         });
                     })
+
                 }
             })
         }
