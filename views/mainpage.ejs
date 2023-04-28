@@ -37,64 +37,81 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" aria-label="Fourth navbar example">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#home" onclick="showSection('home')">Hotel BS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Hotel BS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li>
-                        <label for="checkin" class="no-select" style="color:white">เช็คอิน:</label>
-                        <input type="text" id="checkin" name="checkin" />
-                        <label for="checkout" class="no-select" style="color:white">เช็คเอาท์:</label>
-                        <input type="text" id="checkout" name="checkout" />
-                        <label style="color:white">ประเภทห้อง:</label>
-                        <div class="select-container">
-                            <select id="roomstype">
-                                <option value="all" selected="selected">ทั้งหมด</option>
-                                <%for(var i=0 ;i<roomstype.length;i++){%>
-                                    <option value="<%= roomstype[i].id %>">
-                                        <%= roomstype[i].name %>
-                                            <%= roomstype[i].bed %>
-                                    </option>
-                                    <%}%>
-                            </select>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav w-100 ms-auto justify-content-end align-items-center">
+                    <div class="padding-searchbar d-flex mx-auto" id="padding-searchbar">
+                        <div class="searchbar">
+                            <div class="d-flex" id="searchbar1">
+
+
+
+                                <div class=" d-flex justify-content-center align-items-center " id="psb">
+                                    <label for="checkin" class="no-select mx-2 w-50 form-label" style="color:white">เช็คอิน:</label>
+                                    <input type="text" id="checkin" name="checkin" class="form-control" style="width: 100%;" />
+                                </div>
+                                <div class=" d-flex justify-content-center align-items-center " id="psb2">
+                                    <label for="checkout" class="no-select mx-2 w-50 form-label" style="color:white">เช็คเอาท์:</label>
+                                    <input type="text" id="checkout" name="checkout" class="form-control " style="width: 100%;" />
+                                </div>
+                                <div class=" d-flex justify-content-center align-items-center " id="psb3">
+                                    <label class=" no-select mx-2 w-50 form-label" style="color:white">ประเภท:</label>
+                                    <select id="roomstype" class="form-select form-control " style="width: 100%;">
+                                        <option value="all" selected="selected">ทั้งหมด</option>
+                                        <%for(var i=0 ;i<roomstype.length;i++){%>
+                                            <option value="<%= roomstype[i].id %>">
+                                                <%= roomstype[i].name_th %>
+                                                    <%= roomstype[i].bed %>
+                                            </option>
+                                            <%}%>
+                                    </select>
+                                </div>
+
+
+
+                            </div>
+
+
+
                         </div>
-                        <button type="button" class="search-icon" id="searchbtn" onclick="booking_search(),showSection('booking')">
-                            <i class="fa fa-search"></i>
-                            </input>
+
+
+
+
+
+                        <button type="button" class="btn btn-secondary mx-3" id="searchbtn" onclick="booking_search(),showSection('booking')">ค้นหา</button>
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
+                    </li>
+                    <li class="nav-item dropdown d-flex justify-content-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ภาษา
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">ไทย TH</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">อังกฤษ EN</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto justify-content-end">
-                    <div class="collapse navbar-collapse" id="navbarsExample04">
-                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">ภาษา</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                    <li>
-                                        <a class="dropdown-item" href="#">ไทย</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">อังกฤษ</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-
-                    </div>
             </div>
+        </div>
     </nav>
     <main>
         <%- include('homesection.ejs') %>
@@ -105,11 +122,11 @@
 
 <script>
     // fix show section when you refresh webpage
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function() {
         let hash = location.hash; // get current hash location
         let id = hash.substring(1); // remove # from location
         if (id != (null || '' || "")) {
-            document.querySelectorAll('section').forEach(function (element) {
+            document.querySelectorAll('section').forEach(function(element) {
                 element.style.display = 'none';
             });
             showSection(id)
@@ -120,24 +137,31 @@
 
     // JavaScript function to show a specific section
     function showSection(id) { // hide all sections
-        document.querySelectorAll('section').forEach(function (element) {
+        document.querySelectorAll('section').forEach(function(element) {
             element.style.display = 'none';
         });
         // show the selected section
         document.getElementById(id).style.display = 'block';
     }
 
-    // fix topnav and section is override
-    // window.onload = function () {
-    //     var topnav = document.getElementById("topnav"); // get the topnav element
-    //     var topnavHeight = topnav.offsetHeight;
-    //     // get the height of the topnav element
-    //     // var section = document.querySelector("section"); //get the section element
+    function handleScreenSizeChange() {
+        if (window.innerWidth <= 576) {
 
-    //     document.querySelectorAll('section').forEach(function (element) {
-    //         element.style.transform = 'translateY(' + topnavHeight + 'px)';
-    //     }); // assign the topnav height as margin-top to the section
-    // }
+            document.getElementById('searchbar1').classList.remove('d-flex');
+            document.getElementById('padding-searchbar').classList.add('mt-3');
+            document.getElementById('psb').classList.add('mb-2');
+            document.getElementById('psb2').classList.add('mb-2');
+
+
+        } else {
+            document.getElementById('searchbar1').classList.add('d-flex');
+            document.getElementById('padding-searchbar').classList.remove('mt-3');
+            document.getElementById('psb').classList.remove('mb-2');
+            document.getElementById('psb2').classList.remove('mb-2');
+        }
+    }
+    handleScreenSizeChange();
+    window.addEventListener('resize', handleScreenSizeChange);
 </script>
 
 </html>

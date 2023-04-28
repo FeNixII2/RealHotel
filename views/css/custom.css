@@ -1,6 +1,6 @@
 body {
-  font-family: Kanit;
-  padding-top: 2rem;
+    font-family: Kanit;
+    padding-top: 2rem;
 }
 
 h1,
@@ -9,29 +9,30 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Kanit;
+    font-family: Kanit;
 }
-.navbar-nav {
-  float: right;
-}
-.row-card {
-  display: flex;
 
-  flex-wrap: wrap;
+.navbar-nav {
+    float: right;
+}
+
+.row-card {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
-  margin: 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  /* height: 100%; */
+    margin: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    /* height: 100%; */
 }
 
 .img-fluid {
-  height: 15rem;
-  object-fit: cover;
+    height: 15rem;
+    object-fit: cover;
 }
 
 .box-padding {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }

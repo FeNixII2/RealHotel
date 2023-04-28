@@ -2,103 +2,78 @@
 
     <div class="container">
         <!-- attraction -->
-        <div class="row gy-2 py-4">
+        <div class="row gy-2 py-4 mx-auto w-100 ">
             <div class="col-sm-12 col-md-12 col-lg-12 carousel-fade">
-                <div class="">
-                    <div class="d-flex justify-content-center fs-2 fw-semibold mt-1">ห้องแนะนำ แสตนดาร์ด</div>
+                <div class="card">
+                    <div class="d-flex justify-content-center fs-2 fw-semibold mt-1">แสตนดาร์ด</div>
 
-                    <div class="containerroom">
-                        <div class="box-padding">
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">1 / 6</div>
-                                <img src="standard1.jpg" style="width:100%">
-                            </div>
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">2 / 6</div>
-                                <img src="standard2.jpg" style="width:100%">
-                            </div>
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">3 / 6</div>
-                                <img src="standard3.jpg" style="width:100%">
-                            </div>
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">4 / 6</div>
-                                <img src="standard4.jpg" style="width:100%">
-                            </div>
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">5 / 6</div>
-                                <img src="standard5.jpg" style="width:100%">
-                            </div>
-
-                            <div class="mySlides rounded-2">
-                                <div class="numbertext">6 / 6</div>
-                                <img src="standard6.jpg" style="width:100%">
-                            </div>
-
-                            <a class="prev" onclick="plusSlides(-1)">❮</a>
-                            <a class="next" onclick="plusSlides(1)">❯</a>
+                    <!-- img Carousel -->
+                    <div id="carouselExampleIndicators0" class="carousel slide carousel-fade py-3" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators0" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators0" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators0" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="standard1.jpg" class="d-block w-100 " alt="...">
 
-                        <div class="row px-2">
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
                             </div>
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                            <div class="carousel-item">
+                                <img src="standard2.jpg" class="d-block w-100 " alt="...">
                             </div>
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                            <div class="carousel-item">
+                                <img src="standard3.jpg" class="d-block w-100 " alt="...">
                             </div>
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                            </div>
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                            </div>
-                            <div class="column">
-                                <img class="demo cursor rounded-2" src="standard6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                            </div>
-
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators0" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators0" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <div class="detailsroom box-padding fw-semibold fs-5">
-                        รายละเอียดห้องพัก สแตนดาร์ด เป็นห้องพักแบบมาตรฐานทั่วไป มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน ห้องน้ำ ขนาดของห้องสแตนดาร์ด จะมีขนาดเล็กที่สุดถ้าเทียบกับห้องอื่น แต่สำหรับท่านต้องการที่พักราคาประหยัด ห้องนี้ถือว่าเป็นห้องที่ราคาประหยัดที่สุด
-
+                    <!-- img Carousel -->
+                    <div class="detailsroom box-padding ">
+                        <div class="head-fa fw-semibold fs-4">รายละเอียดห้อง</div>
                         <div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-6">
                                 <div class="row d-flex ">
-                                    <div class="d-l fs-2">ขนาดห้อง 36 ตารางเมตร
-                                        <ic class="fa-solid fa-maximize"> </ic>
-                                    </div>
+                                    <div class="d-l fs-5">ขนาดห้อง 36 ตรม.</div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
-                                <div class="d-l fs-2">ราคา 450
+                                <div class="d-l fs-5">ราคา
+                                    <cl>450</cl>
                                     <i class="fa-solid fa-baht-sign"></i> /คืน
                                 </div>
                             </div>
                         </div>
 
-                        <div class="facilities fw-semibold fs-4">
-                            สิ่งอำนวยความสะดวก
-                            <div class="row trd_color  fw-semibold fs-5">
-                                <div class="col-sm-6 col-md-6 col-lg-3">
-                                    Wifi
-                                    <ic class="fa-solid fa-wifi"></ic>
+                        <div class="facilities fs-4">
+                            <div class="head-fa fw-semibold">สิ่งอำนวยความสะดวก</div>
+
+                            <div class="row fs-5 ">
+                                <div class="row col-sm-6 col-md-6 col-lg-3 d-inline">
+                                    <ic class="fa-solid fa-wifi text-center" style="width: 3rem;"></ic>
+                                    อินเทอร์เน็ต
                                 </div>
 
-                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="row col-sm-6 col-md-6 col-lg-3 d-inline">
+                                    <ic class="fa-solid fa-temperature-half text-center" style="width: 3rem;"></ic>
                                     ตู้เย็น
-                                    <ic class="fa-solid fa-temperature-half"></ic>
                                 </div>
 
-                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="row col-sm-6 col-md-6 col-lg-3 d-inline">
+                                    <ic class="fa-solid fa-shower text-center" style="width: 3rem;"></ic>
                                     เครื่องทำน้ำอุ่น
-                                    <ic class="fa-solid fa-shower"></ic>
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                <div class="row col-sm-6 col-md-6 col-lg-3 d-inline">
+
+                                    <ic class="fa-solid fa-utensils text-center" style="width: 3rem;"></ic>
                                     อาหารเช้า
-                                    <ic class="fa-solid fa-utensils"></ic>
                                 </div>
 
                             </div>
@@ -116,60 +91,68 @@
 
 
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="">
+                <div class="card">
                     <div class="d-flex justify-content-center fs-2 fw-semibold mt-1">ห้องซูพีเรีย</div>
                     <div class="containerroom">
 
 
 
 
-                        <div class="row gy-2 px-2">
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior1">
+                        <!-- img Carousel -->
+                        <div id="carouselExampleIndicators1" class="carousel slide carousel-fade py-3" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior2">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior3">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior4">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior5">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="superior6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#superior6">
-                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="superior1.jpg" class="d-block w-100  " alt="...">
 
-
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="superior2.jpg" class="d-block w-100  " alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="superior3.jpg" class="d-block w-100  " alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <div class="detailsroom box-padding fw-semibold fs-5">
-                            รายละเอียดห้องพัก ซูพีเรีย จะเป็นห้องพักที่มีขนาดกว้างมากกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย อาจจะมีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น บางรีสอร์ทอาจจะเริ่มต้นที่ห้อง ซูพีเรีย เพื่อความสะดวกสบายของแขกที่เข้าพัก
+                        <!-- img Carousel -->
+
+                        <div class="detailsroom box-padding">
+                            <div class="head-fa fw-semibold fs-4">รายละเอียดห้อง</div>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <div class="row d-flex ">
-                                        <div class="d-l fs-2">ขนาดห้อง 40 ตารางเมตร
-                                            <ic class="fa-solid fa-maximize"> </ic>
+                                        <div class="d-l fs-5">ขนาดห้อง 40 ตารางเมตร
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="d-l fs-2">ราคา 750
+                                    <div class="d-l fs-5">ราคา
+                                        <cl> 750</cl>
                                         <i class="fa-solid fa-baht-sign"></i> /คืน
                                     </div>
                                 </div>
                             </div>
-                            <div class="facilities fw-semibold fs-4">
-                                สิ่งอำนวยความสะดวก
-                                <div class="row trd_color  fw-semibold fs-5">
+                            <div class="facilities ">
+                                <div class="head-fa fw-semibold fs-4">สิ่งอำนวยความสะดวก</div>
+                                <div class="row fs-5">
                                     <div class="col-sm-6 col-md-6 col-lg-3">
                                         Wifi
                                         <ic class="fa-solid fa-wifi"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
-                                        เครื่องปรับอากาศ
+                                        แอร์
                                         <ic class="fa-solid fa-wind"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -196,80 +179,7 @@
                             <div button type="button" class="btn btn-primary fw-semibold fs-5" onclick="sign_room('2')">จองห้องพัก</a>
                             </div>
                         </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="superior1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior1.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="superior2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior2.jpg" style="width: 100%;height: 600px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="superior3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior3.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="superior4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior4.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="superior5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior5.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="superior6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="superior6.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
+
 
 
                     </div>
@@ -278,60 +188,67 @@
 
 
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="">
+                <div class="card">
                     <div class="d-flex justify-content-center fs-2 fw-semibold mt-1">ห้องดีลักซ์</div>
                     <div class="containerroom">
 
-
-
-
-                        <div class="row gy-2 px-2">
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe1">
+                        <!-- img Carousel -->
+                        <div id="carouselExampleIndicators2" class="carousel slide carousel-fade py-3" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe2">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="deluxe1.jpg" class="d-block w-100  " alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="deluxe2.jpg" class="d-block w-100 " alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="deluxe3.jpg" class="d-block w-100 " alt="...">
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe3">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe4">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe5">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="deluxe6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#deluxe6">
-                            </div>
-
-
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <div class="detailsroom box-padding fw-semibold fs-5">
-                            รายละเอียดห้องพัก ดีลักซ์ จะเป็นห้องที่หรูหราขึ้นมา มีการตกแต่งที่สวยงาม เตียงขนาดใหญ่ พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน
+                        <!-- img Carousel -->
+
+
+                        <div class="detailsroom box-padding">
+                            <div class="head-fa fw-semibold fs-4">รายละเอียด</div>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <div class="row d-flex ">
-                                        <div class="d-l fs-2">ขนาดห้อง 46 ตารางเมตร
-                                            <ic class="fa-solid fa-maximize"> </ic>
+                                        <div class="d-l fs-5">ขนาดห้อง 46 ตารางเมตร
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="d-l fs-2">ราคา 990
+                                    <div class="d-l fs-5">ราคา
+                                        <cl>990</cl>
                                         <i class="fa-solid fa-baht-sign"></i> /คืน
                                     </div>
                                 </div>
                             </div>
-                            <div class="facilities  fw-semibold fs-4">
-                                สิ่งอำนวยความสะดวก
-                                <div class="row trd_color  fw-semibold fs-5">
+                            <div class="facilities ">
+                                <div class="head-fa fw-semibold fs-4">สิ่งอำนวยความสะดวก</div>
+
+                                <div class="row fs-5">
                                     <div class="col-sm-6 col-md-6 col-lg-3">
                                         Wifi
                                         <ic class="fa-solid fa-wifi"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
-                                        เครื่องปรับอากาศ
+                                        แอร์
                                         <ic class="fa-solid fa-wind"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -364,141 +281,76 @@
                             </div>
                         </div>
                         <div class="box-padding mt-auto d-flex justify-content-center"><a href="#" class=" btn btn-primary fw-semibold fs-5" onclick="sign_room('3')">จองห้องพัก</a></div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="deluxe1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe1.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="deluxe2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe2.jpg" style="width: 100%;height: 600px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="deluxe3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe3.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="deluxe4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe4.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="deluxe5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe5.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="deluxe6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="deluxe6.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
+
                     </div>
                 </div>
             </div>
 
 
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="">
+                <div class="card">
                     <div class="d-flex justify-content-center fs-2 fw-semibold mt-1">ห้องสวีท</div>
                     <div class="containerroom">
 
+                        <!-- img Carousel -->
+                        <div id="carouselExampleIndicators3" class="carousel slide carousel-fade py-3" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="suite1.jpg" class="d-block w-100  " alt="...">
 
-
-
-                        <div class="row gy-2 px-2">
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite1.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="suite2.jpg" class="d-block w-100 " alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="suite3.jpg" class="d-block w-100 " alt="...">
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite2.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite2">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite3.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite3">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite4.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite4">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite5.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite5">
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <img class="cursor h-100 rounded-2" src="suite6.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#suite6">
-                            </div>
-
-
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <div class="detailsroom box-padding fw-semibold fs-5">
-                            รายละเอียดห้องพัก สวีท เป็นห้องพักที่มีเอกลักษณ์เฉพาะตัว โดยจะมีห้องนั่งเล่นอยู่ด้วย มีการแบ่งสัดส่วนชัดเจน ซึ่งเฟอร์นิเจอร์และสิ่งอำนวยความสะดวกต่าง ๆ ก็จะครบครันกว่าห้องพักประเภทอื่น ๆ ขนาดพื้นที่ก็กว้างมากกว่า มีการตกแต่งที่หรูหรา จึงเหมาะกับคู่รัก
-                            หรือครอบครัว
+                        <!-- img Carousel -->
+
+
+
+                        <div class="detailsroom box-padding">
+                            <div class="head-fa fw-semibold fs-4">รายละเอียด</div>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <div class="row d-flex ">
-                                        <div class="d-l fs-2">ขนาดห้อง 52 ตารางเมตร
-                                            <ic class="fa-solid fa-maximize"> </ic>
+                                        <div class="d-l fs-5">ขนาดห้อง 52 ตารางเมตร
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="d-l fs-2">ราคา 1200
+                                    <div class="d-l fs-5">ราคา
+                                        <cl>1200</cl>
                                         <i class="fa-solid fa-baht-sign"></i> /คืน
                                     </div>
                                 </div>
                             </div>
-                            <div class="facilities fw-semibold fs-4">
-                                สิ่งอำนวยความสะดวก
-                                <div class="row trd_color  fw-semibold fs-5">
+                            <div class="facilities ">
+                                <div class="head-fa fw-semibold fs-4">สิ่งอำนวยความสะดวก</div>
+
+                                <div class="row fs-5">
                                     <div class="col-sm-6 col-md-6 col-lg-3">
                                         Wifi
                                         <ic class="fa-solid fa-wifi"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
-                                        เครื่องปรับอากาศ
+                                        แอร์
                                         <ic class="fa-solid fa-wind"></ic>
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -534,80 +386,7 @@
                             </div>
                         </div>
                         <div class="box-padding mt-auto d-flex justify-content-center"><a href="#" class=" btn btn-primary fw-semibold fs-5" onclick="sign_room('4')">จองห้องพัก</a></div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="suite1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite1.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="suite2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite2.jpg" style="width: 100%;height: 600px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="suite3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite3.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="suite4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite4.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="suite5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite5.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="suite6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content ">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="suite6.jpg" style="width: 100%;height: 600px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
+
                     </div>
                 </div>
             </div>
@@ -625,36 +404,4 @@
 </section>
 
 <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("demo");
-        let captionText = document.getElementById("caption");
-        if (n > slides.length) {
-            slideIndex = 1
-        }
-        if (n < 1) {
-            slideIndex = slides.length
-        }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-
-    }
 </script>
