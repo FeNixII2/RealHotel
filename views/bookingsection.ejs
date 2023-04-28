@@ -127,17 +127,6 @@
                 var available_room = body.count_available_rooms
                 var room_type = body.roomtype
                 var success = body.success
-
-                console.log("roomtype.lenght: " + room_type.length);
-
-                // for (var i = 0; i < room_type.length; i++) {
-                //     console.log("roomtype[" + i + "].name: " + room_type[i].name);
-                //     console.log("roomtype[" + i + "].id: " + room_type[i].id);
-                //     console.log("roomtype[" + i + "].price: " + room_type[i].price);
-                // }
-
-                console.log("available_room.length: " + available_room.length);
-                console.log("roomtype: " + room_type);
                 if (success == true) {
                     if (available_room.length > 1) {
 

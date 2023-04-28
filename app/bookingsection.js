@@ -37,7 +37,6 @@ module.exports = function (app, con, moment, transporter) {
                 res.send({})
             } else if (cus_id.length == 0) {
                 con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, result) => {
-                    // result.insertId
                     if (err) throw err
                     con.query("select id from customer where f_name = ? and l_name = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
                         if (err) throw err
@@ -50,14 +49,12 @@ module.exports = function (app, con, moment, transporter) {
     })
 
     function reserv(more_info, payment, checkin, checkout, room_type, cus_id) {
-        const currentDate = moment();
-        const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
         con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
             if (err) throw err
             con.query("insert into reserved values ('',?,?,?,?,'0',?,?,?) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment], (err, result) => {
                 if (err) throw err
                 var detail = 'ได้ทำการชำระเงินสำหรับห้อง ' + num_room[0].num_room + ' แล้ว'
-                con.query("insert into payment_log values ('',?,?,?) ", [detail, cus_id, formattedDate], (err, result) => {
+                con.query("insert into payment_log values ('',?,?) ", [detail, cus_id], (err, result) => {
                     if (err) throw err
                 })
             })
