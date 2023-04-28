@@ -29,9 +29,6 @@
                         </div>
  -->
 
-
-
-
                         <form class="row g-3">
                             <div class="col-md-6 my-custom-class">
                                 ชื่อ
@@ -64,8 +61,6 @@
                                 </div>
 
                                 <%}%>
-
-
 
                                     <!-- <% for(var i=0;i< payment_type.length;i++){ %>
                                 <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
@@ -101,8 +96,6 @@
             // checkinLabel.textContent = document.getElementById('checkin').value;
             // const checkoutLabel = document.getElementById('checkout-label');
             // checkoutLabel.textContent = document.getElementById('checkout').value
-
-
 
 
             const myCards = document.getElementById('my-cards');
@@ -648,11 +641,6 @@
                         }
 
 
-
-
-
-
-
                         const br2 = document.createElement('br');
 
                         const usable_room = document.createElement('p');
@@ -719,84 +707,91 @@
         }
 
         function confirm() {
-            Swal.fire({
-                title: 'ต้องการจองห้องนี้หรือไม่',
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'ไม่',
-                confirmButtonText: 'ใช่'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    var firstName = document.getElementById('firstName').value
-                    var p_number = document.getElementById('p_number').value
-                    var email = document.getElementById('email').value
-                    var lastName = document.getElementById('lastName').value
-                    var more_info = document.getElementById('more_info').value
-                    var checkin = document.getElementById('checkin').value
-                    var checkout = document.getElementById('checkout').value
-                    var room_type = document.getElementById('con_reserv').value
+            var firstName = document.getElementById('firstName').value
+            var p_number = document.getElementById('p_number').value
+            var email = document.getElementById('email').value
+            var lastName = document.getElementById('lastName').value
+            var more_info = document.getElementById('more_info').value
+            var checkin = document.getElementById('checkin').value
+            var checkout = document.getElementById('checkout').value
+            var room_type = document.getElementById('con_reserv').value
 
-                    const radioButtons = document.getElementsByName('myGroup');
-                    let payment;
+            const radioButtons = document.getElementsByName('myGroup');
+            if ((firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == '' && (firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == null) {
+                Swal.fire({
+                    title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                });
+            } else {
+                Swal.fire({
+                    title: 'ต้องการจองห้องนี้หรือไม่',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'ไม่',
+                    confirmButtonText: 'ใช่'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let payment;
 
-                    for (let i = 0; i < radioButtons.length; i++) {
-                        if (radioButtons[i].checked) {
-                            payment = radioButtons[i].value;
-                            break;
-                        }
-                    }
-
-                    fetch("/confirm_booking_room", {
-                        method: "post",
-                        headers: {
-                            Accept: "application/json",
-                            "Content-Type": "application/json"
-                        },
-
-                        body: JSON.stringify({
-                            firstName,
-                            p_number,
-                            email,
-                            lastName,
-                            more_info,
-                            payment,
-                            checkin,
-                            checkout,
-                            room_type
-                        })
-                    }).then((response) => response.json()).then((body) => {
-                        Swal.fire({
-                            title: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
-                            text: 'รหัสการจองห้องคือ ' + body.reserved_custom_id + ' สามารถใช้ค้นหาในเมนูเช็คห้องพักได้',
-                            icon: 'success',
-                            showConfirmButton: true,
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-                            allowEnterKey: false,
-                            preConfirm: () => {
-                                return new Promise((resolve) => {
-                                    setTimeout(() => {
-                                        resolve();
-                                    }, 3000);
-                                });
+                        for (let i = 0; i < radioButtons.length; i++) {
+                            if (radioButtons[i].checked) {
+                                payment = radioButtons[i].value;
+                                break;
                             }
-                        }).then(() => {
+                        }
 
-                            const modal = document.getElementById('exampleModal');
-                            const modalInstance = new bootstrap.Modal(modal);
+                        fetch("/confirm_booking_room", {
+                            method: "post",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json"
+                            },
 
-                            // To hide the modal
-                            modalInstance.hide();
+                            body: JSON.stringify({
+                                firstName,
+                                p_number,
+                                email,
+                                lastName,
+                                more_info,
+                                payment,
+                                checkin,
+                                checkout,
+                                room_type
+                            })
+                        }).then((response) => response.json()).then((body) => {
+                            Swal.fire({
+                                title: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
+                                text: 'รหัสการจองห้องคือ ' + body.reserved_custom_id + ' สามารถใช้ค้นหาในเมนูเช็คห้องพักได้',
+                                icon: 'success',
+                                showConfirmButton: true,
+                                allowOutsideClick: false,
+                                allowEscapeKey: false,
+                                allowEnterKey: false,
+                                // preConfirm: () => {
+                                //     return new Promise((resolve) => {
+                                //         setTimeout(() => {
+                                //             showConfirmButton: true,
+                                //             resolve();
+                                //         }, 3000);
+                                //     });
+                                // }
+                            }).then(() => {
 
-                            window.location.hash = 'home';
-                            location.reload();
-                        });
-                    })
+                                const modal = document.getElementById('exampleModal');
+                                const modalInstance = new bootstrap.Modal(modal);
 
-                }
-            })
+                                // To hide the modal
+                                modalInstance.hide();
+
+                                window.location.hash = 'home';
+                                location.reload();
+                            });
+                        })
+
+                    }
+                })
+            }
         }
 
         function dateTimepicker() { // date time picker
