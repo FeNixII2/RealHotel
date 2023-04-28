@@ -14,7 +14,7 @@
 
                     <div class="modal-body">
 
-                        <!-- รายละเอียดห้องพัก
+                        รายละเอียดห้องพัก
                         <div class="rooms-label">
                             <label id="roomtype-label"></label>
                         </div>
@@ -27,7 +27,7 @@
                             วันเช็คเอ้าท์
                             <label id="checkout-label"></label>
                         </div>
- -->
+
 
 
 
@@ -97,10 +97,10 @@
         })
 
         function booking_search() {
-            // const checkinLabel = document.getElementById('checkin-label');
-            // checkinLabel.textContent = document.getElementById('checkin').value;
-            // const checkoutLabel = document.getElementById('checkout-label');
-            // checkoutLabel.textContent = document.getElementById('checkout').value
+            const checkinLabel = document.getElementById('checkin-label');
+            checkinLabel.textContent = document.getElementById('checkin').value;
+            const checkoutLabel = document.getElementById('checkout-label');
+            checkoutLabel.textContent = document.getElementById('checkout').value
 
 
 
@@ -129,16 +129,21 @@
                 var success = body.success
 
                 console.log("roomtype.lenght: " + room_type.length);
+
+                // for (var i = 0; i < room_type.length; i++) {
+                //     console.log("roomtype[" + i + "].name: " + room_type[i].name);
+                //     console.log("roomtype[" + i + "].id: " + room_type[i].id);
+                //     console.log("roomtype[" + i + "].price: " + room_type[i].price);
+                // }
+
                 console.log("available_room.length: " + available_room.length);
+                console.log("roomtype: " + room_type);
                 if (success == true) {
                     if (available_room.length > 1) {
 
                         for (i = 0; i < room_type.length; i++) {
 
-                            console.log("i เท่ากับ: " + i);
-                            console.log("ไอดีห้อง: " + '<%= roomstype[i].id %>');
-                            console.log("ชื่อห้อง: " + '<%= roomstype[i].name_th %>');
-                            console.log("ประเภทเตียงห้อง: " + '<%= roomstype[i].bed %>');
+
 
                             for (j = 0; j < available_room.length; j++) {
 
@@ -201,18 +206,16 @@
                                         const img = document.createElement('img');
 
 
-                                        img.setAttribute('src', "<%= roomstype[i].img1 %>");
+                                        img.setAttribute('src', room_type[i].img1);
                                         img.setAttribute('class', 'img-fluid w-100 h-100 d-block');
 
                                         const img1 = document.createElement('img');
-                                        img1.setAttribute('src', "<%= roomstype[i].img2 %>");
+                                        img1.setAttribute('src', room_type[i].img2);
                                         img1.setAttribute('class', 'img-fluid w-100 h-100 d-block');
 
                                         const img2 = document.createElement('img');
-                                        img2.setAttribute('src', "<%= roomstype[i].img3 %>");
+                                        img2.setAttribute('src', room_type[i].img3);
                                         img2.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-
-
 
                                         divcarousel_item.appendChild(img);
                                         divcarousel_item1.appendChild(img1);
@@ -452,12 +455,14 @@
                                         button.setAttribute('class', 'btn btn-primary fs-3 ');
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
-                                        button.value = room_type[i].id
-                                        button.onclick = function(i, j, event) {
-                                            // const roomtypeLabel = document.getElementById('roomtype-label');
-                                            // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
-                                            reserv_modal(available_room[j], room_type[i]);
-                                        }.bind(this, i, j, event);
+                                        button.value = room_type[i].id <
+                                            section id = "booking"
+                                        style = "padding-top: 50px" >
+                                            button.onclick = function(i, j, event) {
+                                                const roomtypeLabel = document.getElementById('roomtype-label');
+                                                roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
+                                                reserv_modal(available_room[j], room_type[i]);
+                                            }.bind(this, i, j, event);
 
                                         btn_confirm.appendChild(button);
                                         bt_col_price.appendChild(prices);
@@ -719,6 +724,7 @@
         }
 
         function confirm() {
+
             Swal.fire({
                 title: 'ต้องการจองห้องนี้หรือไม่',
                 icon: 'question',
