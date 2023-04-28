@@ -92,7 +92,7 @@
     </div>
 
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             dateTimepicker()
         })
 
@@ -453,7 +453,7 @@
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function (i, j, event) {
+                                        button.onclick = function(i, j, event) {
                                             // const roomtypeLabel = document.getElementById('roomtype-label');
                                             // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
@@ -663,7 +663,7 @@
                         button.setAttribute('class', 'btn btn-primary mt-auto');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function (event) {
+                        button.onclick = function(event) {
                             reserv_modal(available_room[0], room_type[0]);
 
                         }
@@ -713,7 +713,7 @@
             modalInstance.show();
 
             document.getElementById('total-price').innerHTML = 'ราคา ' + roomtype.price + ' บาท'
-            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+                // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
             document.getElementById('con_reserv').value = roomtype.id
         }
@@ -767,9 +767,10 @@
                             room_type
                         })
                     }).then((response) => response.json()).then((body) => {
+
                         Swal.fire({
-                            title: 'ทำรายการสำเร็จ',
-                            text: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
+                            title: 'ทำรายการสำเร็จ รบกวนรอการยืนยันห้องทางอีเมลล์',
+                            text: 'รหัสการจองห้องคือ ' + body.reserved_custom_id + ' สามารถใช้ค้นหาในเมนูได้',
                             icon: 'success'
                         }).then(() => {
                             // Get a reference to the Bootstrap modal element
@@ -783,7 +784,7 @@
                             // setTimeout(() => {
                             window.location.hash = 'home';
                             location.reload()
-                            // }, 500);
+                                // }, 500);
 
 
 
@@ -803,7 +804,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function (selectedDates, dateStr, instance) {
+                onChange: function(selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {
