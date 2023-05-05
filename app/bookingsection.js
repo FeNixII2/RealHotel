@@ -41,7 +41,6 @@ module.exports = function (app, con, moment, transporter) {
                     console.log("Reserved custom ID:", reserved_custom_id);
                     res.send({ reserved_custom_id })
                 });
-                res.send({})
             } else if (cus_id.length == 0) {
                 con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, cus_id) => {
                     var cus_id = cus_id.insertId
