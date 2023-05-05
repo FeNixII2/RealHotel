@@ -1,7 +1,6 @@
 <section id="booking" style="padding-top: 50px">
     <div class="container">
         <br>
-
         <div id="my-cards"></div>
 
         <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -434,8 +433,8 @@
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
                                         button.onclick = function(i, j, event) {
-                                            const roomtypeLabel = document.getElementById('roomtype-label');
-                                            roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
+                                            // const roomtypeLabel = document.getElementById('roomtype-label');
+                                            // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
                                         }.bind(this, i, j, event);
 
@@ -704,10 +703,15 @@
             var room_type = document.getElementById('con_reserv').value
 
             const radioButtons = document.getElementsByName('myGroup');
-            if ((firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == '' && (firstName, p_number, email, lastName, more_info, checkin, checkout, room_type) == null) {
+            if (!firstName || !p_number || !email || !lastName || !more_info || !checkin || !checkout || !room_type) {
                 Swal.fire({
                     title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                    backdrop: true,
+                    customClass: {
+                        backdrop: 'swal-backdrop-blur',
+                    },
                 });
+
             } else {
                 Swal.fire({
                     title: 'ต้องการจองห้องนี้หรือไม่',
