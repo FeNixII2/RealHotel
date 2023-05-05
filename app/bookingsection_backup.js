@@ -1,243 +1,76 @@
-module.exports = function(app, con, moment) {
-
+module.exports = function (app, con, moment, transporter) {
     app.post("/booking_search", (req, res) => {
         var { checkin, checkout, roomtype } = req.body;
-
-        const format = "DD-MM-YYYY";
-        var checkin = moment(checkin, format);
-        var checkout = moment(checkout, format);
-        var search_daycount = checkout.diff(checkin, 'days');
-        if (search_daycount == '0') {
-            search_daycount += 1
-        }
-        var available_room = [];
-        var available_type = [];
-
-        if (roomtype != 'all') { // if user pick specific room type
-            con.query("SELECT  num_room ,checkin,checkout,id_typeroom FROM reserved where id_typeroom ='" + roomtype + "'and status != '3'", (err, reserv_room) => {
-                if (err) { console.log(err); }
-
-                for (let i = 0; i < reserv_room.length; i++) {
-                    available_room[i] = reserv_room[i].num_room;
-                    available_type[i] = reserv_room[i].id_typeroom;
-                }
-                for (var i = 0; i < reserv_room.length; i++) {
-                    var reserv_checkin = moment(reserv_room[i].checkin, format);
-                    var reserv_checkout = moment(reserv_room[i].checkout, format);
-                    const reserv_daycount = reserv_checkout.diff(reserv_checkin, 'days') + 1
-
-                    for (var j = 0; j < reserv_daycount; j++) {
-
-                        reserv_checkin2 = reserv_checkin.clone().add(j, 'day')
-                        reserv_checkin2_str = reserv_checkin2.format(format)
-
-                        for (var k = 0; k < search_daycount; k++) {
-
-                            checkin2 = checkin.clone().add(k, 'day')
-                            checkin2_str = checkin2.format(format)
-                            if (checkin2.isSame(reserv_checkin2)) {
-                                available_room[i] = ''
-                                available_type[i] = ''
-                                break;
-                            }
-                        }
-
+        if (roomtype != 'all') {
+            con.query("SELECT COUNT(*) as count_available_rooms FROM rooms WHERE id_typeroom = ? AND num_room NOT IN (SELECT num_room FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) ", [roomtype, roomtype, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
+                if (err) throw err;
+                const count_available_rooms = results[0].count_available_rooms;
+                con.query("select * from roomstype WHERE id = ? order by price asc", [roomtype], (err, roomtype) => {
+                    if (err) throw err
+                    if (count_available_rooms != 0) {
+                        res.send({ success: true, count_available_rooms, roomtype })
+                    } else if (count_available_rooms == 0) {
+                        res.send({ success: false, count_available_rooms, roomtype })
                     }
-                }
-                // Remove empty strings
-                available_room = available_room.filter(function(value) {
-                    return value !== '';
-                });
-
-                available_type = available_type.filter(function(value) {
-                    return value !== '';
-                });
-
-                // Sort the array in ascending order
-                available_room.sort(function(a, b) {
-                    return a - b;
-                });
-                available_type = available_type.filter(function(item, index) {
-                    return available_type.indexOf(item) === index;
-                });
-                con.query("select * from roomstype order by price asc", (err, type_price) => {
-
                 })
-                res.send({ available_room, available_type, search_daycount })
+            });
 
-            })
-        } else if (roomtype == 'all') { // if user pick all room type
-            con.query("SELECT  num_room ,checkin,checkout,id_typeroom FROM reserved where status != '3'", (err, reserv_room) => {
-                if (err) { console.log(err); }
-
-
-                for (let i = 0; i < reserv_room.length; i++) {
-                    available_room.push({ num_room: reserv_room[i].num_room, type_room: reserv_room[i].id_typeroom });
-                    available_type[i] = reserv_room[i].id_typeroom;
-                }
-                for (var i = 0; i < reserv_room.length; i++) {
-                    var reserv_checkin = moment(reserv_room[i].checkin, format);
-                    var reserv_checkout = moment(reserv_room[i].checkout, format);
-                    const reserv_daycount = reserv_checkout.diff(reserv_checkin, 'days') + 1
-
-                    for (var j = 0; j < reserv_daycount; j++) {
-
-                        reserv_checkin2 = reserv_checkin.clone().add(j, 'day')
-                        reserv_checkin2_str = reserv_checkin2.format(format)
-
-
-                        for (var k = 0; k < search_daycount; k++) {
-
-                            checkin2 = checkin.clone().add(k, 'day')
-                            checkin2_str = checkin2.format(format)
-
-                            if (checkin2.isSame(reserv_checkin2)) {
-                                available_room[i].num_room = ''
-                                available_room[i].type_room = ''
-                                available_type[i] = ''
-                                break;
-                            }
-                        }
-                    }
-                }
-                // Remove empty strings
-                available_room = available_room.filter(function(value) {
-                    return value.num_room !== '';
+        } else if (roomtype == 'all') {
+            con.query("SELECT COUNT(*) as count_available_rooms, id_typeroom FROM rooms WHERE num_room NOT IN (SELECT num_room FROM reserved WHERE (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) GROUP BY id_typeroom", [checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
+                if (err) throw err;
+                con.query("SELECT roomtype_facility.id,roomtype_facility.room_type_id, roomtype_facility.facility_id ,facility.name , facility.type_id FROM roomtype_facility JOIN facility ON roomtype_facility.facility_id = facility.id JOIN roomstype ON roomstype.id = roomtype_facility.room_type_id", (err, allfacility) => {
+                    if (err) throw err;
+                    con.query("select * from roomstype order by price asc", (err, roomtype) => {
+                        if (err) throw err;
+                        const countAvailableRooms = results.reduce((acc, curr) => acc + curr.count_available_rooms, 0);
+                        const success = countAvailableRooms > 0;
+                        res.send({ success, count_available_rooms: results, roomtype, allfacility });
+                    })
                 });
-
-                available_type = available_type.filter(function(value) {
-                    return value !== '';
-                });
-                // Sort the array in ascending order
-                available_room.sort(function(a, b) {
-                    return a - b;
-                });
-                available_type = available_type.filter(function(item, index) {
-                    return available_type.indexOf(item) === index;
-                });
-
-                con.query("select * from roomstype order by price asc", (err, type_price) => {
-                    var type_price_arr = []
-                    for (let i = 0; i < type_price.length; i++) {
-                        type_price_arr[i] = type_price[i].id;
-                    }
-
-                    // console.log(available_room, available_type);
-
-                    res.send({ available_room, available_type, type_price_arr, search_daycount })
-
-                })
-            })
+            });
         }
-
     })
 
-    app.post("/confirm_booking_room", (req, res) => {
-        var { firstName, p_number, email, lastName, card_id, more_info, booking_room, checkin, checkout } = req.body
-        const format = "DD-MM-YYYY";
 
-        booking_room = booking_room.filter(function(value) {
-            return value !== '';
-        });
+    app.post('/confirm_booking_room', (req, res) => {
+        var { firstName, p_number, email, lastName, more_info, payment, checkin, checkout, room_type } = req.body
+        con.query("select id from customer where f_name = ? and l_name = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
+            if (err) throw err
+            if (cus_id.length != 0) {
+                reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id, function (reserved_custom_id) {
+                    console.log("Reserved custom ID:", reserved_custom_id);
+                    res.send({ reserved_custom_id })
+                });
+                res.send({})
+            } else if (cus_id.length == 0) {
+                con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, cus_id) => {
+                    var cus_id = cus_id.insertId
+                    if (err) throw err
+                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, function (reserved_custom_id) {
+                        console.log("Reserved custom ID:", reserved_custom_id);
+                        res.send({ reserved_custom_id })
+                    });
 
-        booking_room = booking_room.reduce((acc, val) => {
-            acc[val] = (acc[val] || 0) + 1;
-            return acc;
-        }, {});
-        // console.log(booking_room);
-
-        con.query("select * from customer where f_name = '" + firstName + "' and l_name = '" + lastName + "' and card_num ='" + card_id + "' and  p_num = '" + p_number + "' and email = '" + email + "'", (err, result) => {
-            if (err) { console.log(err); }
-            if (result == '') {
-                con.query("insert into customer values ('','" + firstName + "','" + lastName + "','" + card_id + "','" + p_number + "','" + email + "')", (err, result) => {
-                    if (err) { console.log(err); }
-                    con.query("SELECT id FROM customer ORDER BY id DESC LIMIT 1", (err, id) => {
-                        if (err) { console.log(err); }
-                        con.query("SELECT  num_room ,checkin,checkout,id_typeroom FROM reserved where status != '3'", (err, reserv_room) => {
-                            if (err) { console.log(err); }
-                            // console.log(reserv_room);
-                            const values = Object.values(booking_room);
-                            available_room = []
-                            count = 0;
-
-                            checkin = moment(checkin, format);
-                            checkout = moment(checkout, format);
-                            var search_daycount = checkout.diff(checkin, 'days') + 1;
-
-                            for (const type in booking_room) {
-                                matchingRooms = reserv_room.filter(room => type.includes(room.id_typeroom));
-                                var available = true;
-                                // console.log(matchingRooms);
-                                for (let value_index = 0; value_index < values[count]; value_index++) {
-                                    for (var i = 0; i < matchingRooms.length; i++) {
-                                        var matching_checkin = moment(matchingRooms[i].checkin, format);
-                                        var matching_checkout = moment(matchingRooms[i].checkout, format);
-                                        var reserv_daycount = matching_checkout.diff(matching_checkin, 'days') + 1
-
-                                        for (var j = 0; j < reserv_daycount; j++) {
-                                            // console.log(type, values[count], reserv_daycount, available_room);
-
-                                            matching_checkin2 = matching_checkin.clone().add(j, 'day')
-                                            matching_checkin_str = matching_checkin2.format(format)
-                                                // console.log(matchingRooms[i], matching_checkin_str, '+', j);
-                                            for (var k = 0; k < search_daycount; k++) {
-                                                // console.log(search_daycount);
-                                                checkin2 = checkin.clone().add(k, 'day')
-                                                checkin2_str = checkin2.format(format)
-                                                    // console.log(matchingRooms[i].num_room, matching_checkin_str, checkin2_str, k);
-
-                                                if (checkin2.isSame(matching_checkin2)) {
-                                                    available = false
-                                                    break;
-                                                }
-                                                // console.log(k + '==' + (search_daycount - 1) + '&&' + available + '==' + true);
-
-                                            }
-                                            if (available == true) {
-                                                typeCount = countObjectsWithPropertyValue(available_room, 'type', type, values[count]);
-                                                if (typeCount < values[count]) {
-                                                    const isDuplicate = available_room.some(obj => obj.type === type && obj.room_number === matchingRooms[i].num_room);
-                                                    if (!isDuplicate) {
-                                                        // console.log('inif');
-                                                        available_room.push({ type: type, room_number: matchingRooms[i].num_room, checkin: checkin.clone().format(format), checkout: checkout.clone().format(format) })
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                }
-                                count++
-                            }
-                            // console.log(available_room);
-                            for (let i = 0; i < available_room.length; i++) {
-                                const data = available_room[i];
-                                con.query("select id from customer where f_name = '" + firstName + "' and l_name = '" + lastName + "' and card_num ='" + card_id + "' and  p_num = '" + p_number + "' and email = '" + email + "'", (err, id) => {
-                                    if (err) throw err;
-                                    con.query("INSERT INTO reserved VALUES ('', ?, ?, ?, ?, '1', ?,?)", [data.room_number, data.type, data.checkin, data.checkout, id[0].id, more_info], (err, results) => {
-                                        if (err) throw err;
-                                    });
-                                })
-                            }
-                        })
-                    })
                 })
-            } else {
-
             }
         })
-
-
-
     })
 
-    function countObjectsWithPropertyValue(arr, property, value, maxCount) {
-        const count = arr.reduce((acc, obj) => {
-            if (obj[property] === value && acc < maxCount) {
-                acc++;
-            }
-            return acc;
-        }, 0);
-        return count;
+    function reserv(more_info, payment, checkin, checkout, room_type, cus_id, callback) {
+        const currentDate = moment();
+        const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
+        con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
+            if (err) throw err
+            var reserved_custom_date = currentDate.format('DDMMYYHHmm')
+            var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
+            con.query("insert into reserved (num_room,id_typeroom,checkin,checkout,cus_id, more_info, payment,reserved_id,status) values (?,?,?,?,?,?,?,?,0) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment, reserved_custom_id], (err, result) => {
+                if (err) throw err
+                var detail = 'ได้ทำการชำระเงินสำหรับห้อง ' + num_room[0].num_room + ' แล้ว'
+                con.query("insert into payment_log values ('',?,?,?) ", [detail, cus_id, formattedDate], (err, result) => {
+                    if (err) throw err
+                    callback(reserved_custom_id);
+                })
+            })
+        })
     }
 }
