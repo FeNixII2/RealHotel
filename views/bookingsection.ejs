@@ -14,7 +14,7 @@
 
                     <div class="modal-body">
 
-                        <!-- รายละเอียดห้องพัก
+                        รายละเอียดห้องพัก
                         <div class="rooms-label">
                             <label id="roomtype-label"></label>
                         </div>
@@ -27,7 +27,7 @@
                             วันเช็คเอ้าท์
                             <label id="checkout-label"></label>
                         </div>
- -->
+
 
                         <form class="row g-3">
                             <div class="col-md-6 my-custom-class">
@@ -87,15 +87,15 @@
     </div>
 
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             dateTimepicker()
         })
 
         function booking_search() {
-            // const checkinLabel = document.getElementById('checkin-label');
-            // checkinLabel.textContent = document.getElementById('checkin').value;
-            // const checkoutLabel = document.getElementById('checkout-label');
-            // checkoutLabel.textContent = document.getElementById('checkout').value
+            const checkinLabel = document.getElementById('checkin-label');
+            checkinLabel.textContent = document.getElementById('checkin').value;
+            const checkoutLabel = document.getElementById('checkout-label');
+            checkoutLabel.textContent = document.getElementById('checkout').value
 
 
             const myCards = document.getElementById('my-cards');
@@ -120,104 +120,83 @@
                 var available_room = body.count_available_rooms
                 var room_type = body.roomtype
                 var success = body.success
+                var allfacility = body.allfacility
 
-                console.log("roomtype.lenght: " + room_type.length);
 
-                // for (var i = 0; i < room_type.length; i++) {
-                //     console.log("roomtype[" + i + "].name: " + room_type[i].name);
-                //     console.log("roomtype[" + i + "].id: " + room_type[i].id);
-                //     console.log("roomtype[" + i + "].price: " + room_type[i].price);
-                // }
+                for (var i = 0; i < allfacility.length; i++) {
 
-                console.log("available_room.length: " + available_room.length);
-                console.log("roomtype: " + room_type);
+                    console.log("roomtype[" + i + "].name: " + allfacility[i].room_type_id);
+                    console.log("roomtype[" + i + "].name: " + allfacility[i].name);
+
+                }
+
                 if (success == true) {
                     if (available_room.length > 1) {
-
                         for (i = 0; i < room_type.length; i++) {
-
-                            console.log("i เท่ากับ: " + i);
-                            console.log("ไอดีห้อง: " + '<%= roomstype[i].id %>');
-                            console.log("ชื่อห้อง: " + '<%= roomstype[i].name_th %>');
-                            console.log("ประเภทเตียงห้อง: " + '<%= roomstype[i].bed %>');
-
                             for (j = 0; j < available_room.length; j++) {
-
                                 if (available_room[j].count_available_rooms != 0) {
                                     if (available_room[j].id_typeroom == room_type[i].id) {
 
-                                        const cardDiv = document.createElement('div');
-                                        cardDiv.setAttribute('class', 'card');
+                                        console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
 
+                                        const cardDiv = document.createElement('div');
+                                        cardDiv.setAttribute('class', 'card cardbooking');
                                         const row = document.createElement('div');
                                         row.setAttribute('class', 'row g-0');
-
                                         const col1 = document.createElement('div');
                                         col1.setAttribute('class', 'col-md-6 ');
-
                                         const divimgcarousel = document.createElement('div');
                                         divimgcarousel.setAttribute('id', 'carouselIndicators' + i);
                                         divimgcarousel.setAttribute('class', 'carousel slide carousel-fade');
-                                        divimgcarousel.setAttribute('data-bs-ride', 'true');
+                                        divimgcarousel.setAttribute('data-bs-ride', 'carousel');
+                                        divimgcarousel.setAttribute('data-bs-interval', '3000');
 
                                         const divcarouselindicator = document.createElement('div');
                                         divcarouselindicator.setAttribute('class', 'carousel-indicators');
-
                                         const btn_divcarouselindicator = document.createElement('button');
                                         btn_divcarouselindicator.setAttribute('type', 'button');
                                         btn_divcarouselindicator.setAttribute('data-bs-target', '#carouselIndicators' + i);
                                         btn_divcarouselindicator.setAttribute('data-bs-slide-to', '0');
                                         btn_divcarouselindicator.setAttribute('class', 'active');
+
                                         btn_divcarouselindicator.setAttribute('aria-current', 'true');
                                         btn_divcarouselindicator.setAttribute('aria-label', 'Slide 1');
-
                                         const btn_divcarouselindicator1 = document.createElement('button');
                                         btn_divcarouselindicator1.setAttribute('type', 'button');
                                         btn_divcarouselindicator1.setAttribute('data-bs-target', '#carouselIndicators' + i);
                                         btn_divcarouselindicator1.setAttribute('data-bs-slide-to', '1');
                                         btn_divcarouselindicator1.setAttribute('aria-label', 'Slide 2');
-
                                         const btn_divcarouselindicator2 = document.createElement('button');
                                         btn_divcarouselindicator2.setAttribute('type', 'button');
                                         btn_divcarouselindicator2.setAttribute('data-bs-target', '#carouselIndicators' + i);
                                         btn_divcarouselindicator2.setAttribute('data-bs-slide-to', '2');
                                         btn_divcarouselindicator2.setAttribute('aria-label', 'Slide 3');
-
                                         divcarouselindicator.appendChild(btn_divcarouselindicator);
                                         divcarouselindicator.appendChild(btn_divcarouselindicator1);
                                         divcarouselindicator.appendChild(btn_divcarouselindicator2);
-
                                         const divcarouselinner = document.createElement('div');
                                         divcarouselinner.setAttribute('class', 'carousel-inner');
-
                                         const divcarousel_item = document.createElement('div');
                                         divcarousel_item.setAttribute('class', 'carousel-item active');
-
+                                        divcarousel_item.setAttribute('data-bs-interval', '3000');
                                         const divcarousel_item1 = document.createElement('div');
                                         divcarousel_item1.setAttribute('class', 'carousel-item');
-
+                                        divcarousel_item1.setAttribute('data-bs-interval', '3000');
                                         const divcarousel_item2 = document.createElement('div');
                                         divcarousel_item2.setAttribute('class', 'carousel-item');
-
+                                        divcarousel_item2.setAttribute('data-bs-interval', '3000');
                                         const img = document.createElement('img');
-
-
-                                        img.setAttribute('src', "<%= roomstype[i].img1 %>");
+                                        img.setAttribute('src', room_type[i].img1);
                                         img.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-
                                         const img1 = document.createElement('img');
-                                        img1.setAttribute('src', "<%= roomstype[i].img2 %>");
+                                        img1.setAttribute('src', room_type[i].img2);
                                         img1.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-
                                         const img2 = document.createElement('img');
-                                        img2.setAttribute('src', "<%= roomstype[i].img3 %>");
+                                        img2.setAttribute('src', room_type[i].img3);
                                         img2.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-
-
-
                                         divcarousel_item.appendChild(img);
                                         divcarousel_item1.appendChild(img1);
-                                        divcarousel_item2.appendChild(img2);
+                                        divcarousel_item2.appendChild(img2);;
 
                                         divcarouselinner.appendChild(divcarousel_item);
                                         divcarouselinner.appendChild(divcarousel_item1);
@@ -275,6 +254,14 @@
                                         h5.setAttribute('class', 'card-title fw-semibold fs-2');
                                         h5.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
 
+                                        var row_facilities = document.createElement('div');
+                                        row_facilities.setAttribute('class', 'row mb-1');
+                                        const col_facilities1 = document.createElement('div');
+                                        col_facilities1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
+
+                                        const t_facilities = document.createElement('div');
+                                        t_facilities.setAttribute('class', ' fw-semibold fs-5 ');
+                                        t_facilities.textContent = "สิ่งอำนวยความสะดวก";
 
 
                                         const i_wifi = document.createElement('i');
@@ -304,16 +291,6 @@
                                         const i_tv = document.createElement('i');
                                         i_tv.setAttribute('class', 'fa-solid fa-tv text-center text-center');
                                         i_tv.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-
-                                        const t_facilities = document.createElement('div');
-                                        t_facilities.setAttribute('class', ' fw-semibold fs-5 ');
-                                        t_facilities.textContent = "สิ่งอำนวยความสะดวก";
-
-                                        const row_facilities = document.createElement('div');
-                                        row_facilities.setAttribute('class', 'row mb-1');
-
-
-
 
                                         if (room_type[i].wifi == 1) {
                                             const col_facilities1 = document.createElement('div');
@@ -420,6 +397,8 @@
                                             row_facilities.appendChild(col_facilities9);
                                         }
 
+
+
                                         const t_details = document.createElement('div');
                                         t_details.setAttribute('class', ' fw-semibold fs-5');
                                         t_details.textContent = "รายละเอียดห้อง";
@@ -454,9 +433,9 @@
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function (i, j, event) {
-                                            // const roomtypeLabel = document.getElementById('roomtype-label');
-                                            // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
+                                        button.onclick = function(i, j, event) {
+                                            const roomtypeLabel = document.getElementById('roomtype-label');
+                                            roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
                                         }.bind(this, i, j, event);
 
@@ -659,7 +638,7 @@
                         button.setAttribute('class', 'btn btn-primary mt-auto');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function (event) {
+                        button.onclick = function(event) {
                             reserv_modal(available_room[0], room_type[0]);
 
                         }
@@ -709,7 +688,7 @@
             modalInstance.show();
 
             document.getElementById('total-price').innerHTML = 'ราคา ' + roomtype.price + ' บาท'
-            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+                // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
             document.getElementById('con_reserv').value = roomtype.id
         }
@@ -811,7 +790,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function (selectedDates, dateStr, instance) {
+                onChange: function(selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {

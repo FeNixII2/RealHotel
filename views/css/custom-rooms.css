@@ -140,3 +140,18 @@ img {
         height: 250px;
     }
 }
+
+.cardbooking .carousel-item {
+    height: 400px;
+}
+
+.cardbooking .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+    .cardbooking .carousel-item {
+        height: 250px;
+    }
+}
