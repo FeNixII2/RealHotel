@@ -58,7 +58,7 @@ module.exports = function (app, con, moment, transporter) {
     function reserv(more_info, payment, checkin, checkout, room_type, cus_id, callback) {
         const currentDate = moment();
         const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
-        con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
+        con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))and status NOT IN ('4', '5')) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
             if (err) throw err
             var reserved_custom_date = currentDate.format('DMYYHHmm')
             var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
