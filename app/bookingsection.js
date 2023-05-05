@@ -2,7 +2,7 @@ module.exports = function (app, con, moment, transporter) {
     app.post("/booking_search", (req, res) => {
         var { checkin, checkout, roomtype } = req.body;
         if (roomtype != 'all') {
-            con.query("SELECT COUNT(*) as count_available_rooms FROM rooms WHERE id_typeroom = ? AND num_room NOT IN (SELECT num_room FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?)))", [roomtype, roomtype, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
+            con.query("SELECT COUNT(*) as count_available_rooms FROM rooms WHERE id_typeroom = ? AND num_room NOT IN (SELECT num_room FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) ", [roomtype, roomtype, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
                 if (err) throw err;
                 const count_available_rooms = results[0].count_available_rooms;
                 con.query("select * from roomstype WHERE id = ? order by price asc", [roomtype], (err, roomtype) => {
