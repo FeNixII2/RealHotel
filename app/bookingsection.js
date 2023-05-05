@@ -16,7 +16,7 @@ module.exports = function(app, con, moment, transporter) {
             });
 
         } else if (roomtype == 'all') {
-            con.query("SELECT COUNT(*) as count_available_rooms FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?)) AND status NOT IN (0, 1, 2, 3, 4) )", [roomtype, roomtype, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
+            con.query("SELECT COUNT(*) as count_available_rooms FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))", [roomtype, roomtype, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
                 if (err) throw err;
                 con.query("SELECT roomtype_facility.id,roomtype_facility.room_type_id, roomtype_facility.facility_id ,facility.name , facility.type_id FROM roomtype_facility JOIN facility ON roomtype_facility.facility_id = facility.id JOIN roomstype ON roomstype.id = roomtype_facility.room_type_id", (err, allfacility) => {
                     if (err) throw err;
