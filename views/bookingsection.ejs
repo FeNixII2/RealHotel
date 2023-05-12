@@ -12,44 +12,70 @@
                     </div>
 
                     <div class="modal-body">
-
-                        รายละเอียดห้องพัก
-                        <div class="rooms-label">
-                            <label id="roomtype-label"></label>
+                        <div class="card">
+                            <div class="fs-5 d-flex align-self-center">
+                                <i class="fa-solid fa-door-closed d-flex align-self-center"></i>
+                                <div class="ms-2">รายละเอียดห้องพัก</div>
+                            </div>
+                            <div class="container">
+                                <div class="rooms-label">
+                                    ประเภท:
+                                    <label id="roomtype-label"></label>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+                                        วันเช็คอิน:
+                                        <label id="checkin-label"></label>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                        วันเช็คเอ้าท์:
+                                        <label id="checkout-label"></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="checkin-label">
-                            วันเช็คอิน
-                            <label id="checkin-label"></label>
+                        <div class="card p-1">
+                            <div class="fs-5 mb-3 d-flex align-self-center mt-2">
+                                <i class="fa-solid fa-user d-flex align-self-center"></i>
+                                <div class="ms-2 ">ข้อมูลผู้เข้าพัก</div>
+                            </div>
+
+                            <form class="row g-3">
+                                <div class="col-md-6 my-custom-class">
+                                    ชื่อ
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required="required">
+                                </div>
+                                <div class="col-md-6 my-custom-class">
+                                    นามสกุล
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required="required">
+                                </div>
+                                <div class="col-md-6 my-custom-class">
+                                    เบอร์โทรศัพท์
+                                    <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์">
+                                </div>
+                                <div class="col-md-6 my-custom-class">
+                                    อีเมลล์
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" required="required">
+                                </div>
+                            </form>
+
                         </div>
-                        <div class="checkout-label mb-4">
-                            วันเช็คเอ้าท์
-                            <label id="checkout-label"></label>
+                        <div class="mt-1 fs-5 d-flex align-self-center mt-2">
+                            <i class="fa-solid fa-note-sticky d-flex align-self-center"></i>
+                            <div class="ms-2 ">คำขอเพิ่มเติม</div>
                         </div>
 
-
-                        <form class="row g-3">
-                            <div class="col-md-6 my-custom-class">
-                                ชื่อ
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required="required">
-                            </div>
-                            <div class="col-md-6 my-custom-class">
-                                นามสกุล
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required="required">
-                            </div>
-                            <div class="col-md-6 my-custom-class">
-                                เบอร์โทรศัพท์
-                                <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์">
-                            </div>
-                            <div class="col-md-6 my-custom-class">
-                                อีเมลล์
-                                <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" required="required">
-                            </div>
-                        </form>
-                        คำขอเพิ่มเติม
                         <textarea class="form-control" name="more_info" id="more_info" rows="6" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
-                        <div class="total-price fs-4" id="total-price" style="color: red;">0</div> รูปแบบการชำระเงิน
-                        <div class="payment-s">
+
+                        <div class="textprice fs-5 d-flex align-self-center mt-2">
+                            <i class="fa-solid fa-coins d-flex align-self-center"></i>
+                            <div class="ms-2 me-2">ราคา</div>
+                            <div class="total-price " id="total-price" style="color: red;">0</div>
+                        </div>
+
+
+                        <!-- <div class="payment-s">
 
                             <% for(var i=0;i< payment_type.length;i++){ %>
                                 <div class="form-check">
@@ -61,24 +87,73 @@
 
                                 <%}%>
 
-                                    <!-- <% for(var i=0;i< payment_type.length;i++){ %>
-                                <input type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>" />
-                                <label for="option<%=i%>" class="payment-opt">
-                                    <%=payment_type[i].pay_type%>
-                                </label><br />
-                                <%}%> -->
+
+                        </div> -->
+
+
+                        <div class="textpaymeant fs-5 d-flex align-self-center mt-2">
+                            <i class="fa-solid fa-money-check-dollar d-flex align-self-center"></i>
+                            <div class="ms-2 ">รูปแบบการชำระเงิน</div>
                         </div>
 
-                        <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
 
-                        <div class="box-padding mt-auto d-flex justify-content-center">
-                            <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง</a>
+
+
+
+                        <% var payment_type_left=payment_type.slice(0, Math.ceil(payment_type.length / 2)); var payment_type_right=payment_type.slice(Math.ceil(payment_type.length / 2)); %>
+
+                            <div class="payment-s row">
+                                <div class="col-6 col-sm-6 col-md-6 text-left">
+                                    <% for(var i=0;i< payment_type_left.length;i++){ %>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type_left[i].id%>">
+                                            <label class="form-check-label" for="option<%=i%>">
+                                                <%=payment_type_left[i].pay_type%>
+                                            </label>
+                                        </div>
+                                        <%}%>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 text-right">
+                                    <% for(var i=0;i< payment_type_right.length;i++){ %>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="option<%=i%+payment_type_left.length%>" name="myGroup" value="<%=payment_type_right[i].id%>">
+                                            <label class="form-check-label" for="option<%=i%+payment_type_left.length%>">
+                                                <%=payment_type_right[i].pay_type%>
+                                            </label>
+                                        </div>
+                                        <%}%>
+                                </div>
                             </div>
-                        </div>
+
+
+                            <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
+
+                            <div class="box-padding mt-auto d-flex justify-content-center">
+                                <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง</a>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="modal fade modal-lg" id="facilitymodal" tabindex="-1" aria-labelledby="facilitymodalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="facilitymodalLabel">สิ่งอำนวยความสะดวก</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+                    <div class="modal-body" id="body_facility">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- footer -->
         <footer-component></footer-component>
@@ -86,7 +161,7 @@
     </div>
 
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             dateTimepicker()
         })
 
@@ -122,12 +197,7 @@
                 var allfacility = body.allfacility
 
 
-                for (var i = 0; i < allfacility.length; i++) {
 
-                    console.log("roomtype[" + i + "].name: " + allfacility[i].room_type_id);
-                    console.log("roomtype[" + i + "].name: " + allfacility[i].name);
-
-                }
 
                 if (success == true) {
                     if (available_room.length > 1) {
@@ -136,10 +206,13 @@
                                 if (available_room[j].count_available_rooms != 0) {
                                     if (available_room[j].id_typeroom == room_type[i].id) {
 
-                                        console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
+
+
+                                        // console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
+
 
                                         const cardDiv = document.createElement('div');
-                                        cardDiv.setAttribute('class', 'card cardbooking');
+                                        cardDiv.setAttribute('class', 'card cardbookingall');
                                         const row = document.createElement('div');
                                         row.setAttribute('class', 'row g-0');
                                         const col1 = document.createElement('div');
@@ -253,159 +326,87 @@
                                         h5.setAttribute('class', 'card-title fw-semibold fs-2');
                                         h5.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
 
-                                        var row_facilities = document.createElement('div');
-                                        row_facilities.setAttribute('class', 'row mb-1');
-                                        const col_facilities1 = document.createElement('div');
-                                        col_facilities1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-
-                                        const t_facilities = document.createElement('div');
-                                        t_facilities.setAttribute('class', ' fw-semibold fs-5 ');
-                                        t_facilities.textContent = "สิ่งอำนวยความสะดวก";
-
-
-                                        const i_wifi = document.createElement('i');
-                                        i_wifi.setAttribute('class', 'fa-solid fa-wifi text-center');
-                                        i_wifi.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_air = document.createElement('i');
-                                        i_air.setAttribute('class', 'fa-solid fa-wind text-center');
-                                        i_air.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_minifridge = document.createElement('i');
-                                        i_minifridge.setAttribute('class', 'fa-solid fa-temperature-half text-center');
-                                        i_minifridge.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_bath = document.createElement('i');
-                                        i_bath.setAttribute('class', 'fa-solid fa-bath text-center');
-                                        i_bath.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_shower = document.createElement('i');
-                                        i_shower.setAttribute('class', 'fa-solid fa-shower text-center');
-                                        i_shower.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_fitness = document.createElement('i');
-                                        i_fitness.setAttribute('class', 'fa-solid fa-dumbbell text-center');
-                                        i_fitness.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_pool = document.createElement('i');
-                                        i_pool.setAttribute('class', 'fa-solid fa-water-ladder text-center');
-                                        i_pool.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_breakfast = document.createElement('i');
-                                        i_breakfast.setAttribute('class', 'fa-solid fa-utensils text-center');
-                                        i_breakfast.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-                                        const i_tv = document.createElement('i');
-                                        i_tv.setAttribute('class', 'fa-solid fa-tv text-center text-center');
-                                        i_tv.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
-
-                                        if (room_type[i].wifi == 1) {
-                                            const col_facilities1 = document.createElement('div');
-                                            col_facilities1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_wifi);
-                                            const text = document.createElement('label');
-                                            text.textContent = "อินเทอร์เน็ต"
-                                            col_facilities1.appendChild(icon);
-                                            col_facilities1.appendChild(text);
-                                            row_facilities.appendChild(col_facilities1);
-                                        }
-
-                                        if (room_type[i].air_con == 1) {
-                                            const col_facilities2 = document.createElement('div');
-                                            col_facilities2.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_air);
-                                            const text = document.createElement('label');
-                                            text.textContent = "แอร์"
-                                            col_facilities2.appendChild(icon);
-                                            col_facilities2.appendChild(text);
-                                            row_facilities.appendChild(col_facilities2);
-                                        }
-
-                                        if (room_type[i].minifridge == 1) {
-                                            const col_facilities3 = document.createElement('div');
-                                            col_facilities3.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_minifridge);
-                                            const text = document.createElement('label');
-                                            text.textContent = "ตู้เย็น"
-                                            col_facilities3.appendChild(icon);
-                                            col_facilities3.appendChild(text);
-                                            row_facilities.appendChild(col_facilities3);
-                                        }
-
-                                        if (room_type[i].bath == 1) {
-                                            const col_facilities4 = document.createElement('div');
-                                            col_facilities4.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_bath);
-                                            const text = document.createElement('label');
-                                            text.textContent = "อ่างอาบน้ำ"
-                                            col_facilities4.appendChild(icon);
-                                            col_facilities4.appendChild(text);
-                                            row_facilities.appendChild(col_facilities4);
-                                        }
-                                        if (room_type[i].shower == 1) {
-                                            const col_facilities5 = document.createElement('div');
-                                            col_facilities5.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_shower);
-                                            const text = document.createElement('label');
-                                            text.textContent = "ฝักบัว"
-                                            col_facilities5.appendChild(icon);
-                                            col_facilities5.appendChild(text);
-                                            row_facilities.appendChild(col_facilities5);
-                                        }
-
-                                        if (room_type[i].fitness == 1) {
-                                            const col_facilities6 = document.createElement('div');
-                                            col_facilities6.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_fitness);
-                                            const text = document.createElement('label');
-                                            text.textContent = "ฟิตเนส"
-                                            col_facilities6.appendChild(icon);
-                                            col_facilities6.appendChild(text);
-                                            row_facilities.appendChild(col_facilities6);
-                                        }
-                                        if (room_type[i].pool == 1) {
-                                            const col_facilities7 = document.createElement('div');
-                                            col_facilities7.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_pool);
-                                            const text = document.createElement('label');
-                                            text.textContent = "สระว่ายน้ำ"
-                                            col_facilities7.appendChild(icon);
-                                            col_facilities7.appendChild(text);
-                                            row_facilities.appendChild(col_facilities7);
-                                        }
-
-                                        if (room_type[i].breakfast == 1) {
-                                            const col_facilities8 = document.createElement('div');
-                                            col_facilities8.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_breakfast);
-                                            const text = document.createElement('label');
-                                            text.textContent = "อาหารเช้า"
-                                            col_facilities8.appendChild(icon);
-                                            col_facilities8.appendChild(text);
-                                            row_facilities.appendChild(col_facilities8);
-                                        }
-                                        if (room_type[i].tv == 1) {
-                                            const col_facilities9 = document.createElement('div');
-                                            col_facilities9.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5 d-flex');
-                                            const icon = document.createElement('label');
-                                            icon.appendChild(i_tv);
-                                            const text = document.createElement('label');
-                                            text.textContent = "ทีวี"
-                                            col_facilities9.appendChild(icon);
-                                            col_facilities9.appendChild(text);
-                                            row_facilities.appendChild(col_facilities9);
-                                        }
-
-
-
                                         const t_details = document.createElement('div');
-                                        t_details.setAttribute('class', ' fw-semibold fs-5');
+                                        t_details.setAttribute('class', 'fs-5');
                                         t_details.textContent = "รายละเอียดห้อง";
 
-                                        const size = document.createElement('div');
-                                        size.setAttribute('class', 'fs-5 mb-1');
-                                        size.textContent = 'ขนาดห้อง ' + room_type[i].size + ' ตรม.';
+                                        var row_details = document.createElement('div');
+                                        row_details.setAttribute('class', 'row mb-1 container');
 
+
+
+
+
+                                        const col_details1 = document.createElement('div');
+                                        col_details1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                                        const col_details2 = document.createElement('div');
+                                        col_details2.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                                        const col_details3 = document.createElement('div');
+                                        col_details3.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                                        const col_details4 = document.createElement('div');
+                                        col_details4.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+
+                                        const detail1 = document.createElement('div');
+                                        detail1.setAttribute('class', 'mb-1');
+                                        detail1.textContent = 'ขนาดห้อง: ' + room_type[i].size + ' ตรม.';
+
+                                        const detail2 = document.createElement('div');
+                                        detail2.setAttribute('class', 'mb-1');
+                                        detail2.textContent = 'เข้าพักได้: ' + room_type[i].count_humen + ' คน';
+
+                                        const detail3 = document.createElement('div');
+                                        detail3.setAttribute('class', 'mb-1');
+                                        detail3.textContent = 'เตียงขนาด: ' + room_type[i].type_bed;
+
+                                        const detail4 = document.createElement('div');
+                                        detail4.setAttribute('class', 'mb-1');
+                                        detail4.textContent = 'ส่วนเสริม: ' + room_type[i].extional;
+
+                                        col_details1.appendChild(detail1);
+                                        col_details2.appendChild(detail2);
+                                        col_details3.appendChild(detail3);
+                                        col_details4.appendChild(detail4);
+                                        row_details.appendChild(col_details1);
+                                        row_details.appendChild(col_details2);
+                                        row_details.appendChild(col_details3);
+                                        row_details.appendChild(col_details4);
+
+
+
+
+
+
+
+
+
+                                        var row_facilities = document.createElement('div');
+                                        row_facilities.setAttribute('class', 'row mb-1');
+
+                                        const t_facilities = document.createElement('div');
+                                        t_facilities.setAttribute('class', 'fs-5');
+                                        t_facilities.textContent = "สิ่งอำนวยความสะดวก";
+
+                                        var mainfacility = [1, 5, 6, 8, 9, 12];
+
+                                        for (var c = 0; c < 5; c++) {
+                                            // if (allfacility[c].room_type_id == room_type[i].id) {
+                                            // console.log("roomtype[" + c + "].id: " + allfacility[c].room_type_id);
+                                            // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
+                                            const col_facilities = document.createElement('div');
+                                            col_facilities.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
+                                            const i_classicon = document.createElement('i');
+                                            i_classicon.setAttribute('class', allfacility[mainfacility[c]].class + ' text-center');
+                                            i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                            i_classicon.textContent = allfacility[mainfacility[c]].class_nameicon;
+                                            const icon = document.createElement('label');
+                                            icon.appendChild(i_classicon);
+                                            const text = document.createElement('label');
+                                            text.textContent = allfacility[mainfacility[c]].name;
+                                            col_facilities.appendChild(icon);
+                                            col_facilities.appendChild(text);
+                                            row_facilities.appendChild(col_facilities);
+                                            // }
+                                        }
 
 
                                         const prices = document.createElement('div');
@@ -426,15 +427,61 @@
                                         const btn_confirm = document.createElement('div');
                                         btn_confirm.setAttribute('class', 'col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-end');
 
+                                        var more_facility = document.createElement('a')
+                                        more_facility.setAttribute('class', '');
+                                        more_facility.setAttribute('href', '');
+                                        more_facility.value = room_type[i].id
+                                        // more_facility.setAttribute('data-bs-toggle', 'modal');
+                                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                                        more_facility.textContent = 'รายละเอียดเพิ่มเติม';
+
+
+
+
+                                        more_facility.onclick = function (event) {
+                                            event.preventDefault();
+                                            // console.log(this.value);
+                                            // console.log(room_type[this.value - 1].id);
+                                            var modal = document.getElementById('facilitymodal');
+                                            const modalInstance = new bootstrap.Modal(modal);
+                                            modalInstance.show();
+
+                                            var row_modalfacility = document.createElement('div');
+                                            row_modalfacility.setAttribute('class', 'row mb-1');
+
+                                            var body_m = document.getElementById('body_facility')
+                                            body_m.innerHTML = '';
+                                            for (var c = 0; c < allfacility.length; c++) {
+                                                if (allfacility[c].room_type_id == room_type[this.value - 1].id) {
+                                                    // console.log("roomtype[" + c + "].name: " + allfacility[c].room_type_id);
+                                                    // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
+                                                    const col_modalfacility = document.createElement('div');
+                                                    col_modalfacility.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
+                                                    const i_classicon = document.createElement('i');
+                                                    i_classicon.setAttribute('class', allfacility[c].class + ' text-center');
+                                                    i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                                    i_classicon.textContent = allfacility[c].class_nameicon;
+                                                    const icon = document.createElement('label');
+                                                    icon.appendChild(i_classicon);
+                                                    const text = document.createElement('label');
+                                                    text.textContent = allfacility[c].name;
+                                                    col_modalfacility.appendChild(icon);
+                                                    col_modalfacility.appendChild(text);
+                                                    row_modalfacility.appendChild(col_modalfacility);
+                                                }
+                                            }
+                                            body_m.appendChild(row_modalfacility)
+                                        }
+
 
                                         const button = document.createElement('button');
                                         button.setAttribute('class', 'btn btn-primary fs-3 ');
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function(i, j, event) {
-                                            // const roomtypeLabel = document.getElementById('roomtype-label');
-                                            // roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
+                                        button.onclick = function (i, j, event) {
+                                            const roomtypeLabel = document.getElementById('roomtype-label');
+                                            roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
                                         }.bind(this, i, j, event);
 
@@ -447,9 +494,11 @@
 
                                         cardBody.appendChild(h5);
                                         cardBody.appendChild(t_details);
-                                        cardBody.appendChild(size);
+                                        cardBody.appendChild(row_details);
                                         cardBody.appendChild(t_facilities);
                                         cardBody.appendChild(row_facilities);
+                                        cardBody.appendChild(more_facility);
+
                                         cardBody.appendChild(bt_col_price);
                                         col2.appendChild(cardBody);
                                         row.appendChild(col1);
@@ -461,28 +510,123 @@
                             }
                         }
                     } else {
+                        // console.log(room_type[0].id + " " + room_type[0].name_th + " " + room_type[0].bed);
+
+
+
+
                         const cardDiv = document.createElement('div');
-                        cardDiv.setAttribute('class', 'card');
+                        cardDiv.setAttribute('class', 'card cardbooking');
 
                         const row = document.createElement('div');
                         row.setAttribute('class', 'row g-0');
 
                         const col1 = document.createElement('div');
-                        col1.setAttribute('class', 'col-md-6');
+                        col1.setAttribute('class', 'col-md-6 ');
+                        const divimgcarousel = document.createElement('div');
+                        divimgcarousel.setAttribute('id', 'carouselIndicators' + 0);
+                        divimgcarousel.setAttribute('class', 'carousel slide carousel-fade');
+                        divimgcarousel.setAttribute('data-bs-ride', 'carousel');
+                        divimgcarousel.setAttribute('data-bs-interval', '3000');
 
+                        const divcarouselindicator = document.createElement('div');
+                        divcarouselindicator.setAttribute('class', 'carousel-indicators');
+                        const btn_divcarouselindicator = document.createElement('button');
+                        btn_divcarouselindicator.setAttribute('type', 'button');
+                        btn_divcarouselindicator.setAttribute('data-bs-target', '#carouselIndicators' + 0);
+                        btn_divcarouselindicator.setAttribute('data-bs-slide-to', '0');
+                        btn_divcarouselindicator.setAttribute('class', 'active');
+
+                        btn_divcarouselindicator.setAttribute('aria-current', 'true');
+                        btn_divcarouselindicator.setAttribute('aria-label', 'Slide 1');
+                        const btn_divcarouselindicator1 = document.createElement('button');
+                        btn_divcarouselindicator1.setAttribute('type', 'button');
+                        btn_divcarouselindicator1.setAttribute('data-bs-target', '#carouselIndicators' + 0);
+                        btn_divcarouselindicator1.setAttribute('data-bs-slide-to', '1');
+                        btn_divcarouselindicator1.setAttribute('aria-label', 'Slide 2');
+                        const btn_divcarouselindicator2 = document.createElement('button');
+                        btn_divcarouselindicator2.setAttribute('type', 'button');
+                        btn_divcarouselindicator2.setAttribute('data-bs-target', '#carouselIndicators' + 0);
+                        btn_divcarouselindicator2.setAttribute('data-bs-slide-to', '2');
+                        btn_divcarouselindicator2.setAttribute('aria-label', 'Slide 3');
+                        divcarouselindicator.appendChild(btn_divcarouselindicator);
+                        divcarouselindicator.appendChild(btn_divcarouselindicator1);
+                        divcarouselindicator.appendChild(btn_divcarouselindicator2);
+                        const divcarouselinner = document.createElement('div');
+                        divcarouselinner.setAttribute('class', 'carousel-inner');
+                        const divcarousel_item = document.createElement('div');
+                        divcarousel_item.setAttribute('class', 'carousel-item active');
+                        divcarousel_item.setAttribute('data-bs-interval', '3000');
+                        const divcarousel_item1 = document.createElement('div');
+                        divcarousel_item1.setAttribute('class', 'carousel-item');
+                        divcarousel_item1.setAttribute('data-bs-interval', '3000');
+                        const divcarousel_item2 = document.createElement('div');
+                        divcarousel_item2.setAttribute('class', 'carousel-item');
+                        divcarousel_item2.setAttribute('data-bs-interval', '3000');
                         const img = document.createElement('img');
-                        img.setAttribute('src', './rooms/' + room_type[0].id + '.jpg');
-                        img.setAttribute('class', 'rounded-start img-fluid w-100 h-100');
-                        img.setAttribute('alt', '');
+                        img.setAttribute('src', room_type[0].img1);
+                        img.setAttribute('class', 'img-fluid w-100 h-100 d-block');
+                        const img1 = document.createElement('img');
+                        img1.setAttribute('src', room_type[0].img2);
+                        img1.setAttribute('class', 'img-fluid w-100 h-100 d-block');
+                        const img2 = document.createElement('img');
+                        img2.setAttribute('src', room_type[0].img3);
+                        img2.setAttribute('class', 'img-fluid w-100 h-100 d-block');
+                        divcarousel_item.appendChild(img);
+                        divcarousel_item1.appendChild(img1);
+                        divcarousel_item2.appendChild(img2);;
 
-                        col1.appendChild(img);
+                        divcarouselinner.appendChild(divcarousel_item);
+                        divcarouselinner.appendChild(divcarousel_item1);
+                        divcarouselinner.appendChild(divcarousel_item2);
+
+                        const btncarousel_l = document.createElement('button');
+                        btncarousel_l.setAttribute('class', 'carousel-control-prev');
+                        btncarousel_l.setAttribute('type', 'button');
+                        btncarousel_l.setAttribute('data-bs-target', '#carouselIndicators' + 0);
+                        btncarousel_l.setAttribute('data-bs-slide', 'prev');
+
+                        const span_l1 = document.createElement('span');
+                        span_l1.setAttribute('class', 'carousel-control-prev-icon');
+                        span_l1.setAttribute('aria-hidden', 'true');
+
+                        const span_l2 = document.createElement('span');
+                        span_l2.setAttribute('class', 'visually-hidden');
+                        span_l2.textContent = 'Previous'
+
+                        btncarousel_l.appendChild(span_l1);
+                        btncarousel_l.appendChild(span_l2);
+
+                        const btncarousel_r = document.createElement('button');
+                        btncarousel_r.setAttribute('class', 'carousel-control-next');
+                        btncarousel_r.setAttribute('type', 'button');
+                        btncarousel_r.setAttribute('data-bs-target', '#carouselIndicators' + 0);
+                        btncarousel_r.setAttribute('data-bs-slide', 'next');
+
+                        const span1 = document.createElement('span');
+                        span1.setAttribute('class', 'carousel-control-next-icon');
+                        span1.setAttribute('aria-hidden', 'true');
+
+                        const span2 = document.createElement('span');
+                        span2.setAttribute('class', 'visually-hidden');
+                        span2.textContent = 'Next'
+
+                        btncarousel_r.appendChild(span1);
+                        btncarousel_r.appendChild(span2);
+
+                        divimgcarousel.appendChild(divcarouselindicator);
+                        divimgcarousel.appendChild(divcarouselinner);
+                        divimgcarousel.appendChild(btncarousel_l);
+                        divimgcarousel.appendChild(btncarousel_r);
+
+
+                        col1.appendChild(divimgcarousel);
 
                         const col2 = document.createElement('div');
                         col2.setAttribute('class', 'col-md-6');
 
                         const cardBody = document.createElement('div');
-                        cardBody.setAttribute('class', 'card-body');
-
+                        cardBody.setAttribute('class', 'card-body h-100 d-flex flex-column');
 
                         const h5 = document.createElement('h5');
                         h5.setAttribute('class', 'card-title fw-semibold fs-2');
@@ -490,177 +634,176 @@
 
                         const br1 = document.createElement('br');
 
-                        const t_details = document.createElement('p');
-                        t_details.setAttribute('class', ' fw-semibold fs-5');
+                        const t_details = document.createElement('div');
+                        t_details.setAttribute('class', 'fs-5');
                         t_details.textContent = "รายละเอียดห้อง";
 
-                        const size = document.createElement('p');
-                        size.setAttribute('class', 'fs-5');
-                        size.textContent = 'ขนาดห้อง ' + room_type[0].size + ' ตรม.';
+                        var row_details = document.createElement('div');
+                        row_details.setAttribute('class', 'row mb-1 container');
 
-                        const prices = document.createElement('p');
-                        prices.setAttribute('class', 'fs-5');
-                        prices.textContent = 'ราคา  ' + room_type[0].price + ' ฿ /คืน ';
+                        const col_details1 = document.createElement('div');
+                        col_details1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                        const col_details2 = document.createElement('div');
+                        col_details2.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                        const col_details3 = document.createElement('div');
+                        col_details3.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
+                        const col_details4 = document.createElement('div');
+                        col_details4.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-6 d-flex');
 
-                        const i_wifi = document.createElement('i');
-                        i_wifi.setAttribute('class', 'fa-solid fa-wifi');
-                        const i_air = document.createElement('i');
-                        i_air.setAttribute('class', 'fa-solid fa-wind');
-                        const i_minifridge = document.createElement('i');
-                        i_minifridge.setAttribute('class', 'fa-solid fa-temperature-half');
-                        const i_bath = document.createElement('i');
-                        i_bath.setAttribute('class', 'fa-solid fa-bath');
-                        const i_shower = document.createElement('i');
-                        i_shower.setAttribute('class', 'fa-solid fa-shower');
-                        const i_fitness = document.createElement('i');
-                        i_fitness.setAttribute('class', 'fa-solid fa-dumbbell');
-                        const i_pool = document.createElement('i');
-                        i_pool.setAttribute('class', 'fa-solid fa-water-ladder');
-                        const i_breakfast = document.createElement('i');
-                        i_breakfast.setAttribute('class', 'fa-solid fa-utensils');
-                        const i_tv = document.createElement('i');
-                        i_tv.setAttribute('class', 'fa-solid fa-tv');
+                        const detail1 = document.createElement('div');
+                        detail1.setAttribute('class', 'mb-1');
+                        detail1.textContent = 'ขนาดห้อง: ' + room_type[0].size + ' ตรม.';
 
-                        const t_facilities = document.createElement('p');
-                        t_facilities.setAttribute('class', ' fw-semibold fs-5');
+                        const detail2 = document.createElement('div');
+                        detail2.setAttribute('class', 'mb-1');
+                        detail2.textContent = 'เข้าพักได้: ' + room_type[0].count_humen + ' คน';
+
+                        const detail3 = document.createElement('div');
+                        detail3.setAttribute('class', 'mb-1');
+                        detail3.textContent = 'เตียงขนาด: ' + room_type[0].type_bed;
+
+                        const detail4 = document.createElement('div');
+                        detail4.setAttribute('class', 'mb-1');
+                        detail4.textContent = 'ส่วนเสริม: ' + room_type[0].extional;
+
+                        col_details1.appendChild(detail1);
+                        col_details2.appendChild(detail2);
+                        col_details3.appendChild(detail3);
+                        col_details4.appendChild(detail4);
+                        row_details.appendChild(col_details1);
+                        row_details.appendChild(col_details2);
+                        row_details.appendChild(col_details3);
+                        row_details.appendChild(col_details4);
+
+                        const t_facilities = document.createElement('div');
+                        t_facilities.setAttribute('class', 'fs-5');
                         t_facilities.textContent = "สิ่งอำนวยความสะดวก";
+
+
 
                         const row_facilities = document.createElement('div');
                         row_facilities.setAttribute('class', 'row');
 
+                        var mainfacility = [1, 5, 6, 8, 9, 12];
 
-
-                        if (room_type[0].wifi == 1) {
-                            const col_facilities1 = document.createElement('div');
-                            col_facilities1.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "Wifi "
-                            textt.appendChild(i_wifi);
-                            col_facilities1.appendChild(textt);
-                            row_facilities.appendChild(col_facilities1);
+                        for (var c = 0; c < 5; c++) {
+                            // if (allfacility[c].room_type_id == room_type[i].id) {
+                            // console.log("roomtype[" + c + "].id: " + allfacility[c].room_type_id);
+                            // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
+                            const col_facilities = document.createElement('div');
+                            col_facilities.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
+                            const i_classicon = document.createElement('i');
+                            i_classicon.setAttribute('class', allfacility[mainfacility[c]].class + ' text-center');
+                            i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                            i_classicon.textContent = allfacility[mainfacility[c]].class_nameicon;
+                            const icon = document.createElement('label');
+                            icon.appendChild(i_classicon);
+                            const text = document.createElement('label');
+                            text.textContent = allfacility[mainfacility[c]].name;
+                            col_facilities.appendChild(icon);
+                            col_facilities.appendChild(text);
+                            row_facilities.appendChild(col_facilities);
+                            // }
                         }
 
-                        if (room_type[0].air_con == 1) {
-                            const col_facilities2 = document.createElement('div');
-                            col_facilities2.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
+                        var more_facility = document.createElement('a')
+                        more_facility.setAttribute('class', '');
+                        more_facility.setAttribute('href', '');
+                        more_facility.value = room_type[0].id
+                        // more_facility.setAttribute('data-bs-toggle', 'modal');
+                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                        more_facility.textContent = 'รายละเอียดเพิ่มเติม';
 
-                            const textt = document.createElement('p');
-                            textt.textContent = "แอร์ "
-                            textt.appendChild(i_air);
-                            col_facilities2.appendChild(textt);
-                            row_facilities.appendChild(col_facilities2);
+
+
+
+                        more_facility.onclick = function (event) {
+                            event.preventDefault();
+                            // console.log(this.value);
+                            // console.log(room_type[0].id);
+                            var modal = document.getElementById('facilitymodal');
+                            const modalInstance = new bootstrap.Modal(modal);
+                            modalInstance.show();
+
+                            var row_modalfacility = document.createElement('div');
+                            row_modalfacility.setAttribute('class', 'row mb-1');
+
+                            var body_m = document.getElementById('body_facility')
+                            body_m.innerHTML = '';
+                            for (var c = 0; c < allfacility.length; c++) {
+                                if (allfacility[c].room_type_id == room_type[0].id) {
+                                    // console.log("roomtype[" + c + "].name: " + allfacility[c].room_type_id);
+                                    // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
+                                    const col_modalfacility = document.createElement('div');
+                                    col_modalfacility.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
+                                    const i_classicon = document.createElement('i');
+                                    i_classicon.setAttribute('class', allfacility[c].class + ' text-center');
+                                    i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                    i_classicon.textContent = allfacility[c].class_nameicon;
+                                    const icon = document.createElement('label');
+                                    icon.appendChild(i_classicon);
+                                    const text = document.createElement('label');
+                                    text.textContent = allfacility[c].name;
+                                    col_modalfacility.appendChild(icon);
+                                    col_modalfacility.appendChild(text);
+                                    row_modalfacility.appendChild(col_modalfacility);
+                                }
+                            }
+                            body_m.appendChild(row_modalfacility)
                         }
 
-                        if (room_type[0].minifridge == 1) {
-                            const col_facilities3 = document.createElement('div');
-                            col_facilities3.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
+                        const div_col_price = document.createElement('div');
+                        div_col_price.setAttribute('class', '');
 
-                            const textt = document.createElement('p');
-                            textt.textContent = "ตู้เย็น "
-                            textt.appendChild(i_minifridge);
-                            col_facilities3.appendChild(textt);
-                            row_facilities.appendChild(col_facilities3);
-                        }
+                        const bt_col_price = document.createElement('div');
+                        bt_col_price.setAttribute('class', 'row mt-auto');
 
-                        if (room_type[0].bath == 1) {
-                            const col_facilities4 = document.createElement('div');
-                            col_facilities4.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
+                        const usable_room = document.createElement('div');
+                        usable_room.setAttribute('class', ' card-text fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
+                        usable_room.textContent = 'ห้องว่าง ' + available_room + ' ห้อง';
 
-                            const textt = document.createElement('p');
-                            textt.textContent = "อ่างอาบน้ำ "
-                            textt.appendChild(i_bath);
-                            col_facilities4.appendChild(textt);
-                            row_facilities.appendChild(col_facilities4);
-                        }
-                        if (room_type[0].shower == 1) {
-                            const col_facilities5 = document.createElement('div');
-                            col_facilities5.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "เครื่องทำน้ำอุ่น "
-                            textt.appendChild(i_shower);
-                            col_facilities5.appendChild(textt);
-                            row_facilities.appendChild(col_facilities5);
-                        }
-
-                        if (room_type[0].fitness == 1) {
-                            const col_facilities6 = document.createElement('div');
-                            col_facilities6.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "ฟิตเนส "
-                            textt.appendChild(i_fitness);
-                            col_facilities6.appendChild(textt);
-                            row_facilities.appendChild(col_facilities6);
-                        }
-                        if (room_type[0].pool == 1) {
-                            const col_facilities7 = document.createElement('div');
-                            col_facilities7.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "สระว่ายน้ำ "
-                            textt.appendChild(i_pool);
-                            col_facilities7.appendChild(textt);
-                            row_facilities.appendChild(col_facilities7);
-                        }
-
-                        if (room_type[0].breakfast == 1) {
-                            const col_facilities8 = document.createElement('div');
-                            col_facilities8.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "อาหารเช้า "
-                            textt.appendChild(i_breakfast);
-                            col_facilities8.appendChild(textt);
-                            row_facilities.appendChild(col_facilities8);
-                        }
-                        if (room_type[0].tv == 1) {
-                            const col_facilities9 = document.createElement('div');
-                            col_facilities9.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 fs-5');
-
-                            const textt = document.createElement('p');
-                            textt.textContent = "ทีวี "
-                            textt.appendChild(i_tv);
-                            col_facilities9.appendChild(textt);
-                            row_facilities.appendChild(col_facilities9);
-                        }
+                        const btn_confirm = document.createElement('div');
+                        btn_confirm.setAttribute('class', 'col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-end');
 
 
-                        const br2 = document.createElement('br');
+                        const prices = document.createElement('div');
+                        prices.setAttribute('class', 'fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
+                        prices.setAttribute('style', 'color: rgb(213, 34, 34)');
+                        prices.textContent = 'ราคา  ' + room_type[0].price + '฿/คืน ';
 
-                        const usable_room = document.createElement('p');
-                        usable_room.setAttribute('class', 'card-text');
-                        usable_room.textContent = 'ว่างทั้งหมด ' + available_room + ' ห้อง';
+
 
                         const button = document.createElement('button');
-                        button.setAttribute('class', 'btn btn-primary mt-auto');
+                        button.setAttribute('class', 'btn btn-primary fs-3 ');
+                        button.setAttribute('id', 'clickviewinfo');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function(event) {
+                        button.onclick = function (event) {
+                            // const roomtypeLabel = document.getElementById('roomtype-label');
+                            // roomtypeLabel.textContent = room_type[0].name_th + ' ' + room_type[0].bed;
                             reserv_modal(available_room[0], room_type[0]);
-
                         }
+
+
+                        btn_confirm.appendChild(button);
+                        bt_col_price.appendChild(prices);
+                        bt_col_price.appendChild(usable_room);
+                        bt_col_price.appendChild(btn_confirm);
 
 
                         cardBody.appendChild(h5);
                         cardBody.appendChild(t_details);
-                        cardBody.appendChild(size);
-                        cardBody.appendChild(prices);
+                        cardBody.appendChild(row_details);
+
                         cardBody.appendChild(t_facilities);
                         cardBody.appendChild(row_facilities);
+                        cardBody.appendChild(more_facility);
 
-                        cardBody.appendChild(br2);
-                        cardBody.appendChild(usable_room);
-                        cardBody.appendChild(button);
-
+                        cardBody.appendChild(bt_col_price);
                         col2.appendChild(cardBody);
-
                         row.appendChild(col1);
                         row.appendChild(col2);
-
                         cardDiv.appendChild(row);
-
                         myCards.appendChild(cardDiv);
 
                     }
@@ -680,14 +823,35 @@
             });
         }
 
+
         function reserv_modal(available_rooms, roomtype) {
             const modal = document.getElementById('exampleModal');
 
             const modalInstance = new bootstrap.Modal(modal);
             modalInstance.show();
 
-            document.getElementById('total-price').innerHTML = 'ราคา ' + roomtype.price + ' บาท'
-                // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+
+            // Parse check-in and check-out dates using moment.js
+            var checkin = moment(document.getElementById('checkin').value, 'DD/MM/YYYY');
+            var checkout = moment(document.getElementById('checkout').value, 'DD/MM/YYYY');
+
+            // Format check-in and check-out dates as "DD/MM/YYYY" strings
+            var checkinFormatted = checkin.format('DD/MM/YYYY');
+            var checkoutFormatted = checkout.format('DD/MM/YYYY');
+
+            // Calculate the number of days between check-in and check-out
+            var diffDays = checkout.diff(checkin, 'days') + 1; // Add 1 day to include both check-in and check-out dates
+
+            // console.log('Check-in date: ' + checkinFormatted);
+            // console.log('Check-out date: ' + checkoutFormatted);
+            // console.log('Number of days: ' + diffDays);
+
+
+
+
+
+            document.getElementById('total-price').innerHTML = " " + (roomtype.price * (diffDays - 1)) + '฿'
+            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
             document.getElementById('con_reserv').value = roomtype.id
         }
@@ -794,7 +958,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function(selectedDates, dateStr, instance) {
+                onChange: function (selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {
