@@ -118,8 +118,12 @@ img {
 }
 
 .btn-primary:hover {
-    color: #0d6efd;
-    background-color: white;
+    /* color: #0d6efd;
+    background-color: white; */
+}
+
+.my-custom-class {
+    margin-top: 0px;
 }
 
 .my-custom-class1 {
@@ -141,8 +145,36 @@ img {
     }
 }
 
+.recfood .carousel-item {
+    height: 350px;
+}
+
+
+/* size cardbooking all */
+
+.cardbookingall .carousel-item {
+    height: 360px;
+}
+
+.cardbookingall .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+    .cardbookingall .carousel-item {
+        height: 250px;
+    }
+}
+
+
+/* size cardbooking all */
+
+
+/* size cardbooking  */
+
 .cardbooking .carousel-item {
-    height: 400px;
+    height: 360px;
 }
 
 .cardbooking .carousel-item img {
@@ -154,4 +186,18 @@ img {
     .cardbooking .carousel-item {
         height: 250px;
     }
+}
+
+@media (max-width: 575.98px) {
+    .bt_listbooking {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* size cardbooking  */
+
+.card_r1 .carousel-item {
+    height: 400px;
+    object-fit: cover;
 }

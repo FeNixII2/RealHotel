@@ -34,14 +34,14 @@
     <script src="js/component.js"></script>
 
     <!-- css import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Hotel BS</a>
+            <a class="navbar-brand" href="#home" onclick="showSection('home')">Hotel BS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,9 +50,6 @@
                     <div class="padding-searchbar d-flex mx-auto" id="padding-searchbar">
                         <div class="searchbar">
                             <div class="d-flex" id="searchbar1">
-
-
-
                                 <div class=" d-flex justify-content-center align-items-center " id="psb">
                                     <label for="checkin" class="no-select mx-2 w-50 form-label" style="color:white">เช็คอิน:</label>
                                     <input type="text" id="checkin" name="checkin" class="form-control" style="width: 100%;" />
@@ -73,19 +70,8 @@
                                             <%}%>
                                     </select>
                                 </div>
-
-
-
                             </div>
-
-
-
                         </div>
-
-
-
-
-
                         <button type="button" class="btn btn-secondary mx-3" id="searchbtn" onclick="booking_search(),showSection('booking')">ค้นหา</button>
                     </div>
                     <li class="nav-item">
@@ -100,38 +86,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking'),booking_search()">เช็คห้องพัก</a>
                     </li>
-                    <li class="nav-item dropdown d-flex justify-content-center">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ภาษา
-                        </a>
-                        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="#">ไทย</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">อังกฤษ</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contract" onclick="showSection('contract'),booking_search()">Contract</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+
     <main>
         <%- include('homesection.ejs') %>
             <%- include('roomssection.ejs') %>
                 <%- include('bookingsection.ejs') %>
                     <%- include('checkbooking.ejs') %>
+                        <%- include('contract.ejs') %>
     </main>
+
+
 </body>
 
 <script>
     // fix show section when you refresh webpage
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function() {
         let hash = location.hash; // get current hash location
         let id = hash.substring(1); // remove # from location
         if (id != (null || '' || "")) {
-            document.querySelectorAll('section').forEach(function (element) {
+            document.querySelectorAll('section').forEach(function(element) {
                 element.style.display = 'none';
             });
             showSection(id)
@@ -142,7 +124,7 @@
 
     // JavaScript function to show a specific section
     function showSection(id) { // hide all sections
-        document.querySelectorAll('section').forEach(function (element) {
+        document.querySelectorAll('section').forEach(function(element) {
             element.style.display = 'none';
         });
         // show the selected section
@@ -155,7 +137,7 @@
             document.getElementById('padding-searchbar').classList.add('mt-3');
             document.getElementById('psb').classList.add('mb-2');
             document.getElementById('psb2').classList.add('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+            document.querySelectorAll('.nav-link').forEach(function(navLink) {
                 navLink.setAttribute('data-bs-toggle', 'collapse');
                 navLink.setAttribute('data-bs-target', '#navbarNavDropdown');
                 navLink.setAttribute('aria-expanded', 'false');
@@ -171,7 +153,7 @@
             document.getElementById('padding-searchbar').classList.remove('mt-3');
             document.getElementById('psb').classList.remove('mb-2');
             document.getElementById('psb2').classList.remove('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+            document.querySelectorAll('.nav-link').forEach(function(navLink) {
                 navLink.removeAttribute('data-bs-toggle');
                 navLink.removeAttribute('data-bs-target');
                 navLink.removeAttribute('aria-expanded');

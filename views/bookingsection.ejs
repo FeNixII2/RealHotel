@@ -1,81 +1,93 @@
-<section id="booking" style="padding-top: 50px">
-    <div class="container">
-        <br>
-        <div id="my-cards"></div>
+<section id="booking">
+    <div class="h-100" style="position: relative;">
+        <div class="bg-image" style="
+  background-image: url('testbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: blur(4px);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+"></div>
+        <div class="container pb-2" style=" position: relative;background-color: rgba(255, 255, 255, 0.6)">
+            <br>
+            <div id="my-cards"></div>
 
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title w-100 text-center" style="position: relative;">ยืนยันการจอง</h5>
-                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 1.5rem;"></button>
-                    </div>
+            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title w-100 text-center" style="position: relative;">ยืนยันการจอง</h5>
+                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 1.5rem;"></button>
+                        </div>
 
-                    <div class="modal-body">
-                        <div class="card">
-                            <div class="fs-5 d-flex align-self-center">
-                                <i class="fa-solid fa-door-closed d-flex align-self-center"></i>
-                                <div class="ms-2">รายละเอียดห้องพัก</div>
-                            </div>
-                            <div class="container">
+                        <div class="modal-body p-1">
+                            <div class="card p-3 ">
+                                <div class="fs-5 d-flex mb-2">
+                                    <i class="fa-solid fa-door-closed d-flex align-self-center"></i>
+                                    <div class="ms-2">รายละเอียดห้องพัก</div>
+                                </div>
+
                                 <div class="rooms-label">
                                     ประเภท:
                                     <label id="roomtype-label"></label>
                                 </div>
                                 <div class="row ">
                                     <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
-                                        วันเช็คอิน:
+                                        เช็คอิน:
                                         <label id="checkin-label"></label>
                                     </div>
                                     <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                        วันเช็คเอ้าท์:
+                                        เช็คเอ้าท์:
                                         <label id="checkout-label"></label>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="card p-1">
-                            <div class="fs-5 mb-3 d-flex align-self-center mt-2">
-                                <i class="fa-solid fa-user d-flex align-self-center"></i>
-                                <div class="ms-2 ">ข้อมูลผู้เข้าพัก</div>
                             </div>
 
-                            <form class="row g-3">
-                                <div class="col-md-6 my-custom-class">
-                                    ชื่อ
-                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required="required">
+                            <div class="card p-3">
+                                <div class="fs-5 mb-3 d-flex mb-4 mt-2">
+                                    <i class="fa-solid fa-user d-flex align-self-center"></i>
+                                    <div class="ms-2 ">ข้อมูลผู้เข้าพัก</div>
                                 </div>
-                                <div class="col-md-6 my-custom-class">
-                                    นามสกุล
-                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required="required">
+
+                                <form class="row g-3">
+                                    <div class="col-md-6 my-custom-class">
+                                        ชื่อ
+                                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required="required">
+                                    </div>
+                                    <div class="col-md-6 my-custom-class">
+                                        นามสกุล
+                                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required="required">
+                                    </div>
+                                    <div class="col-md-6 my-custom-class">
+                                        เบอร์โทรศัพท์
+                                        <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์">
+                                    </div>
+                                    <div class="col-md-6 my-custom-class">
+                                        อีเมลล์
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" required="required">
+                                    </div>
+                                </form>
+
+                                <div class="mt-1 fs-5 d-flex mt-3 mb-2 mt-">
+                                    <i class="fa-solid fa-note-sticky d-flex align-self-center"></i>
+                                    <div class="ms-2  ">คำขอเพิ่มเติม</div>
                                 </div>
-                                <div class="col-md-6 my-custom-class">
-                                    เบอร์โทรศัพท์
-                                    <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์">
-                                </div>
-                                <div class="col-md-6 my-custom-class">
-                                    อีเมลล์
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" required="required">
-                                </div>
-                            </form>
 
-                        </div>
-                        <div class="mt-1 fs-5 d-flex align-self-center mt-2">
-                            <i class="fa-solid fa-note-sticky d-flex align-self-center"></i>
-                            <div class="ms-2 ">คำขอเพิ่มเติม</div>
-                        </div>
+                                <textarea class="form-control" name="more_info" id="more_info" rows="3" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
 
-                        <textarea class="form-control" name="more_info" id="more_info" rows="6" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
+                            </div>
 
-                        <div class="textprice fs-5 d-flex align-self-center mt-2">
-                            <i class="fa-solid fa-coins d-flex align-self-center"></i>
-                            <div class="ms-2 me-2">ราคา</div>
-                            <div class="total-price " id="total-price" style="color: red;">0</div>
-                        </div>
+                            <div class="card p-3">
 
 
-                        <!-- <div class="payment-s">
+
+                                <!-- <div class="payment-s">
 
                             <% for(var i=0;i< payment_type.length;i++){ %>
                                 <div class="form-check">
@@ -91,77 +103,104 @@
                         </div> -->
 
 
-                        <div class="textpaymeant fs-5 d-flex align-self-center mt-2">
-                            <i class="fa-solid fa-money-check-dollar d-flex align-self-center"></i>
-                            <div class="ms-2 ">รูปแบบการชำระเงิน</div>
-                        </div>
-
-
-
-
-
-                        <% var payment_type_left=payment_type.slice(0, Math.ceil(payment_type.length / 2)); var payment_type_right=payment_type.slice(Math.ceil(payment_type.length / 2)); %>
-
-                            <div class="payment-s row">
-                                <div class="col-6 col-sm-6 col-md-6 text-left">
-                                    <% for(var i=0;i< payment_type_left.length;i++){ %>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type_left[i].id%>">
-                                            <label class="form-check-label" for="option<%=i%>">
-                                                <%=payment_type_left[i].pay_type%>
-                                            </label>
-                                        </div>
-                                        <%}%>
+                                <div class="textpaymeant fs-5 d-flex mb-2 mt-2">
+                                    <i class="fa-solid fa-money-check-dollar d-flex align-self-center"></i>
+                                    <div class="ms-2 ">รูปแบบการชำระเงิน</div>
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-6 text-right">
-                                    <% for(var i=0;i< payment_type_right.length;i++){ %>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="option<%=i%+payment_type_left.length%>" name="myGroup" value="<%=payment_type_right[i].id%>">
-                                            <label class="form-check-label" for="option<%=i%+payment_type_left.length%>">
-                                                <%=payment_type_right[i].pay_type%>
-                                            </label>
+
+
+
+
+
+                                <% var payment_type_left=payment_type.slice(0, Math.ceil(payment_type.length / 2)); var payment_type_right=payment_type.slice(Math.ceil(payment_type.length / 2)); %>
+
+                                    <div class="payment-s row">
+                                        <div class="col-6 col-sm-6 col-md-6 text-left">
+                                            <% for(var i=0;i< payment_type_left.length;i++){ %>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type_left[i].id%>">
+                                                    <label class="form-check-label" for="option<%=i%>">
+                                                        <%=payment_type_left[i].pay_type%>
+                                                    </label>
+                                                </div>
+                                                <%}%>
                                         </div>
-                                        <%}%>
-                                </div>
+                                        <div class="col-6 col-sm-6 col-md-6 text-right">
+                                            <% for(var i=0;i< payment_type_right.length;i++){ %>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="option<%=i%+payment_type_left.length%>" name="myGroup" value="<%=payment_type_right[i].id%>">
+                                                    <label class="form-check-label" for="option<%=i%+payment_type_left.length%>">
+                                                        <%=payment_type_right[i].pay_type%>
+                                                    </label>
+                                                </div>
+                                                <%}%>
+                                        </div>
+                                    </div>
+
+                                    <div class="textprice fs-5 d-flex  mt-2">
+                                        <i class="fa-solid fa-coins d-flex align-self-center"></i>
+                                        <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
+                                        <b>
+                                            <div class="total-price " id="total-price" style="color: red;">0</div>
+                                        </b>
+                                        <div class="ms-2 me-2">บาท</div>
+                                    </div>
+
                             </div>
 
 
                             <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
 
-                            <div class="box-padding mt-auto d-flex justify-content-center">
-                                <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง</a>
-                                </div>
+
+                        </div>
+
+                        <div class="box-padding mt-auto d-flex align-self-end">
+                            <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง</a>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="modal fade modal-lg" id="facilitymodal" tabindex="-1" aria-labelledby="facilitymodalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="facilitymodalLabel">สิ่งอำนวยความสะดวก</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal fade modal-lg" id="facilitymodal" tabindex="-1" aria-labelledby="facilitymodalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="facilitymodalLabel">สิ่งอำนวยความสะดวก</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                    </div>
-                    <div class="modal-body" id="body_facility">
+                        </div>
+                        <div class="modal-body" id="body_facility">
 
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <footer class="py-3 mt-5">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#home" onclick="showSection('home')" class="nav-link px-2 text-muted">หน้าหลัก</a></li>
+                    <li class="nav-item"><a href="#rooms" onclick="showSection('rooms')" class="nav-link px-2 text-muted">ห้องพัก</a></li>
+                    <li class="nav-item"><a href="#booking" onclick="showSection('booking'),booking_search()" class="nav-link px-2 text-muted">จองห้องพัก</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ติดต่อ 0123456789</a></li>
+
+                </ul>
+                <p class="text-center text-muted">© 2023 โรงแรมบีเอส</p>
+            </footer>
+
         </div>
-
-
-
-        <!-- footer -->
-        <footer-component></footer-component>
-        <!-- footer -->
     </div>
 
+
+
+
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             dateTimepicker()
         })
 
@@ -356,7 +395,7 @@
 
                                         const detail3 = document.createElement('div');
                                         detail3.setAttribute('class', 'mb-1');
-                                        detail3.textContent = 'เตียงขนาด: ' + room_type[i].type_bed;
+                                        detail3.textContent = 'ขนาดเตียง: ' + room_type[i].type_bed;
 
                                         const detail4 = document.createElement('div');
                                         detail4.setAttribute('class', 'mb-1');
@@ -409,10 +448,20 @@
                                         }
 
 
+                                        var fprices = document.createElement('div');
+                                        fprices.setAttribute('class', 'fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
+                                        fprices.textContent = 'ราคา ';
+
+                                        var lprices = document.createElement('div');
+                                        lprices.setAttribute('class', 'fs-4 ms-1');
+                                        lprices.textContent = ' ฿/คืน';
+
                                         const prices = document.createElement('div');
-                                        prices.setAttribute('class', 'fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
+                                        prices.setAttribute('class', 'fs-4 ms-1');
                                         prices.setAttribute('style', 'color: rgb(213, 34, 34)');
-                                        prices.textContent = 'ราคา  ' + room_type[i].price + '฿/คืน ';
+                                        prices.textContent = room_type[i].price;
+                                        fprices.appendChild(prices);
+                                        fprices.appendChild(lprices);
 
                                         const div_col_price = document.createElement('div');
                                         div_col_price.setAttribute('class', '');
@@ -431,14 +480,14 @@
                                         more_facility.setAttribute('class', '');
                                         more_facility.setAttribute('href', '');
                                         more_facility.value = room_type[i].id
-                                        // more_facility.setAttribute('data-bs-toggle', 'modal');
-                                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                                            // more_facility.setAttribute('data-bs-toggle', 'modal');
+                                            // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
                                         more_facility.textContent = 'รายละเอียดเพิ่มเติม';
 
 
 
 
-                                        more_facility.onclick = function (event) {
+                                        more_facility.onclick = function(event) {
                                             event.preventDefault();
                                             // console.log(this.value);
                                             // console.log(room_type[this.value - 1].id);
@@ -459,7 +508,7 @@
                                                     col_modalfacility.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
                                                     const i_classicon = document.createElement('i');
                                                     i_classicon.setAttribute('class', allfacility[c].class + ' text-center');
-                                                    i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                                    i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60);');
                                                     i_classicon.textContent = allfacility[c].class_nameicon;
                                                     const icon = document.createElement('label');
                                                     icon.appendChild(i_classicon);
@@ -479,14 +528,14 @@
                                         button.setAttribute('id', 'clickviewinfo');
                                         button.textContent = 'จองห้องนี้';
                                         button.value = room_type[i].id
-                                        button.onclick = function (i, j, event) {
+                                        button.onclick = function(i, j, event) {
                                             const roomtypeLabel = document.getElementById('roomtype-label');
                                             roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
                                             reserv_modal(available_room[j], room_type[i]);
                                         }.bind(this, i, j, event);
 
                                         btn_confirm.appendChild(button);
-                                        bt_col_price.appendChild(prices);
+                                        bt_col_price.appendChild(fprices);
                                         bt_col_price.appendChild(usable_room);
                                         bt_col_price.appendChild(btn_confirm);
 
@@ -660,7 +709,7 @@
 
                         const detail3 = document.createElement('div');
                         detail3.setAttribute('class', 'mb-1');
-                        detail3.textContent = 'เตียงขนาด: ' + room_type[0].type_bed;
+                        detail3.textContent = 'ขนาดเตียง: ' + room_type[0].type_bed;
 
                         const detail4 = document.createElement('div');
                         detail4.setAttribute('class', 'mb-1');
@@ -710,14 +759,14 @@
                         more_facility.setAttribute('class', '');
                         more_facility.setAttribute('href', '');
                         more_facility.value = room_type[0].id
-                        // more_facility.setAttribute('data-bs-toggle', 'modal');
-                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                            // more_facility.setAttribute('data-bs-toggle', 'modal');
+                            // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
                         more_facility.textContent = 'รายละเอียดเพิ่มเติม';
 
 
 
 
-                        more_facility.onclick = function (event) {
+                        more_facility.onclick = function(event) {
                             event.preventDefault();
                             // console.log(this.value);
                             // console.log(room_type[0].id);
@@ -766,11 +815,21 @@
                         btn_confirm.setAttribute('class', 'col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-end');
 
 
-                        const prices = document.createElement('div');
-                        prices.setAttribute('class', 'fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
-                        prices.setAttribute('style', 'color: rgb(213, 34, 34)');
-                        prices.textContent = 'ราคา  ' + room_type[0].price + '฿/คืน ';
 
+                        var fprices = document.createElement('div');
+                        fprices.setAttribute('class', 'fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
+                        fprices.textContent = 'ราคา ';
+
+                        var lprices = document.createElement('div');
+                        lprices.setAttribute('class', 'fs-4 ms-1');
+                        lprices.textContent = ' ฿/คืน';
+
+                        const prices = document.createElement('div');
+                        prices.setAttribute('class', 'fs-4 ms-1');
+                        prices.setAttribute('style', 'color: rgb(213, 34, 34)');
+                        prices.textContent = room_type[0].price;
+                        fprices.appendChild(prices);
+                        fprices.appendChild(lprices);
 
 
                         const button = document.createElement('button');
@@ -778,7 +837,7 @@
                         button.setAttribute('id', 'clickviewinfo');
                         button.textContent = 'จองห้องนี้';
                         button.value = room_type[0].id
-                        button.onclick = function (event) {
+                        button.onclick = function(event) {
                             // const roomtypeLabel = document.getElementById('roomtype-label');
                             // roomtypeLabel.textContent = room_type[0].name_th + ' ' + room_type[0].bed;
                             reserv_modal(available_room[0], room_type[0]);
@@ -786,7 +845,7 @@
 
 
                         btn_confirm.appendChild(button);
-                        bt_col_price.appendChild(prices);
+                        bt_col_price.appendChild(fprices);
                         bt_col_price.appendChild(usable_room);
                         bt_col_price.appendChild(btn_confirm);
 
@@ -850,8 +909,8 @@
 
 
 
-            document.getElementById('total-price').innerHTML = " " + (roomtype.price * (diffDays - 1)) + '฿'
-            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+            document.getElementById('total-price').innerHTML = " " + (roomtype.price * (diffDays - 1))
+                // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
             document.getElementById('con_reserv').value = roomtype.id
         }
@@ -866,8 +925,9 @@
             var checkout = document.getElementById('checkout').value
             var room_type = document.getElementById('con_reserv').value
 
+
             const radioButtons = document.getElementsByName('myGroup');
-            if (!firstName || !p_number || !email || !lastName || !more_info || !checkin || !checkout || !room_type) {
+            if (!firstName || !p_number || !email || !lastName || !checkin || !checkout || !room_type) {
                 Swal.fire({
                     title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
                     backdrop: true,
@@ -958,7 +1018,7 @@
                 locale: "th",
                 dateFormat: "d-m-Y",
                 minDate: new Date(),
-                onChange: function (selectedDates, dateStr, instance) {
+                onChange: function(selectedDates, dateStr, instance) {
 
                     if (checkout.value) {
                         if (checkout.value < dateStr) {
@@ -981,5 +1041,33 @@
                 minDate: new Date(Date.now() + 86400000)
             });
         }
+
+
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('onkeyup', function(event) {
+            if (!isValidEmail(event.target.value)) {
+                event.target.setCustomValidity('Please enter a valid email address');
+            } else {
+                event.target.setCustomValidity('');
+            }
+        });
+
+        function isValidEmail(email) {
+            // Use regular expression to check if the email is valid
+            const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+
+        const numericInput = document.getElementById('p_number');
+        numericInput.addEventListener('input', function(event) {
+            const newValue = event.target.value.replace(/[^\d]/g, '');
+            event.target.value = newValue;
+            if (newValue.length > 10) {
+                event.target.value = newValue.slice(0, 10);
+            } else {
+                event.target.value = newValue;
+            }
+        });
     </script>
 </section>

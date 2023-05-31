@@ -79,3 +79,4 @@ app.get("/", (req, res) => {
 require("./app/empty.js")(app, con);
 require("./app/bookingsection.js")(app, con, moment, transporter); //js ของหน้า bookingsection
 require("./app/roomsection.js")(app, con); //js ของหน้า roomsection
+require("./app/checkbooking.js")(app, con); //js ของหน้า checkbooking

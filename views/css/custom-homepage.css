@@ -1,6 +1,6 @@
 body {
-  font-family: Kanit;
-  padding-top: 2rem;
+    font-family: Kanit;
+    padding-top: 2rem;
 }
 
 h1,
@@ -9,13 +9,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Kanit;
+    font-family: Kanit;
 }
 
 .card {
-  overflow: hidden;
-  cursor: pointer;
+    overflow: hidden;
+    /* cursor: pointer; */
 }
+
 
 /* .card:hover {
   background-color: rgb(73, 73, 73);
@@ -23,24 +24,24 @@ h6 {
 } */
 
 .img-fluid {
-  height: 15rem;
-  object-fit: cover;
+    height: 15rem;
+    object-fit: cover;
 }
 
 .box-padding {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 .imgfitcover {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .carousel {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .img-block1 {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
