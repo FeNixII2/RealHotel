@@ -1,23 +1,25 @@
 <section id="checkbooking" style="position: relative;">
     <div class="backgroundpage-image"></div>
 
-    <div class="container pt-5 vh-100" style="background-color: rgba(255, 255, 255, 0.6);">
-        <div class="checkbooking-section">
+    <div class="container pt-5 d-flex flex-column justify-content-between align-items-center vh-100" style="background-color: rgba(255, 255, 255, 0.6);">
+        <div class="container">
+            <div class="checkbooking-section">
 
-            <div class="textcheck pt-4 fs-3 d-flex justify-content-center mb-4">ตรวจสอบการจองห้องพัก</div>
+                <div class="textcheck pt-4 fs-3 d-flex justify-content-center mb-4">ตรวจสอบการจองห้องพัก</div>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="" id="id_numcheckbooking" placeholder="กรอกรหัสการจองหรือเบอร์โทรศัพท์" aria-label="Search">
-                <button class="btn btn-outline-success" type="button" onclick="checkbooking_search()">ค้นหา</button>
-            </form>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="" id="id_numcheckbooking" placeholder="กรอกรหัสการจองหรือเบอร์โทรศัพท์" aria-label="Search">
+                    <button class="btn btn-outline-success" type="button" onclick="checkbooking_search()">ค้นหา</button>
+                </form>
 
-            <div id="card-booking"></div>
+                <div id="card-booking"></div>
 
 
+            </div>
         </div>
-
+        <footer-component></footer-component>
     </div>
-    <footer-component></footer-component>
+
 
 </section>
 
