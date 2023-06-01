@@ -137,9 +137,7 @@
 
                             </div>
 
-
                             <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
-
 
                         </div>
 
@@ -392,14 +390,6 @@
                                     row_details.appendChild(col_details3);
                                     row_details.appendChild(col_details4);
 
-
-
-
-
-
-
-
-
                                     var row_facilities = document.createElement('div');
                                     row_facilities.setAttribute('class', 'row mb-1');
 
@@ -407,7 +397,7 @@
                                     t_facilities.setAttribute('class', 'fs-5');
                                     t_facilities.textContent = "สิ่งอำนวยความสะดวก";
 
-                                    var mainfacility = [1, 5, 6, 8, 9, 12];
+                                    var mainfacility = [0, 1, 2, 3, 4, 5, 6];
 
                                     for (var c = 0; c < 6; c++) {
                                         // if (allfacility[c].room_type_id == room_type[i].id) {
@@ -714,7 +704,8 @@
                     const row_facilities = document.createElement('div');
                     row_facilities.setAttribute('class', 'row');
 
-                    var mainfacility = [1, 5, 6, 8, 9, 12];
+                    var mainfacility = [0, 1, 2, 3, 4, 5, 6];
+
 
                     for (var c = 0; c < 6; c++) {
                         // if (allfacility[c].room_type_id == room_type[i].id) {
