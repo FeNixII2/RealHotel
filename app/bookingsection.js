@@ -1,4 +1,4 @@
-module.exports = function (app, con, moment, transporter) {
+module.exports = function(app, con, moment, transporter) {
     app.post("/booking_search", (req, res) => {
         var { checkin, checkout, roomtype } = req.body;
         if (roomtype != 'all') {
@@ -6,11 +6,12 @@ module.exports = function (app, con, moment, transporter) {
                 if (err) throw err
                 const roomTypeIds = roomTypeResults.map(roomType => roomType.id);
                 // const placeholders = roomTypeIds.map(() => '?').join(',');
-                console.log(roomTypeIds);
+                // console.log(roomTypeIds);
 
                 con.query(`SELECT COUNT(*) as count_available_rooms, id_typeroom FROM rooms WHERE id_typeroom IN (?) AND num_room NOT IN (SELECT num_room FROM reserved WHERE id_typeroom IN (?) AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?)) AND status NOT IN ('4', '5')) GROUP BY id_typeroom`, [roomTypeIds, roomTypeIds, checkin, checkout, checkin, checkout, checkin, checkout], (err, results) => {
                     if (err) throw err;
                     con.query("SELECT roomtype_facility.id,roomtype_facility.room_type_id, roomtype_facility.facility_id ,facility.name , facility.type_id , facility.class , facility.class_nameicon  FROM roomtype_facility JOIN facility ON roomtype_facility.facility_id = facility.id JOIN roomstype ON roomstype.id = roomtype_facility.room_type_id order by roomtype_facility.room_type_id asc , facility.id  asc", (err, allfacility) => {
+                        console.log(allfacility);
                         if (err) throw err;
                         con.query(`select * from roomstype WHERE id IN (?) order by price asc`, [roomTypeIds], (err, roomtype) => {
                             if (err) throw err;
@@ -44,7 +45,7 @@ module.exports = function (app, con, moment, transporter) {
         con.query("select id from customer where f_name = ? and l_name = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
             if (err) throw err
             if (cus_id.length != 0) {
-                reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id, function (reserved_custom_id) {
+                reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id, function(reserved_custom_id) {
                     console.log("Reserved custom ID:", reserved_custom_id);
                     res.send({ reserved_custom_id })
                 });
@@ -52,7 +53,7 @@ module.exports = function (app, con, moment, transporter) {
                 con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, cus_id) => {
                     var cus_id = cus_id.insertId
                     if (err) throw err
-                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, function (reserved_custom_id) {
+                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, function(reserved_custom_id) {
                         console.log("Reserved custom ID:", reserved_custom_id);
                         res.send({ reserved_custom_id })
                     });

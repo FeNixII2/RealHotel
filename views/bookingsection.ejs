@@ -217,6 +217,7 @@
             var allfacility = body.allfacility
 
             console.log(room_type);
+            console.log(allfacility);
 
 
             if (success == true) {
@@ -408,7 +409,7 @@
 
                                     var mainfacility = [1, 5, 6, 8, 9, 12];
 
-                                    for (var c = 0; c < 5; c++) {
+                                    for (var c = 0; c < 6; c++) {
                                         // if (allfacility[c].room_type_id == room_type[i].id) {
                                         // console.log("roomtype[" + c + "].id: " + allfacility[c].room_type_id);
                                         // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
@@ -470,8 +471,7 @@
 
                                     more_facility.onclick = function(event) {
                                         event.preventDefault();
-                                        // console.log(this.value);
-                                        // console.log(room_type[this.value - 1].id);
+                                        console.log(this.value);
                                         var modal = document.getElementById('facilitymodal');
                                         const modalInstance = new bootstrap.Modal(modal);
                                         modalInstance.show();
@@ -481,8 +481,11 @@
 
                                         var body_m = document.getElementById('body_facility')
                                         body_m.innerHTML = '';
+
+
                                         for (var c = 0; c < allfacility.length; c++) {
-                                            if (allfacility[c].room_type_id == room_type[this.value - 1].id) {
+                                            console.log(allfacility[c].room_type_id);
+                                            if (allfacility[c].room_type_id == this.value) {
                                                 // console.log("roomtype[" + c + "].name: " + allfacility[c].room_type_id);
                                                 // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
                                                 const col_modalfacility = document.createElement('div');
@@ -713,7 +716,7 @@
 
                     var mainfacility = [1, 5, 6, 8, 9, 12];
 
-                    for (var c = 0; c < 5; c++) {
+                    for (var c = 0; c < 6; c++) {
                         // if (allfacility[c].room_type_id == room_type[i].id) {
                         // console.log("roomtype[" + c + "].id: " + allfacility[c].room_type_id);
                         // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
@@ -758,7 +761,7 @@
                         var body_m = document.getElementById('body_facility')
                         body_m.innerHTML = '';
                         for (var c = 0; c < allfacility.length; c++) {
-                            if (allfacility[c].room_type_id == room_type[0].id) {
+                            if (allfacility[c].room_type_id == this.value) {
                                 // console.log("roomtype[" + c + "].name: " + allfacility[c].room_type_id);
                                 // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
                                 const col_modalfacility = document.createElement('div');
@@ -911,6 +914,7 @@
                 backdrop: true,
                 customClass: {
                     backdrop: 'swal-backdrop-blur',
+
                 },
             });
 
