@@ -63,9 +63,8 @@
                                     <select id="roomstype" class="form-select form-control " style="width: 100%;">
                                         <option value="all" selected="selected">ทั้งหมด</option>
                                         <%for(var i=0 ;i<roomstype.length;i++){%>
-                                            <option value="<%= roomstype[i].id %>">
+                                            <option value="<%= roomstype[i].name %>">
                                                 <%= roomstype[i].name_th %>
-                                                    <%= roomstype[i].bed %>
                                             </option>
                                             <%}%>
                                     </select>

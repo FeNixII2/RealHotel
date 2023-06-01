@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 
 // database connect setup
 const con = mysql.createConnection({
-    host: "192.168.1.92",
+    host: "25.19.244.218",
     // host: "localhost",
     user: "root",
     password: "",
