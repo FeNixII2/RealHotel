@@ -44,3 +44,14 @@ h6 {
     height: auto;
     object-fit: cover;
 }
+
+.p_reccomend {
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+@media (max-width: 575.98px) {
+    .p_reccomend {
+        padding: 0;
+    }
+}
