@@ -65,7 +65,7 @@ let transporter = nodemailer.createTransport({
 app.get("/", (req, res) => {
     con.query("select * from roomstype", (err, datarooms) => {
         con.query(
-            "select * from roomstype order by price asc",
+            "select name,name_th from roomstype group by name order by price asc",
             (err, roomstype) => {
                 con.query("select * from payment", (err, payment_type) => {
                     res.render("mainpage.ejs", { datarooms, roomstype, payment_type });
