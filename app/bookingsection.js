@@ -68,7 +68,7 @@ module.exports = function(app, con, moment, transporter) {
         const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
         con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
             if (err) throw err
-            var reserved_custom_date = currentDate.format('DDMMYYHHmm')
+            var reserved_custom_date = currentDate.format('DMYYHmm')
             var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
             con.query("insert into reserved (num_room,id_typeroom,checkin,checkout,cus_id, more_info, payment,reserved_id,status) values (?,?,?,?,?,?,?,?,0) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment, reserved_custom_id], (err, result) => {
                 if (err) throw err
