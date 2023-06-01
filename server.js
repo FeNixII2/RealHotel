@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 
 // database connect setup
 const con = mysql.createConnection({
-  host: "25.19.244.218",
+  host: "192.168.1.92",
   // host: "localhost",
   user: "root",
   password: "",
@@ -65,7 +65,7 @@ let transporter = nodemailer.createTransport({
 app.get("/", (req, res) => {
   con.query("select * from roomstype", (err, datarooms) => {
     con.query(
-      "select * from roomstype order by price asc",
+      "select name from roomstype group by name order by price asc",
       (err, roomstype) => {
         con.query("select * from payment", (err, payment_type) => {
           res.render("mainpage.ejs", { datarooms, roomstype, payment_type });
