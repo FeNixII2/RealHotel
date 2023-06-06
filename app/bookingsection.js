@@ -1,4 +1,4 @@
-module.exports = function(app, con, moment, transporter) {
+module.exports = function (app, con, moment, transporter) {
     app.post("/booking_search", (req, res) => {
         var { checkin, checkout, roomtype } = req.body;
         if (roomtype != 'all') {
@@ -45,7 +45,7 @@ module.exports = function(app, con, moment, transporter) {
         con.query("select id from customer where f_name = ? and l_name = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
             if (err) throw err
             if (cus_id.length != 0) {
-                reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id, function(reserved_custom_id) {
+                reserv(more_info, payment, checkin, checkout, room_type, cus_id[0].id, function (reserved_custom_id) {
                     console.log("Reserved custom ID:", reserved_custom_id);
                     res.send({ reserved_custom_id })
                 });
@@ -53,7 +53,7 @@ module.exports = function(app, con, moment, transporter) {
                 con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, cus_id) => {
                     var cus_id = cus_id.insertId
                     if (err) throw err
-                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, function(reserved_custom_id) {
+                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, function (reserved_custom_id) {
                         console.log("Reserved custom ID:", reserved_custom_id);
                         res.send({ reserved_custom_id })
                     });
