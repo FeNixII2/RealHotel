@@ -41,7 +41,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#home" onclick="showSection('home')">Hotel BS</a>
+            <a class="navbar-brand" href="" onclick="showSection('home')">Hotel BS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,7 +74,7 @@
                         <button type="button" class="btn btn-secondary mx-3" id="searchbtn" onclick="booking_search(),showSection('booking')">ค้นหา</button>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                        <a class="nav-link" href="#home_new" onclick="showSection('home_new')">หน้าหลัก</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
@@ -86,7 +86,7 @@
                         <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking'),booking_search()">เช็คห้องพัก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contract" onclick="showSection('contract'),booking_search()">Contract</a>
+                        <a class="nav-link" href="#contact" onclick="showSection('contact'),booking_search()">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -97,10 +97,11 @@
 
     <main>
         <%- include('homesection.ejs') %>
-            <%- include('roomssection.ejs') %>
-                <%- include('bookingsection.ejs') %>
-                    <%- include('checkbooking.ejs') %>
-                        <%- include('contract.ejs') %>
+            <%- include('homesection_new.ejs') %>
+                <%- include('roomssection.ejs') %>
+                    <%- include('bookingsection.ejs') %>
+                        <%- include('checkbooking.ejs') %>
+                            <%- include('contact.ejs') %>
     </main>
 
 
@@ -128,6 +129,18 @@
         });
         // show the selected section
         document.getElementById(id).style.display = 'block';
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    function handleHashChange() {
+        // Get the updated hash value
+        var newHash = window.location.hash.substring(1);
+        console.log(newHash);
+
+        // Perform actions based on the new hash value
+        // For example, you can show/hide content or trigger specific functionality
+        showSection(newHash)
     }
 
     function handleScreenSizeChange() {
@@ -167,22 +180,6 @@
     }
     handleScreenSizeChange();
     window.addEventListener('resize', handleScreenSizeChange);
-
-    window.addEventListener('load', function () {
-        document.click
-    });
-
-    window.onload = function () {
-        if (window.jQuery) {
-            $(document).click(function (event) {
-                var clickover = $(event.target);
-                var _opened = $(".navbar-collapse").hasClass("collapse show");
-                if (_opened === true && (!clickover.hasClass("navbar-toggler") || !clickover.hasClass("navbar-toggler-icon"))) {
-                    $("button.navbar-toggler").click();
-                }
-            });
-        }
-    }
 </script>
 
 </html>
