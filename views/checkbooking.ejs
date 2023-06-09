@@ -47,10 +47,6 @@
 
         } else {
 
-
-
-
-
             fetch("/checkbooking", {
                 method: "post",
                 headers: {
@@ -63,13 +59,8 @@
                 })
             }).then((response) => response.json()).then((body) => {
                 var idnum_booking = body.allbooking
-                console.log(idnum_booking);
-
-
-
-
-
-                if (idnum_booking.length == 0) {
+                var success = body.success
+                if (success == false) {
                     Swal.fire({
                         title: 'ไม่มีข้อมูลการจองห้องพัก',
                         backdrop: true,
@@ -77,15 +68,13 @@
                             backdrop: 'swal-backdrop-blur',
                         },
                     });
-                } else {
+                } else if (success == true) {
 
                     for (var index = 0; index < idnum_booking.length; index++) {
 
                         const textlist5 = document.createElement('div');
                         const collist5 = document.createElement('div');
                         collist5.setAttribute('class', 'col-12 col-sm-6 col-md-2 col-lg-2 d-flex bt_listbooking justify-content-center ');
-
-
 
                         // console.log(idnum_booking[index].reserved_id);
                         if (idnum_booking[index].status == 0) {
