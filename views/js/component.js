@@ -1,14 +1,14 @@
 class Footer extends HTMLElement {
     constructor() {
-            super();
-        }
-        // style="background-color: #e0e0e0;"
+        super();
+    }
+    // style="background-color: #e0e0e0;"
     connectedCallback() {
         this.innerHTML = `
 
-        <footer class="footer bg-dark text-white text-center mt-auto py-3" style="width: 100vw;">
+        <footer class="footer bg-dark text-white text-center mt-auto py-5" style="width: 100vw;">
         <div class="container">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <ul class="nav justify-content-center border-bottom pb-5 mb-3">
                 <li class="nav-item"><a href="#home" onclick="showSection('home')" class="nav-link px-2 text-muted">หน้าหลัก</a></li>
                 <li class="nav-item"><a href="#rooms" onclick="showSection('rooms')" class="nav-link px-2 text-muted">ห้องพัก</a></li>
                 <li class="nav-item"><a href="#booking" onclick="showSection('booking'),booking_search()" class="nav-link px-2 text-muted">จองห้องพัก</a></li>

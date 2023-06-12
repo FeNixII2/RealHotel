@@ -9,7 +9,7 @@ module.exports = function (app, con, moment, transporter) {
             // console.log("have");
             con.query("select * from reserved JOIN customer ON reserved.cus_id = customer.id JOIN roomstype ON roomstype.id = reserved.id_typeroom WHERE ? = customer.p_num OR ? = reserved.reserved_id ORDER BY reserved.`status` asc", [idnumcheckbooking, idnumcheckbooking], (err, allbooking) => {
                 if (err) throw err
-                console.log(allbooking);
+                // console.log(allbooking);
                 res.send({ success: true, allbooking })
 
             });

@@ -16,16 +16,10 @@ h6 {
     float: right;
 }
 
-.row-card {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    margin: 0.5rem;
-    /* cursor: pointer; */
-    text-decoration: none;
-    /* height: 100%; */
+.img-block1 {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .img-fluid {
@@ -34,7 +28,7 @@ h6 {
 }
 
 .box-padding {
-    padding: 0.5rem;
+    padding: 0rem;
 }
 
 .media-custom {
@@ -60,6 +54,13 @@ a {
     transition: 0.3s;
 }
 
+.media-custom:hover .boxatt a {
+    background-color: rgb(255, 124, 37);
+    border-color: rgb(255, 124, 37);
+    color: white;
+    transition: 0.3s;
+}
+
 .row-service:hover i {
     color: rgb(255, 124, 37);
     transition: 0.2s;
@@ -70,7 +71,79 @@ a {
     transition: 0.2s;
 }
 
-.recfood {
-    background-color: rgb(250, 181, 54);
-    height: 35rem;
+.reccontact i {
+    color: #0d6efd;
+    transition: 0.2s;
+}
+
+.reccontact:hover i {
+    color: rgb(255, 124, 37);
+    transition: 0.2s;
+}
+
+.my-custom-class {
+    margin-top: 0px;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+    .carousel-item {
+        height: 250px;
+    }
+    .cardbookingall .carousel-item {
+        height: 250px;
+    }
+    .cardbooking .carousel-item {
+        height: 250px;
+    }
+    .bt_listbooking {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.recfood .carousel-item {
+    height: 350px;
+}
+
+
+/* size cardbooking all */
+
+.cardbookingall .carousel-item {
+    height: 360px;
+}
+
+.cardbookingall .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* size cardbooking all */
+
+
+/* size cardbooking  */
+
+.cardbooking .carousel-item {
+    height: 360px;
+}
+
+.cardbooking .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* size cardbooking  */
+
+.card_r1 .carousel-item {
+    height: 400px;
+    object-fit: cover;
 }
