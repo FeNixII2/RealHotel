@@ -63,12 +63,42 @@ let transporter = nodemailer.createTransport({
 });
 
 app.get("/", (req, res) => {
-    con.query("select * from roomstype", (err, datarooms) => {
+    con.query("SELECT mr.*,imr.img from main_roomtype AS mr LEFT JOIN  img_main_roomtype AS imr ON mr.id = imr.main_roomtype_id ", (err, datarooms) => {
+        // console.log(datarooms);
+
+        const extractedArray = datarooms.map(item => ({
+            name: item.name,
+            img: item.img
+        }));
+
+        console.log(extractedArray);
+
+        const groupedData = datarooms.reduce((result, item) => {
+            if (!result[item.name]) {
+                result[item.name] = item;
+                delete result[item.name].img; // Exclude name_th property
+            }
+            return result;
+        }, {});
+        // Convert the grouped data object back to an array
+        const groupedArray = Object.values(groupedData);
+
+
+
+
+
+
+        // console.log(groupedArray);
+
+        console.log(groupedArray);
+
+
         con.query(
             "select name,name_th from roomstype group by name order by price asc",
             (err, roomstype) => {
                 con.query("select * from payment", (err, payment_type) => {
                     res.render("mainpage.ejs", { datarooms, roomstype, payment_type });
+
                 });
             }
         );

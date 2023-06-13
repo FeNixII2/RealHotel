@@ -85,16 +85,8 @@ a {
     margin-top: 0px;
 }
 
-.carousel-item {
-    height: 500px;
-}
 
-.carousel-item img {
-    height: 100%;
-    object-fit: cover;
-}
-
-@media (max-width: 575.98px) {
+/* @media (max-width: 575.98px) {
     .carousel-item {
         height: 250px;
     }
@@ -107,10 +99,39 @@ a {
     .bt_listbooking {
         margin-bottom: 0.5rem;
     }
+} */
+
+@media (min-width: 992px) {
+    /* Desktop */
+    .setimg-h-recroom .carousel-item {
+        height: 600px;
+    }
+    .setimg-h-recroom .img {
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.recfood .carousel-item {
-    height: 350px;
+@media (max-width: 991px) {
+    /* Tablets */
+    .setimg-h-recroom .carousel-item {
+        height: 600px;
+    }
+    .setimg-h-recroom .img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Mobile */
+    .setimg-h-recroom .carousel-item {
+        height: 400px;
+    }
+    .setimg-h-recroom .img {
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 
@@ -143,7 +164,12 @@ a {
 
 /* size cardbooking  */
 
-.card_r1 .carousel-item {
-    height: 400px;
-    object-fit: cover;
+
+/* .card_r1 .carousel-item {
+    height: 600px;
+} */
+
+.setcard-recroom {
+    background: #fff;
+    box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
 }
