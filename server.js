@@ -66,14 +66,14 @@ app.get("/", (req, res) => {
     con.query("SELECT mr.*,imr.img from main_roomtype AS mr LEFT JOIN  img_main_roomtype AS imr ON mr.id = imr.main_roomtype_id ", (err, datarooms) => {
         // console.log(datarooms);
 
-        const extractedArray = datarooms.map(item => ({
+        const recroom_img = datarooms.map(item => ({
             name: item.name,
             img: item.img
         }));
 
-        console.log(extractedArray);
 
-        const groupedData = datarooms.reduce((result, item) => {
+
+        const recroom_data = datarooms.reduce((result, item) => {
             if (!result[item.name]) {
                 result[item.name] = item;
                 delete result[item.name].img; // Exclude name_th property
@@ -81,23 +81,16 @@ app.get("/", (req, res) => {
             return result;
         }, {});
         // Convert the grouped data object back to an array
-        const groupedArray = Object.values(groupedData);
+        const recroom_type = Object.values(recroom_data);
 
-
-
-
-
-
-        // console.log(groupedArray);
-
-        console.log(groupedArray);
-
+        // console.log(recroom_img);
+        // console.log(recroom_type);
 
         con.query(
             "select name,name_th from roomstype group by name order by price asc",
             (err, roomstype) => {
                 con.query("select * from payment", (err, payment_type) => {
-                    res.render("mainpage.ejs", { datarooms, roomstype, payment_type });
+                    res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type });
 
                 });
             }
