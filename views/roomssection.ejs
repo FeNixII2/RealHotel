@@ -6,113 +6,7 @@
 
         <div class="container">
 
-            <div class="setcard-recroom mb-5 ">
-                <div class="row p-2">
-                    <div class="col-lg-7 col-md-6 col-sm-12 col-12">
-                        <div class="setimg-h-recroom">
-                            <div id="carouselExampleIndicators11" class="carousel slide carousel-fade" data-bs-ride="true">
-                                <div class="carousel-indicators">
 
-                                    <button type="button" data-bs-target="#carouselExampleIndicators11" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 3"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators11" data-bs-slide-to="1" aria-label="Slide 4"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators11" data-bs-slide-to="2" aria-label="Slide 5"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="mainpage.jpg" class="d-block   " alt="...">
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="bf3.jpg" class="d-block   " alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="testsocial.jpg" class="d-block   " alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators11" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators11" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-sm-12 col-12 d-flex flex-column justify-content-center">
-
-
-                        <div class=" fs-3 fw-semibold">Standard (ธรรมดา)</div>
-                        <div class="detailsroom my-3">
-                            <div class="row fs-5 mb-3">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                    ราคาเริ่มต้น
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
-                                    <div class="fs-3">450฿</div>
-                                    <div class="">/คืน</div>
-
-                                </div>
-
-                            </div>
-                            <div class="fs-5">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <i class="fa-solid fa-check me-2"></i>ขนาดห้อง
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        35 ตารางเมตร
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <i class="fa-solid fa-check me-2"></i>ผู้เข้าพัก
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        สูงสุด 2 คน
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <i class="fa-solid fa-check me-2"></i>ขนาดเตียง
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        คิงไซส์ 6 ft
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <i class="fa-solid fa-check me-2"></i>สิ่งอำนวยความสะดวก
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        ฝักบัว, ห้องน้ำ, แอร์
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        </i>รายระเอียด
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        เป็นห้องพักแบบมาตราฐาน มีการตกแต่งที่สวยงาม ตามสไตล์ของโรงแรม
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-auto d-flex  pt-5">
-                                <a href="#booking" class=" btn btn-primary fw-semibold fs-5 " onclick="sign_room('Standard')">
-                            จองห้องพัก
-                        </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
 
             <!-- <div class="setcard-recroom mb-5 ">
                 <div class="row p-2">
@@ -239,39 +133,39 @@
                                         for(var j = 0; j < recroom_img.length; j++){
 
                                             if(recroom_type[i].name == recroom_img[j].name){
-                                                 count +=1;
-
                                                 %>
-
-                                            <% if( j == 0){ %>
-                                                <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+                                            <% if( count == 0){ %>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" class="active" aria-current="true" aria-label="Slide <%= count %>"></button>
                                                 <%}else{%>
-                                                    <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= j %>" aria-label="Slide <%= count+1 %>"></button>
-
-                                                    <%}%>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" aria-label="Slide <%= count %>"></button>
+                                                    <%}
+                                                    count +=1;
+                                                    %>
                                                         <%}%>
                                                             <% } count = 0 %>
 
                                     </div>
                                     <div class="carousel-inner">
-                                        <% for(var j = 0; j < recroom_img.length; j++){
-                                        if(recroom_type[i].name==recroom_img[j].name){ %>
-                                            <% if( j==0){ %>
+                                        <% var imgcount = 0
+                                        for(var j = 0; j < recroom_img.length; j++){
+                                            if(recroom_type[i].name == recroom_img[j].name){
+                                                %>
+                                            <% if( imgcount == 0){ %>
                                                 <div class="carousel-item active">
-                                                    <div class="d-flex align-items-center justify-content-center ">
-                                                        <img src="<%= recroom_img[j].img%>" class="d-block " alt="...">
-                                                    </div>
+                                                    <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
                                                 </div>
-
                                                 <%}else{%>
                                                     <div class="carousel-item">
-                                                        <div class="d-flex align-items-center justify-content-center ">
-                                                            <img src="<%= recroom_img[j].img%>" class="d-block " alt="...">
-                                                        </div>
+                                                        <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
                                                     </div>
-                                                    <%}%>
+                                                    <%}
+                                                    imgcount +=1;
+                                                    %>
                                                         <%}%>
-                                                            <% } %>
+                                                            <% } imgcount = 0 %>
+
+
+
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -351,7 +245,7 @@
                                 </div>
 
                                 <div class="mt-auto d-flex  pt-5">
-                                    <a href="#booking" class=" btn btn-primary fw-semibold fs-5 " onclick="sign_room('Standard')">
+                                    <a href="#booking" class=" btn btn-primary fw-semibold fs-5 " onclick="sign_room('<%= recroom_type[i].name %>')">
                                 จองห้องพัก
                             </a>
                                 </div>

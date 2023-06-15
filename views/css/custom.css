@@ -40,6 +40,19 @@ h6 {
     padding-right: 1rem;
 }
 
+.sdd {
+    background-color: cadetblue;
+}
+
+.img-fluid {
+    object-fit: cover;
+    height: 15rem;
+}
+
+.imgrecroom {
+    object-fit: cover;
+}
+
 a {
     text-decoration: none;
 }

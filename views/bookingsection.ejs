@@ -38,7 +38,7 @@
 
 
 <script>
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function() {
         dateTimepicker()
     })
 
@@ -70,15 +70,17 @@
         }).then((response) => response.json()).then((body) => {
             var available_room = body.count_available_rooms
             var room_type = body.roomtype
+            var sub_imgroom = body.sub_imgroom
             var success = body.success
             var allfacility = body.allfacility
 
             // console.log(room_type);
-            // console.log(allfacility);
+            // console.log(sub_imgroom);
 
 
             if (success == true) {
                 if (available_room.length > 1) {
+                    var imgcount = 0
                     for (i = 0; i < room_type.length; i++) {
                         for (j = 0; j < available_room.length; j++) {
                             if (available_room[j].count_available_rooms != 0) {
@@ -90,109 +92,80 @@
 
 
                                     const cardDiv = document.createElement('div');
-                                    cardDiv.setAttribute('class', 'card cardbookingall');
+                                    cardDiv.setAttribute('class', 'card sdd cardbookingall');
                                     const row = document.createElement('div');
                                     row.setAttribute('class', 'row g-0');
                                     const col1 = document.createElement('div');
                                     col1.setAttribute('class', 'col-md-6 ');
+
+
+                                    console.log(room_type[i].id);
                                     const divimgcarousel = document.createElement('div');
-                                    divimgcarousel.setAttribute('id', 'carouselIndicators' + i);
+                                    divimgcarousel.setAttribute('id', 'idimg' + i);
                                     divimgcarousel.setAttribute('class', 'carousel slide carousel-fade');
-                                    divimgcarousel.setAttribute('data-bs-ride', 'carousel');
-                                    divimgcarousel.setAttribute('data-bs-interval', '3000');
+                                    divimgcarousel.setAttribute('data-bs-ride', 'true');
+                                    const bottom_button = document.createElement('div');
+                                    divimgcarousel.setAttribute('class', 'carousel-indicators');
 
-                                    const divcarouselindicator = document.createElement('div');
-                                    divcarouselindicator.setAttribute('class', 'carousel-indicators');
-                                    const btn_divcarouselindicator = document.createElement('button');
-                                    btn_divcarouselindicator.setAttribute('type', 'button');
-                                    btn_divcarouselindicator.setAttribute('data-bs-target', '#carouselIndicators' + i);
-                                    btn_divcarouselindicator.setAttribute('data-bs-slide-to', '0');
-                                    btn_divcarouselindicator.setAttribute('class', 'active');
 
-                                    btn_divcarouselindicator.setAttribute('aria-current', 'true');
-                                    btn_divcarouselindicator.setAttribute('aria-label', 'Slide 1');
-                                    const btn_divcarouselindicator1 = document.createElement('button');
-                                    btn_divcarouselindicator1.setAttribute('type', 'button');
-                                    btn_divcarouselindicator1.setAttribute('data-bs-target', '#carouselIndicators' + i);
-                                    btn_divcarouselindicator1.setAttribute('data-bs-slide-to', '1');
-                                    btn_divcarouselindicator1.setAttribute('aria-label', 'Slide 2');
-                                    const btn_divcarouselindicator2 = document.createElement('button');
-                                    btn_divcarouselindicator2.setAttribute('type', 'button');
-                                    btn_divcarouselindicator2.setAttribute('data-bs-target', '#carouselIndicators' + i);
-                                    btn_divcarouselindicator2.setAttribute('data-bs-slide-to', '2');
-                                    btn_divcarouselindicator2.setAttribute('aria-label', 'Slide 3');
-                                    divcarouselindicator.appendChild(btn_divcarouselindicator);
-                                    divcarouselindicator.appendChild(btn_divcarouselindicator1);
-                                    divcarouselindicator.appendChild(btn_divcarouselindicator2);
-                                    const divcarouselinner = document.createElement('div');
-                                    divcarouselinner.setAttribute('class', 'carousel-inner');
-                                    const divcarousel_item = document.createElement('div');
-                                    divcarousel_item.setAttribute('class', 'carousel-item active');
-                                    divcarousel_item.setAttribute('data-bs-interval', '3000');
-                                    const divcarousel_item1 = document.createElement('div');
-                                    divcarousel_item1.setAttribute('class', 'carousel-item');
-                                    divcarousel_item1.setAttribute('data-bs-interval', '3000');
-                                    const divcarousel_item2 = document.createElement('div');
-                                    divcarousel_item2.setAttribute('class', 'carousel-item');
-                                    divcarousel_item2.setAttribute('data-bs-interval', '3000');
-                                    const img = document.createElement('img');
-                                    img.setAttribute('src', room_type[i].img1);
-                                    img.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-                                    const img1 = document.createElement('img');
-                                    img1.setAttribute('src', room_type[i].img2);
-                                    img1.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-                                    const img2 = document.createElement('img');
-                                    img2.setAttribute('src', room_type[i].img3);
-                                    img2.setAttribute('class', 'img-fluid w-100 h-100 d-block');
-                                    divcarousel_item.appendChild(img);
-                                    divcarousel_item1.appendChild(img1);
-                                    divcarousel_item2.appendChild(img2);;
 
-                                    divcarouselinner.appendChild(divcarousel_item);
-                                    divcarouselinner.appendChild(divcarousel_item1);
-                                    divcarouselinner.appendChild(divcarousel_item2);
+                                    // for (let u = 0; u < sub_imgroom.length; u++) {
+                                    //     if (room_type[i].id == sub_imgroom[u].id) {
+                                    //         console.log(sub_imgroom[u].id + sub_imgroom[u].img);
 
-                                    const btncarousel_l = document.createElement('button');
-                                    btncarousel_l.setAttribute('class', 'carousel-control-prev');
-                                    btncarousel_l.setAttribute('type', 'button');
-                                    btncarousel_l.setAttribute('data-bs-target', '#carouselIndicators' + i);
-                                    btncarousel_l.setAttribute('data-bs-slide', 'prev');
+                                    //         if (imgcount == 0) {
 
-                                    const span_l1 = document.createElement('span');
-                                    span_l1.setAttribute('class', 'carousel-control-prev-icon');
-                                    span_l1.setAttribute('aria-hidden', 'true');
+                                    //             var create_bottom_button = document.createElement('button');
+                                    //             create_bottom_button.setAttribute('type', 'button');
+                                    //             create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
+                                    //             create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
+                                    //             create_bottom_button.setAttribute('class', 'active');
+                                    //             create_bottom_button.setAttribute('aria-current', 'true');
+                                    //             create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
+                                    //         } else {
+                                    //             var create_bottom_button = document.createElement('button');
+                                    //             create_bottom_button.setAttribute('type', 'button');
+                                    //             create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
+                                    //             create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
+                                    //             create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
+                                    //         }
+                                    //         imgcount += 1;
 
-                                    const span_l2 = document.createElement('span');
-                                    span_l2.setAttribute('class', 'visually-hidden');
-                                    span_l2.textContent = 'Previous'
+                                    //     }
+                                    //     bottom_button.appendChild(create_bottom_button);
+                                    //     imgcount = 0
 
-                                    btncarousel_l.appendChild(span_l1);
-                                    btncarousel_l.appendChild(span_l2);
-
-                                    const btncarousel_r = document.createElement('button');
-                                    btncarousel_r.setAttribute('class', 'carousel-control-next');
-                                    btncarousel_r.setAttribute('type', 'button');
-                                    btncarousel_r.setAttribute('data-bs-target', '#carouselIndicators' + i);
-                                    btncarousel_r.setAttribute('data-bs-slide', 'next');
-
-                                    const span1 = document.createElement('span');
-                                    span1.setAttribute('class', 'carousel-control-next-icon');
-                                    span1.setAttribute('aria-hidden', 'true');
-
-                                    const span2 = document.createElement('span');
-                                    span2.setAttribute('class', 'visually-hidden');
-                                    span2.textContent = 'Next'
-
-                                    btncarousel_r.appendChild(span1);
-                                    btncarousel_r.appendChild(span2);
-
-                                    divimgcarousel.appendChild(divcarouselindicator);
-                                    divimgcarousel.appendChild(divcarouselinner);
-                                    divimgcarousel.appendChild(btncarousel_l);
-                                    divimgcarousel.appendChild(btncarousel_r);
-
+                                    // }
+                                    divimgcarousel.appendChild(bottom_button);
 
                                     col1.appendChild(divimgcarousel);
+                                    // const img_carousel = document.createElement('div');
+                                    // img_carousel.setAttribute('class', 'carousel-inner');
+                                    // for (let u = 0; u < sub_imgroom.length; u++) {
+                                    //     if (room_type[i].id == sub_imgroom[u].id) {
+
+
+                                    //         if (imgcount == 0) {
+                                    //             var create_img_carousel = document.createElement('div');
+                                    //             create_bottom_button.setAttribute('class', 'carousel-item active');
+                                    //             var create_img = document.createElement('img');
+                                    //             create_img.setAttribute('src', sub_imgroom[u].img);
+                                    //             create_img_carousel.appendChild(create_img);
+                                    //         } else {
+                                    //             var create_img_carousel = document.createElement('div');
+                                    //             create_bottom_button.setAttribute('class', 'carousel-item');
+                                    //             var create_img = document.createElement('img');
+                                    //             create_img.setAttribute('src', sub_imgroom[u].img);
+                                    //             create_img_carousel.appendChild(create_img);
+                                    //         }
+                                    //         imgcount += 1;
+
+                                    //     }
+                                    //     img_carousel.appendChild(create_img_carousel);
+                                    //     imgcount = 0
+
+                                    // }
+
 
                                     const col2 = document.createElement('div');
                                     col2.setAttribute('class', 'col-md-6 ');
@@ -311,14 +284,14 @@
                                     more_facility.setAttribute('class', '');
                                     more_facility.setAttribute('href', '');
                                     more_facility.value = room_type[i].id
-                                    // more_facility.setAttribute('data-bs-toggle', 'modal');
-                                    // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                                        // more_facility.setAttribute('data-bs-toggle', 'modal');
+                                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
                                     more_facility.textContent = 'รายละเอียดเพิ่มเติม';
 
 
 
 
-                                    more_facility.onclick = function (event) {
+                                    more_facility.onclick = function(event) {
                                         event.preventDefault();
                                         // console.log(this.value);
                                         var modal = document.getElementById('facilitymodal');
@@ -361,7 +334,7 @@
                                     button.setAttribute('id', 'clickviewinfo');
                                     button.textContent = 'จองห้องนี้';
                                     button.value = room_type[i].id
-                                    button.onclick = function (i, j, event) {
+                                    button.onclick = function(i, j, event) {
                                         button.href = '#bookinfo'
                                         showSection('bookinfo')
                                         const roomtypeLabel = document.getElementById('roomtype-label');
@@ -592,14 +565,14 @@
                     more_facility.setAttribute('class', '');
                     more_facility.setAttribute('href', '');
                     more_facility.value = room_type[0].id
-                    // more_facility.setAttribute('data-bs-toggle', 'modal');
-                    // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
+                        // more_facility.setAttribute('data-bs-toggle', 'modal');
+                        // more_facility.setAttribute('data-bs-target', '#morefacility' + room_type[i].id);
                     more_facility.textContent = 'รายละเอียดเพิ่มเติม';
 
 
 
 
-                    more_facility.onclick = function (event) {
+                    more_facility.onclick = function(event) {
                         event.preventDefault();
                         // console.log(this.value);
                         // console.log(room_type[0].id);
@@ -670,7 +643,7 @@
                     button.setAttribute('id', 'clickviewinfo');
                     button.textContent = 'จองห้องนี้';
                     button.value = room_type[0].id
-                    button.onclick = function (event) {
+                    button.onclick = function(event) {
                         // const roomtypeLabel = document.getElementById('roomtype-label');
                         // roomtypeLabel.textContent = room_type[0].name_th + ' ' + room_type[0].bed;
                         reserv_modal(available_room[0], room_type[0]);
@@ -739,7 +712,7 @@
 
 
         document.getElementById('total-price').innerHTML = " " + (roomtype.price * (diffDays - 1))
-        // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
         document.getElementById('con_reserv').value = roomtype.id
     }
@@ -842,7 +815,7 @@
             locale: "th",
             dateFormat: "d-m-Y",
             minDate: new Date(),
-            onChange: function (selectedDates, dateStr, instance) {
+            onChange: function(selectedDates, dateStr, instance) {
 
                 if (checkout.value) {
                     if (checkout.value < dateStr) {

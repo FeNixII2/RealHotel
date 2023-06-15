@@ -13,11 +13,31 @@ module.exports = function (app, con, moment, transporter) {
                     con.query("SELECT roomtype_facility.id,roomtype_facility.room_type_id, roomtype_facility.facility_id ,facility.name , facility.type_id , facility.class , facility.class_nameicon  FROM roomtype_facility JOIN facility ON roomtype_facility.facility_id = facility.id JOIN roomstype ON roomstype.id = roomtype_facility.room_type_id order by roomtype_facility.room_type_id asc , facility.id  asc", (err, allfacility) => {
                         // console.log(allfacility);
                         if (err) throw err;
-                        con.query(`select * from roomstype WHERE id IN (?) order by price asc`, [roomTypeIds], (err, roomtype) => {
+                        con.query(`SELECT roomstype.id, roomstype.name, roomstype.name_th,
+                        roomstype.bed, roomstype.price, roomstype.size, roomstype.count_humen, roomstype.type_bed ,roomstype.size_bed
+                        , img_roomstype.img
+                         from roomstype LEFT JOIN img_roomstype on roomstype.id = img_roomstype.roomstype_id where roomstype.id IN (?) order by roomstype.price ASC`, [roomTypeIds], (err, dataroomstype) => {
                             if (err) throw err;
+                            const sub_imgroom = dataroomstype.map(item => ({
+                                id: item.id,
+                                img: item.img
+                            }));
+                            // console.log(sub_imgroom);
+
+                            const data_room = dataroomstype.reduce((result, item) => {
+                                if (!result[item.id]) {
+                                    result[item.id] = item;
+                                    delete result[item.id].img; // Exclude name_th property
+                                }
+                                return result;
+                            }, {});
+                            const roomtype = Object.values(data_room);
+                            // console.log(roomtype);
+
+
                             const count_available_rooms = results.reduce((acc, curr) => acc + curr.count_available_rooms, 0);
                             const success = count_available_rooms > 0;
-                            res.send({ success, count_available_rooms: results, roomtype, allfacility })
+                            res.send({ success, count_available_rooms: results, sub_imgroom, roomtype, allfacility })
                         });
                     })
                 });
