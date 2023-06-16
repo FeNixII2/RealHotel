@@ -41,7 +41,7 @@ h6 {
 }
 
 .sdd {
-    background-color: cadetblue;
+    background-color: white;
 }
 
 .img-fluid {
@@ -134,7 +134,7 @@ a {
 /* size cardbooking all */
 
 .cardbookingall .carousel-item {
-    height: 360px;
+    height: 30rem;
 }
 
 .cardbookingall .carousel-item img {

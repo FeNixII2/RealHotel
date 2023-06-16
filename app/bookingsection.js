@@ -32,7 +32,7 @@ module.exports = function (app, con, moment, transporter) {
                                 return result;
                             }, {});
                             const roomtype = Object.values(data_room);
-                            // console.log(roomtype);
+                            console.log(roomtype);
 
 
                             const count_available_rooms = results.reduce((acc, curr) => acc + curr.count_available_rooms, 0);

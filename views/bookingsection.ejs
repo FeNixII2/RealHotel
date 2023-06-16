@@ -80,15 +80,16 @@
 
             if (success == true) {
                 if (available_room.length > 1) {
-                    var imgcount = 0
+
                     for (i = 0; i < room_type.length; i++) {
+
                         for (j = 0; j < available_room.length; j++) {
                             if (available_room[j].count_available_rooms != 0) {
                                 if (available_room[j].id_typeroom == room_type[i].id) {
 
-
-
-                                    // console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
+                                    console.log(room_type[i].id + " " + room_type[i].name);
+                                    var imgcount = 0
+                                        // console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
 
 
                                     const cardDiv = document.createElement('div');
@@ -99,72 +100,100 @@
                                     col1.setAttribute('class', 'col-md-6 ');
 
 
-                                    console.log(room_type[i].id);
+
                                     const divimgcarousel = document.createElement('div');
                                     divimgcarousel.setAttribute('id', 'idimg' + i);
                                     divimgcarousel.setAttribute('class', 'carousel slide carousel-fade');
                                     divimgcarousel.setAttribute('data-bs-ride', 'true');
                                     const bottom_button = document.createElement('div');
-                                    divimgcarousel.setAttribute('class', 'carousel-indicators');
+                                    bottom_button.setAttribute('class', 'carousel-indicators');
+
+                                    const img_carousel = document.createElement('div');
+                                    img_carousel.setAttribute('class', 'carousel-inner');
+
+                                    for (let u = 0; u < sub_imgroom.length; u++) {
+                                        // console.log(room_type[i].id + " same id " + sub_imgroom[u].id);
+                                        if (room_type[i].id == sub_imgroom[u].id) {
+
+                                            console.log("imgcount: " + imgcount)
+                                            if (imgcount == 0) {
+                                                var create_bottom_button = document.createElement('button');
+                                                create_bottom_button.setAttribute('type', 'button');
+                                                create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
+                                                create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
+                                                create_bottom_button.setAttribute('class', 'active');
+                                                create_bottom_button.setAttribute('aria-current', 'true');
+                                                create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
+
+                                                var img_active = document.createElement('div');
+                                                img_active.setAttribute('class', 'carousel-item active');
+                                                var img_src = document.createElement('img');
+                                                img_src.setAttribute('src', sub_imgroom[u].img);
+                                                img_src.setAttribute('class', 'w-100');
+
+
+                                            } else {
+                                                var create_bottom_button = document.createElement('button');
+                                                create_bottom_button.setAttribute('type', 'button');
+                                                create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
+                                                create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
+                                                create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
+
+                                                var img_active = document.createElement('div');
+                                                img_active.setAttribute('class', 'carousel-item ');
+                                                var img_src = document.createElement('img');
+                                                img_src.setAttribute('src', sub_imgroom[u].img);
+                                                img_src.setAttribute('class', 'w-100');
+                                            }
+                                            imgcount = imgcount + 1;
+                                            bottom_button.appendChild(create_bottom_button);
+                                            img_active.appendChild(img_src);
+                                            img_carousel.appendChild(img_active);
+                                        }
+                                    }
+
+                                    img_btn_prev = document.createElement('button');
+                                    img_btn_prev.setAttribute('class', 'carousel-control-prev');
+                                    img_btn_prev.setAttribute('type', 'button');
+                                    img_btn_prev.setAttribute('data-bs-target', '#idimg' + i);
+                                    img_btn_prev.setAttribute('data-bs-slide', 'prev');
+                                    span_img_btn_prev_i = document.createElement('span');
+                                    span_img_btn_prev_i.setAttribute('class', 'carousel-control-prev-icon');
+                                    span_img_btn_prev_i.setAttribute('aria-hidden', 'true');
+                                    span_img_btn_prev = document.createElement('span');
+                                    span_img_btn_prev.setAttribute('class', 'visually-hidden');
+                                    span_img_btn_prev.textContent = "Previous";
+                                    img_btn_prev.appendChild(span_img_btn_prev_i);
+                                    img_btn_prev.appendChild(span_img_btn_prev);
+
+                                    img_btn_next = document.createElement('button');
+                                    img_btn_next.setAttribute('class', 'carousel-control-next');
+                                    img_btn_next.setAttribute('type', 'button');
+                                    img_btn_next.setAttribute('data-bs-target', '#idimg' + i);
+                                    img_btn_next.setAttribute('data-bs-slide', 'next');
+                                    span_img_btn_next_i = document.createElement('span');
+                                    span_img_btn_next_i.setAttribute('class', 'carousel-control-next-icon');
+                                    span_img_btn_next_i.setAttribute('aria-hidden', 'true');
+                                    span_img_btn_next = document.createElement('span');
+                                    span_img_btn_next.setAttribute('class', 'visually-hidden');
+                                    span_img_btn_next.textContent = "Next";
+                                    img_btn_next.appendChild(span_img_btn_next_i);
+                                    img_btn_next.appendChild(span_img_btn_next);
 
 
 
-                                    // for (let u = 0; u < sub_imgroom.length; u++) {
-                                    //     if (room_type[i].id == sub_imgroom[u].id) {
-                                    //         console.log(sub_imgroom[u].id + sub_imgroom[u].img);
 
-                                    //         if (imgcount == 0) {
+                                    imgcount = 0
 
-                                    //             var create_bottom_button = document.createElement('button');
-                                    //             create_bottom_button.setAttribute('type', 'button');
-                                    //             create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
-                                    //             create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
-                                    //             create_bottom_button.setAttribute('class', 'active');
-                                    //             create_bottom_button.setAttribute('aria-current', 'true');
-                                    //             create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
-                                    //         } else {
-                                    //             var create_bottom_button = document.createElement('button');
-                                    //             create_bottom_button.setAttribute('type', 'button');
-                                    //             create_bottom_button.setAttribute('data-bs-target', '#idimg' + i);
-                                    //             create_bottom_button.setAttribute('data-bs-slide-to', imgcount);
-                                    //             create_bottom_button.setAttribute('aria-label', 'Slide' + imgcount);
-                                    //         }
-                                    //         imgcount += 1;
 
-                                    //     }
-                                    //     bottom_button.appendChild(create_bottom_button);
-                                    //     imgcount = 0
 
-                                    // }
                                     divimgcarousel.appendChild(bottom_button);
+                                    divimgcarousel.appendChild(img_carousel);
+                                    divimgcarousel.appendChild(img_btn_prev);
+                                    divimgcarousel.appendChild(img_btn_next);
 
                                     col1.appendChild(divimgcarousel);
-                                    // const img_carousel = document.createElement('div');
-                                    // img_carousel.setAttribute('class', 'carousel-inner');
-                                    // for (let u = 0; u < sub_imgroom.length; u++) {
-                                    //     if (room_type[i].id == sub_imgroom[u].id) {
 
-
-                                    //         if (imgcount == 0) {
-                                    //             var create_img_carousel = document.createElement('div');
-                                    //             create_bottom_button.setAttribute('class', 'carousel-item active');
-                                    //             var create_img = document.createElement('img');
-                                    //             create_img.setAttribute('src', sub_imgroom[u].img);
-                                    //             create_img_carousel.appendChild(create_img);
-                                    //         } else {
-                                    //             var create_img_carousel = document.createElement('div');
-                                    //             create_bottom_button.setAttribute('class', 'carousel-item');
-                                    //             var create_img = document.createElement('img');
-                                    //             create_img.setAttribute('src', sub_imgroom[u].img);
-                                    //             create_img_carousel.appendChild(create_img);
-                                    //         }
-                                    //         imgcount += 1;
-
-                                    //     }
-                                    //     img_carousel.appendChild(create_img_carousel);
-                                    //     imgcount = 0
-
-                                    // }
 
 
                                     const col2 = document.createElement('div');
