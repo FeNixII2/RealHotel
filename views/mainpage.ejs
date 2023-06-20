@@ -77,9 +77,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#booking" onclick="showSection('booking'),booking_search()">จองห้องพัก</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking'),booking_search()">เช็คห้องพัก</a>
                     </li>
@@ -109,11 +109,11 @@
 
 <script>
     // fix show section when you refresh webpage
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function() {
         let hash = location.hash; // get current hash location
         let id = hash.substring(1); // remove # from location
         if (id != (null || '' || "")) {
-            document.querySelectorAll('section').forEach(function (element) {
+            document.querySelectorAll('section').forEach(function(element) {
                 element.style.display = 'none';
             });
             showSection(id)
@@ -124,7 +124,7 @@
 
     // JavaScript function to show a specific section
     function showSection(id) { // hide all sections
-        document.querySelectorAll('section').forEach(function (element) {
+        document.querySelectorAll('section').forEach(function(element) {
             element.style.display = 'none';
         });
         // show the selected section
@@ -149,7 +149,7 @@
             document.getElementById('padding-searchbar').classList.add('mt-3');
             document.getElementById('psb').classList.add('mb-2');
             document.getElementById('psb2').classList.add('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+            document.querySelectorAll('.nav-link').forEach(function(navLink) {
                 navLink.setAttribute('data-bs-toggle', 'collapse');
                 navLink.setAttribute('data-bs-target', '#navbarNavDropdown');
                 navLink.setAttribute('aria-expanded', 'false');
@@ -165,7 +165,7 @@
             document.getElementById('padding-searchbar').classList.remove('mt-3');
             document.getElementById('psb').classList.remove('mb-2');
             document.getElementById('psb2').classList.remove('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function (navLink) {
+            document.querySelectorAll('.nav-link').forEach(function(navLink) {
                 navLink.removeAttribute('data-bs-toggle');
                 navLink.removeAttribute('data-bs-target');
                 navLink.removeAttribute('aria-expanded');

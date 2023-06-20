@@ -14,7 +14,7 @@ module.exports = function (app, con, moment, transporter) {
                         // console.log(allfacility);
                         if (err) throw err;
                         con.query(`SELECT roomstype.id, roomstype.name, roomstype.name_th,
-                        roomstype.bed, roomstype.price, roomstype.size, roomstype.count_humen, roomstype.type_bed ,roomstype.size_bed
+                        roomstype.bed, roomstype.price, roomstype.size, roomstype.count_humen, roomstype.type_bed ,roomstype.size_bed ,roomstype.extional
                         , img_roomstype.img
                          from roomstype LEFT JOIN img_roomstype on roomstype.id = img_roomstype.roomstype_id where roomstype.id IN (?) order by roomstype.price ASC`, [roomTypeIds], (err, dataroomstype) => {
                             if (err) throw err;
@@ -32,12 +32,24 @@ module.exports = function (app, con, moment, transporter) {
                                 return result;
                             }, {});
                             const roomtype = Object.values(data_room);
-                            console.log(roomtype);
+                            // console.log(roomtype);
+
+
+                            const data_allfacility = allfacility.map(item => ({
+                                roomtype_id: item.room_type_id,
+                                name: item.name,
+                                classicon: item.class,
+                                classnameicon: item.class_nameicon
+
+                            }));
+
+                            // console.log(allfacility);
+                            console.log(data_allfacility);
 
 
                             const count_available_rooms = results.reduce((acc, curr) => acc + curr.count_available_rooms, 0);
                             const success = count_available_rooms > 0;
-                            res.send({ success, count_available_rooms: results, sub_imgroom, roomtype, allfacility })
+                            res.send({ success, count_available_rooms: results, sub_imgroom, roomtype, allfacility, data_allfacility })
                         });
                     })
                 });
