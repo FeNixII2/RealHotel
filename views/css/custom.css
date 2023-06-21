@@ -40,10 +40,6 @@ h6 {
     padding-right: 1rem;
 }
 
-.sdd {
-    background-color: white;
-}
-
 .img-fluid {
     object-fit: cover;
     height: 15rem;
@@ -109,32 +105,19 @@ a {
     }
 } */
 
-@media (min-width: 992px) {
-    /* Desktop */
-    .setimg-h-recroom img {
-        height: 600px;
-    }
-}
-
-@media (max-width: 991px) {
-    /* Tablets */
-    .setimg-h-recroom img {
-        height: 640px;
-    }
-}
-
-@media (max-width: 767px) {
-    /* Mobile */
-    .setimg-h-recroom img {
-        height: 300px;
-    }
+.p-card-booking {
+    padding: 0.5rem;
 }
 
 
 /* size cardbooking all */
 
+.cardbookingall {
+    overflow: hidden;
+}
+
 .cardbookingall .carousel-item {
-    height: 30rem;
+    height: 35rem;
 }
 
 .cardbookingall .carousel-item img {
@@ -166,6 +149,60 @@ a {
 } */
 
 .setcard-recroom {
-    background: #fff;
+    color: white;
+    background: #0e2737;
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-recroom {
+    color: white;
+    background-color: #1cc3b2;
+}
+
+.btn-recroom:hover {
+    color: #1cc3b2;
+    background-color: white;
+}
+
+.p-body-cardbooking {
+    /* padding-top: 3rem;
+    padding-bottom: 3rem; */
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+@media (min-width: 992px) {
+    /* Desktop */
+    .setimg-h-recroom img {
+        height: 600px;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Tablets */
+    .setimg-h-recroom img {
+        height: 640px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Mobile */
+    .setimg-h-recroom img {
+        height: 300px;
+    }
+    .cardbookingall .carousel-item {
+        height: 25rem;
+    }
+    .p-body-cardbooking {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .p-body-recroom {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

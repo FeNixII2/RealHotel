@@ -4,7 +4,7 @@
     <div class="setcontainer pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100">
         <div class="container pt-2">
 
-            <div id="my-cards"></div>
+            <div id="my-cards" class="mt-5"></div>
 
 
 
@@ -98,7 +98,7 @@
 
 
                                     const cardDiv = document.createElement('div');
-                                    cardDiv.setAttribute('class', 'card sdd cardbookingall');
+                                    cardDiv.setAttribute('class', 'setcard-recroom p-card-booking cardbookingall mb-5');
                                     const row = document.createElement('div');
                                     row.setAttribute('class', 'row g-0');
                                     const col1 = document.createElement('div');
@@ -205,7 +205,7 @@
                                     col2.setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-6');
 
                                     const cardBody = document.createElement('div');
-                                    cardBody.setAttribute('class', 'card-body h-100 d-flex flex-column');
+                                    cardBody.setAttribute('class', 'p-body-cardbooking h-100 d-flex flex-column justify-content-center');
 
                                     const roomname = document.createElement('div');
                                     roomname.setAttribute('class', 'card-title fw-semibold fs-2');
@@ -291,6 +291,8 @@
 
 
 
+
+
                                     count = 0
                                     for (var c = 0; c < datafacility.length; c++) {
 
@@ -344,9 +346,13 @@
                                     row_facilitiesaa.appendChild(row_facilities);
                                     row_facilitiesaa.appendChild(row_facilities_more);
 
-                                    var asd = document.createElement('div');
-                                    asd.setAttribute('class', 'text-danger');
-                                    asd.textContent = 'ไม่สามารถคืนเงินได้ ';
+                                    var cantrefunded = document.createElement('div');
+                                    cantrefunded.setAttribute('class', 'text-danger');
+                                    cantrefunded.textContent = 'ไม่สามารถคืนเงินได้ ';
+
+                                    var cantchangecheckin = document.createElement('div');
+                                    cantchangecheckin.setAttribute('class', 'text-danger');
+                                    cantchangecheckin.textContent = 'ไม่สามารถเปลี่ยนแปลงกำหนดการเข้าพักได้ ';
 
 
 
@@ -372,7 +378,7 @@
                                     div_col_price.setAttribute('class', '');
 
                                     const bt_col_price = document.createElement('div');
-                                    bt_col_price.setAttribute('class', 'row mt-auto');
+                                    bt_col_price.setAttribute('class', 'row ');
 
                                     const usable_room = document.createElement('div');
                                     usable_room.setAttribute('class', ' card-text fs-4 col-6 col-sm-6 col-md-4 col-lg-4 d-flex  align-items-center');
@@ -410,7 +416,8 @@
                                     cardBody.appendChild(t_facilities);
                                     cardBody.appendChild(row_facilitiesaa);
                                     cardBody.appendChild(more_facilities);
-                                    cardBody.appendChild(asd);
+                                    cardBody.appendChild(cantrefunded);
+                                    cardBody.appendChild(cantchangecheckin);
 
 
 
@@ -594,12 +601,12 @@
         });
     }
 
-    function changetext_more() {
-        var x = document.getElementById("changetext");
-        if (x.innerHTML === "ย่อ") {
-            x.innerHTML = "เพิ่มเติม";
-        } else {
-            x.innerHTML = "ย่อ";
-        }
-    }
+    // function changetext_more() {
+    //     var x = document.getElementById("changetext");
+    //     if (x.innerHTML === "ย่อ") {
+    //         x.innerHTML = "เพิ่มเติม";
+    //     } else {
+    //         x.innerHTML = "ย่อ";
+    //     }
+    // }
 </script>
