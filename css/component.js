@@ -1,8 +1,8 @@
 class Footer extends HTMLElement {
     constructor() {
-        super();
-    }
-    // style="background-color: #e0e0e0;"
+            super();
+        }
+        // style="background-color: #e0e0e0;"
     connectedCallback() {
         this.innerHTML = `
 

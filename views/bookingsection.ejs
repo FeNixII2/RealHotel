@@ -217,7 +217,7 @@
                                     const icondetails_roomsize = document.createElement('div');
                                     icondetails_roomsize.setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 d-flex flex-column align-items-center');
                                     const span_roomsize = document.createElement('div');
-                                    span_roomsize.setAttribute('class', 'material-symbols-outlined fa-3x');
+                                    span_roomsize.setAttribute('class', 'material-symbols-outlined fa-3x icon-booking');
                                     span_roomsize.textContent = 'fit_screen'
                                     text_roomsize = document.createElement('div');
                                     text_roomsize.textContent = 'ห้อง ' + room_type[i].size + ' ตรม.';
@@ -229,7 +229,7 @@
                                     const icondetails_roombed = document.createElement('div');
                                     icondetails_roombed.setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 d-flex flex-column align-items-center');
                                     const span_roombed = document.createElement('div');
-                                    span_roombed.setAttribute('class', 'material-symbols-outlined fa-3x');
+                                    span_roombed.setAttribute('class', 'material-symbols-outlined fa-3x icon-booking')
                                     span_roombed.textContent = 'bed'
                                     text_roombed = document.createElement('div');
                                     text_roombed.textContent = 'เตียง ' + room_type[i].type_bed;
@@ -240,7 +240,7 @@
                                     const icondetails_countcustomer = document.createElement('div');
                                     icondetails_countcustomer.setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 d-flex flex-column align-items-center');
                                     const span_countcustomer = document.createElement('div');
-                                    span_countcustomer.setAttribute('class', 'material-symbols-outlined fa-3x');
+                                    span_countcustomer.setAttribute('class', 'material-symbols-outlined fa-3x icon-booking');
                                     span_countcustomer.textContent = 'attribution'
                                     text_countcustomer = document.createElement('div');
                                     text_countcustomer.textContent = 'เข้าพักสูงสุด ' + room_type[i].count_humen + ' คน';
@@ -251,7 +251,7 @@
                                     const icondetails_extional = document.createElement('div');
                                     icondetails_extional.setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 d-flex flex-column align-items-center');
                                     const span_extional = document.createElement('div');
-                                    span_extional.setAttribute('class', 'material-symbols-outlined fa-3x');
+                                    span_extional.setAttribute('class', 'material-symbols-outlined fa-3x icon-booking');
                                     span_extional.textContent = 'expand_circle_down'
                                     text_extional = document.createElement('div');
                                     text_extional.textContent = 'ส่วนเสริม ' + room_type[i].extional;
@@ -280,6 +280,8 @@
                                     t_facilities.textContent = "สิ่งอำนวยความสะดวก";
 
                                     const more_facilities = document.createElement('a');
+                                    // more_facilities.setAttribute('style', 'color: #1cc3b2;');
+
                                     more_facilities.setAttribute('data-bs-toggle', 'collapse');
                                     more_facilities.setAttribute('href', '#collapseExample' + room_type[i].id);
                                     more_facilities.setAttribute('role', 'button');
@@ -303,11 +305,12 @@
                                                 col_facilities.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
                                                 const i_classicon = document.createElement('i');
                                                 i_classicon.setAttribute('class', datafacility[c].classicon + ' text-center');
-                                                i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                                i_classicon.setAttribute('style', 'width: 2.5rem;');
                                                 i_classicon.textContent = datafacility[c].classnameicon;
                                                 const icon = document.createElement('label');
                                                 icon.appendChild(i_classicon);
                                                 const text = document.createElement('label');
+
                                                 text.textContent = datafacility[c].name;
                                                 col_facilities.appendChild(icon);
                                                 col_facilities.appendChild(text);
@@ -319,7 +322,7 @@
                                                 col_facilities.setAttribute('class', 'col-6 col-sm-6 col-md-6 col-lg-4 d-flex');
                                                 const i_classicon = document.createElement('i');
                                                 i_classicon.setAttribute('class', datafacility[c].classicon + ' text-center');
-                                                i_classicon.setAttribute('style', 'width: 2.5rem;color: rgb(20, 163, 60)');
+                                                i_classicon.setAttribute('style', 'width: 2.5rem');
                                                 i_classicon.textContent = datafacility[c].classnameicon;
                                                 const icon = document.createElement('label');
                                                 icon.appendChild(i_classicon);
@@ -347,11 +350,12 @@
                                     row_facilitiesaa.appendChild(row_facilities_more);
 
                                     var cantrefunded = document.createElement('div');
-                                    cantrefunded.setAttribute('class', 'text-danger');
+                                    cantrefunded.setAttribute('class', 'text-warning');
+                                    // cantrefunded.setAttribute('style', 'color: red');
                                     cantrefunded.textContent = 'ไม่สามารถคืนเงินได้ ';
 
                                     var cantchangecheckin = document.createElement('div');
-                                    cantchangecheckin.setAttribute('class', 'text-danger');
+                                    cantchangecheckin.setAttribute('class', 'text-warning');
                                     cantchangecheckin.textContent = 'ไม่สามารถเปลี่ยนแปลงกำหนดการเข้าพักได้ ';
 
 
@@ -368,8 +372,7 @@
                                     lprices.textContent = ' ฿/คืน';
 
                                     const prices = document.createElement('div');
-                                    prices.setAttribute('class', 'fs-4 ms-1');
-                                    prices.setAttribute('style', 'color: rgb(213, 34, 34)');
+                                    prices.setAttribute('class', 'fs-4 ms-1 text-danger');
                                     prices.textContent = room_type[i].price;
                                     fprices.appendChild(prices);
                                     fprices.appendChild(lprices);
@@ -392,7 +395,7 @@
 
 
                                     const button = document.createElement('button');
-                                    button.setAttribute('class', 'btn btn-primary fs-3 ');
+                                    button.setAttribute('class', 'btn btn-recroom fs-3 ');
                                     button.setAttribute('id', 'clickviewinfo');
                                     button.textContent = 'จองห้องนี้';
                                     button.value = room_type[i].id
