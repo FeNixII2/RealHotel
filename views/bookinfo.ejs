@@ -38,31 +38,30 @@
                         <div class="ms-2 ">ข้อมูลผู้เข้าพัก</div>
                     </div>
 
-                    <form class="row g-3">
+                    <form class="row g-3" action="javascript:confirm()">
                         <div class="col-md-6 my-custom-class mb-2">
                             <div class="mb-1">ชื่อ</div>
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required="required">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="กรอกชื่อ" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-2">
                             <div class="mb-1">นามสกุล</div>
-                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required="required">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-2">
                             <div class="mb-1">เบอร์โทรศัพท์</div>
-                            <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์">
+                            <input type="tel" class="form-control" id="p_number" name="p_number" placeholder="กรอกโทรศัพท์" pattern="0[0-9]{9}" minlength="10" maxlength="10" title="กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-2">
                             <div class="mb-1">อีเมลล์</div>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" required="required">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="กรอกอีเมลล์" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
                         </div>
-                    </form>
 
-                    <div class="mt-1 fs-5 d-flex mt-3 mb-2 mt-">
-                        <i class="fa-solid fa-note-sticky d-flex align-self-center"></i>
-                        <div class="ms-2  ">คำขอเพิ่มเติม</div>
-                    </div>
+                        <div class="mt-1 fs-5 d-flex mt-3 mb-2 mt-">
+                            <i class="fa-solid fa-note-sticky d-flex align-self-center"></i>
+                            <div class="ms-2  ">คำขอเพิ่มเติม</div>
+                        </div>
 
-                    <textarea class="form-control" name="more_info" id="more_info" rows="3" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
+                        <textarea class="form-control" name="more_info" id="more_info" rows="3" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
 
                 </div>
 
@@ -90,9 +89,6 @@
                         <i class="fa-solid fa-money-check-dollar d-flex align-self-center"></i>
                         <div class="ms-2 ">รูปแบบการชำระเงิน</div>
                     </div>
-
-
-
 
 
                     <% var payment_type_left=payment_type.slice(0, Math.ceil(payment_type.length / 2)); var payment_type_right=payment_type.slice(Math.ceil(payment_type.length / 2)); %>
@@ -137,9 +133,12 @@
 
 
                 <div class="box-padding mt-auto d-flex align-self-end">
-                    <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง</a>
-                    </div>
+                    <button type="submit" class="btn btn-primary fs-5" id="con_reserv">ยืนยันการจอง</button>
+                    <!-- <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง
+                    </div> -->
                 </div>
+                </form>
+
             </div>
         </div>
     </div>
