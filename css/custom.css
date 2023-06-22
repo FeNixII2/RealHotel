@@ -70,6 +70,7 @@ a {
     background-image: url("testsocial.jpg");
     /* Set a specific height */
     height: 550px;
+    width: 100%;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -77,8 +78,25 @@ a {
     background-size: cover;
 }
 
+.media-custom a {
+    color: #1cc3b2;
+    transition: 0.3s;
+}
+
 .media-custom:hover a {
-    color: rgb(255, 124, 37);
+    color: white;
+    transition: 0.3s;
+}
+
+.media-custom {
+    background-color: #0e2737;
+    color: white;
+    transition: 0.3s;
+}
+
+.media-custom:hover {
+    background-color: #0e2737;
+    color: white;
     transition: 0.3s;
 }
 
@@ -90,12 +108,12 @@ a {
 }
 
 .row-service:hover i {
-    color: rgb(255, 124, 37);
+    color: #0d6efd;
     transition: 0.2s;
 }
 
 .row-service:hover p {
-    color: rgb(255, 124, 37);
+    color: #0e2737;
     transition: 0.2s;
 }
 
