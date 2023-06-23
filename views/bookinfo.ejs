@@ -68,23 +68,6 @@
                 <div class=" p-3">
 
 
-
-                    <!-- <div class="payment-s">
-
-        <% for(var i=0;i< payment_type.length;i++){ %>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type[i].id%>">
-                <label class="form-check-label" for="option<%=i%>">
-                    <%=payment_type[i].pay_type%>
-                </label>
-            </div>
-
-            <%}%>
-
-
-    </div> -->
-
-
                     <div class="textpaymeant fs-5 d-flex mb-2 mt-2">
                         <i class="fa-solid fa-money-check-dollar d-flex align-self-center"></i>
                         <div class="ms-2 ">รูปแบบการชำระเงิน</div>
@@ -99,8 +82,8 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type_left[i].id%>">
                                         <label class="form-check-label" for="option<%=i%>">
-                                        <%=payment_type_left[i].pay_type%>
-                                    </label>
+                                            <%=payment_type_left[i].pay_type%>
+                                        </label>
                                     </div>
                                     <%}%>
                             </div>
@@ -109,8 +92,8 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" id="option<%=payment_type_right[i].pay_type%>" name="myGroup" value="<%=payment_type_right[i].id%>">
                                         <label class="form-check-label" for="option<%=payment_type_right[i].pay_type%>">
-                                        <%=payment_type_right[i].pay_type%>
-                                    </label>
+                                            <%=payment_type_right[i].pay_type%>
+                                        </label>
                                     </div>
                                     <%}%>
                             </div>
@@ -120,8 +103,8 @@
                             <i class="fa-solid fa-coins d-flex align-self-center"></i>
                             <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
                             <b>
-                            <div class="total-price " id="total-price" style="color: red;">0</div>
-                        </b>
+                                <div class="total-price " id="total-price" style="color: red;">0</div>
+                            </b>
                             <div class="ms-2 me-2">บาท</div>
                         </div>
 
