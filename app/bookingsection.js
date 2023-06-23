@@ -17,6 +17,7 @@ module.exports = function (app, con, moment, transporter) {
                         roomstype.bed, roomstype.price, roomstype.size, roomstype.count_humen, roomstype.type_bed ,roomstype.size_bed ,roomstype.extional
                         , img_roomstype.img
                          from roomstype LEFT JOIN img_roomstype on roomstype.id = img_roomstype.roomstype_id where roomstype.id IN (?) order by roomstype.price ASC`, [roomTypeIds], (err, dataroomstype) => {
+
                             if (err) throw err;
                             const sub_imgroom = dataroomstype.map(item => ({
                                 id: item.id,
@@ -31,7 +32,9 @@ module.exports = function (app, con, moment, transporter) {
                                 }
                                 return result;
                             }, {});
+
                             const roomtype = Object.values(data_room);
+                            roomtype.sort((a, b) => a.price - b.price);
                             // console.log(roomtype);
 
 
@@ -44,7 +47,7 @@ module.exports = function (app, con, moment, transporter) {
                             }));
 
                             // console.log(allfacility);
-                            console.log(data_allfacility);
+                            // console.log(data_allfacility);
 
 
                             const count_available_rooms = results.reduce((acc, curr) => acc + curr.count_available_rooms, 0);

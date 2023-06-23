@@ -3,9 +3,12 @@
     <div class="container" style="background-color: rgba(255, 255, 255, 0.6);">
         <!-- <div class="parallax d-flex align-items-center"> -->
         <!-- welcome -->
-        <div class="px-4 py-5 text-center" style="color: white;">
+        <div class="px-4 pt-5 text-center" style="color: white;">
             <img class="d-block mx-auto mb-4" src="hotel.png" alt="" width="72" height="57" />
-            <h1 class="display-5 fw-bold">โรงแรมบีเอส ยินดีต้อนรับ</h1>
+            <h1 class="display-5 fw-bold">
+                <div class="">โรงแรมบีเอส</div>
+                <div class="">ยินดีต้อนรับ</div>
+            </h1>
             <div class="col-lg-6 mx-auto">
                 <div class="lead">
                     โรงแรมบีเอส ปราจีนบุรี ตั้งอยู่ใจกลาง อำเภอเมืองปราจีนบุรี มีพนักงานต้อนรับตลอด 24 ชั่วโมง ทุกห้องพักถูกออกแบบให้มีความสะดวกสบาย เหมาะกับการพักผ่อน มีเครื่องใช้ไฟฟ้าครบครัน พร้อมทั้งอินเตอร์เน็ตความเร็วสูง
@@ -15,7 +18,7 @@
         <!-- welcome -->
         <!-- </div> -->
 
-        <div class="d-flex justify-content-center fs-1  py-5">
+        <div class="d-flex justify-content-center fs-1 fw-semibold my-5">
             ห้องพักและบริการ
         </div>
 
@@ -30,7 +33,7 @@
             <div class="row px-3 gy-3">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
 
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="#booking" onclick="sign_room('Standard')" class="mb-4 d-block"><img src="standard.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <span class="meta-post">เริ่มต้นที่, ฿450/คืน</span>
@@ -44,7 +47,7 @@
 
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="#booking" onclick="sign_room('Superior')" class="mb-4 d-block"><img src="superior.jpeg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body h-100">
                             <span class="meta-post">เริ่มต้นที่, ฿550/คืน</span>
@@ -55,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="#booking" onclick="sign_room('Deluxe')" class="mb-4 d-block"><img src="deluxe.jpeg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <span class="meta-post">เริ่มต้นที่, ฿750/คืน</span>
@@ -66,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="#booking" onclick="sign_room('Suite')" class="mb-4 d-block"><img src="Suite.jpeg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <span class="meta-post">เริ่มต้นที่, ฿1000/คืน</span>
@@ -132,7 +135,7 @@
                             ทางเราให้บริการด้วยความเต็มใจ พร้อมให้คุณได้สมผัสบรรยากาศการพักผ่อนที่ประทับใจ มีสิ่งอำนวยความสะดวกครบครัน และที่พักของเรายังใกล้กับสถานที่ท่องเที่ยวมากมาย คุณสามารถเดินทางไปในระยะเวลาที่สั้น และเพลิดเพลินกับการท่องเที่ยว
                         </p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button" class="btn btn btn-secondary btn-lg px-4 me-md-2" href="#contract" onclick="showSection('contract')">เกี่ยวกับเรา</button>
+                            <button type="button" class="btn btn btn-secondary btn-lg px-4 me-md-2" href="#contact" onclick="showSection('contact')">เกี่ยวกับเรา</button>
                             <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">เกี่ยวกับเรา</button> -->
                         </div>
                     </div>
@@ -149,7 +152,7 @@
                         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                             <div class="carousel-inner ">
                                 <div class="carousel-item active" data-bs-interval="5000">
-                                    <img src="bf1.jpg" class="d-block w-100" alt="..." style="border-radius: 10px;" />
+                                    <img src="bf1.jpg" class=" w-100 " alt="..." style="border-radius: 10px;" />
                                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8)">
                                         <h5>อาหารเช้าเบา ๆ สไตล์ยุโรป</h5>
                                         <p>
@@ -158,7 +161,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="5000">
-                                    <img src="bf2.jpg" class="d-block w-100" alt="..." style="border-radius: 10px;" />
+                                    <img src="bf2.jpg" class=" w-100 " alt="..." style="border-radius: 10px;" />
                                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8)">
                                         <h5>อาหารเช้าจัดหนักสไตล์อังกฤษ</h5>
                                         <p>
@@ -167,7 +170,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="5000">
-                                    <img src="bf3.jpg" class="d-block w-100" alt="..." style="border-radius: 10px;" />
+                                    <img src="bf3.jpg" class="w-100 " alt="..." style="border-radius: 10px;" />
                                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8)">
                                         <h5>อาหารเช้าแบบอเมริกันที่คนไทยคุ้นเคย</h5>
                                         <p>
@@ -176,7 +179,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="5000">
-                                    <img src="bf4.jpg" class="d-block w-100" alt="..." style="border-radius: 10px;" />
+                                    <img src="bf4.jpg" class=" w-100 " alt="..." style="border-radius: 10px;" />
                                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8)">
                                         <h5>อาหารเช้าโรงแรม แบบ Buffet และ Local Breakfast</h5>
                                         <p>
@@ -266,7 +269,11 @@
         <!-- แนะนำฟิตเนส -->
 
 
-        <div class="parallax2 d-flex align-items-center"></div>
+        <!-- <div class="parallax2 d-flex align-items-center"></div> -->
+
+        <div class="">
+            <img src="testsocial.jpg" alt="" class="w-100">
+        </div>
 
 
 
@@ -279,7 +286,7 @@
             <!-- attraction -->
             <div class="row gy-2">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100">
+                    <div class=" card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu"
                             class="mb-4 d-block"><img src="attraction1.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
@@ -298,7 +305,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100">
+                    <div class=" card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction2.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu">สิงห์ปาร์ค เชียงราย</a></h2>
@@ -315,7 +322,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu"
                             class="mb-4 d-block"><img src="attraction3.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
@@ -335,7 +342,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction3.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu">ตลาดแม่สาย</a></h2>
@@ -360,11 +367,11 @@
                 เคเฟ่สุดชิล
             </div>
             <!-- attraction -->
-            <div class="row gy-2 mt-1 mb-5 pb-3">
+            <div class="row gy-2 mt-1  pb-3">
 
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction5.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu">Woodbrick CAFE</a></h2>
@@ -381,7 +388,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction6.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu">Seasons bake haus</a></h2>
@@ -399,7 +406,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction7.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu">Lofthouse Cafe</a></h2>
@@ -417,7 +424,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="media-custom d-block mb-4 h-100 p-2">
+                    <div class="card  media-custom d-block mb-4 h-100 p-2">
                         <a href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu" class="mb-4 d-block"><img src="attraction7.jpg" alt="Image placeholder" class="img-fluid w-100"></a>
                         <div class="media-body">
                             <h2 class="c-textroom"><a href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu">The Wanderer</a></h2>

@@ -12,6 +12,10 @@ h6 {
     font-family: Kanit;
 }
 
+.navbar-custom {
+    height: 12%;
+}
+
 .navbar-nav {
     float: right;
 }
@@ -222,10 +226,18 @@ a {
     color: white;
 }
 
+.img-radius {
+    border-radius: 1%;
+}
+
 @media (min-width: 992px) {
     /* Desktop */
     .setimg-h-recroom img {
         height: 600px;
+    }
+    .box-date {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
 
@@ -234,6 +246,16 @@ a {
     .setimg-h-recroom img {
         height: 640px;
     }
+    .p-body-cardbooking {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.navbar-position {
+    justify-content: end;
 }
 
 @media (max-width: 767px) {
@@ -241,19 +263,29 @@ a {
     .setimg-h-recroom img {
         height: 300px;
     }
+    .box-date {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .cardbookingall .carousel-item {
         height: 25rem;
     }
     .p-body-cardbooking {
         padding-top: 1rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     .p-body-recroom {
         padding-top: 3rem;
         padding-bottom: 3rem;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    .navbar-position {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
     }
 }

@@ -15,7 +15,7 @@
 
             <% for (var i = 0; i < recroom_type.length; i++) { %>
 
-                <div class="setcard-recroom mb-5 ">
+                <div class="card setcard-recroom mb-5 ">
                     <div class="row p-2">
                         <div class="col-lg-7 col-md-6 col-sm-12 col-12">
                             <div class="setimg-h-recroom">
@@ -45,11 +45,11 @@
                                                 %>
                                             <% if( imgcount == 0){ %>
                                                 <div class="carousel-item active">
-                                                    <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
+                                                    <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom img-radius " alt="...">
                                                 </div>
                                                 <%}else{%>
                                                     <div class="carousel-item">
-                                                        <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
+                                                        <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom img-radius " alt="...">
                                                     </div>
                                                     <%}
                                                     imgcount +=1;
