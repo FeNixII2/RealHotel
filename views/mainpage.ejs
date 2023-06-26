@@ -38,48 +38,41 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light  fixed-top navbar-dark bg-dark">
+    <div class=" d-flex justify-content-center align-items-center " id="psb3">
+        <label class=" no-select mx-2 w-50 form-label" style="color:white;display: none;">ประเภท:</label>
+        <select id="roomstype" class="form-select form-control " style="width: 100%;display: none;">
+            <option value="all" selected="selected">ทั้งหมด</option>
+            <%for(var i=0 ;i<roomstype.length;i++){%>
+                <option value="<%= roomstype[i].name %>">
+                    <%= roomstype[i].name_th %>
+                </option>
+                <%}%>
+        </select>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand fs-2" href="#" onclick="showSection('home_new')">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+            <a class="navbar-brand fs-4" href="#home" onclick="showSection('home')">Hotel BS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="" style="">
 
-                <div class=" d-flex justify-content-center align-items-center " id="psb3">
-                    <label class=" no-select mx-2 w-50 form-label" style="color:white;display: none;">ประเภท:</label>
-                    <select id="roomstype" class="form-select form-control " style="width: 100%;display: none;">
-                        <option value="all" selected="selected">ทั้งหมด</option>
-                        <%for(var i=0 ;i<roomstype.length;i++){%>
-                            <option value="<%= roomstype[i].name %>">
-                                <%= roomstype[i].name_th %>
-                            </option>
-                            <%}%>
-                    </select>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav text-center fs-5">
+                    <a class="nav-link active" aria-current="page" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                    <a class="nav-link" href="#rooms" onclick="showSection('rooms')">จองห้องพัก</a>
+                    <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking')">ตรวจสอบห้องพัก</a>
+                    <a class="nav-link" href="#contact" onclick="showSection('contact')">Contact</a>
                 </div>
-            </div>
-
-
-            <div class="collapse navbar-collapse fs-5 me-5" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home_new" onclick="showSection('home_new')">หน้าหลัก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#rooms" onclick="showSection('rooms')">ห้องพัก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking')">เช็คห้องพัก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact" onclick="showSection('contact')">contact</a>
-                    </li>
-
-                </ul>
             </div>
         </div>
     </nav>
+
+
+
+
 
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
@@ -126,13 +119,13 @@
 
 
     <main>
+
         <%- include('homesection.ejs') %>
-            <%- include('homesection_new.ejs') %>
-                <%- include('roomssection.ejs') %>
-                    <%- include('bookingsection.ejs') %>
-                        <%- include('checkbooking.ejs') %>
-                            <%- include('contact.ejs') %>
-                                <%- include('bookinfo.ejs') %>
+            <%- include('roomssection.ejs') %>
+                <%- include('bookingsection.ejs') %>
+                    <%- include('checkbooking.ejs') %>
+                        <%- include('contact.ejs') %>
+                            <%- include('bookinfo.ejs') %>
 
     </main>
 
@@ -150,7 +143,7 @@
             });
             showSection(id)
         } else {
-            showSection('home_new')
+            showSection('home')
         }
     });
 
@@ -175,39 +168,29 @@
         showSection(newHash)
     }
 
+    //set room id
+    function sign_room(id) {
+        document.getElementById("roomstype").value = id;
+        showSection('booking');
+        booking_search();
+    }
+
+    // closecollapse when click our
     function handleScreenSizeChange() {
         if (window.innerWidth <= 576) {
-            document.getElementById('searchbar1').classList.remove('d-flex');
-            document.getElementById('padding-searchbar').classList.add('mt-3');
-            document.getElementById('psb').classList.add('mb-2');
-            document.getElementById('psb2').classList.add('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function(navLink) {
-                navLink.setAttribute('data-bs-toggle', 'collapse');
-                navLink.setAttribute('data-bs-target', '#navbarNavDropdown');
-                navLink.setAttribute('aria-expanded', 'false');
-                navLink.setAttribute('aria-controls', 'Toggle navigation');
+            document.addEventListener('click', function(event) {
+                var targetElement = event.target;
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+
+                if (navbarCollapse.classList.contains('show') && !navbarToggler.contains(targetElement) && !navbarCollapse.contains(targetElement)) {
+                    navbarToggler.click();
+                }
+
+                if (targetElement.classList.contains('nav-link')) {
+                    navbarToggler.click();
+                }
             });
-            var searchBtn = document.getElementById('searchbtn');
-            searchBtn.setAttribute('data-bs-toggle', 'collapse');
-            searchBtn.setAttribute('data-bs-target', '#navbarNavDropdown');
-            searchBtn.setAttribute('aria-expanded', 'false');
-            searchBtn.setAttribute('aria-controls', 'Toggle navigation');
-        } else {
-            document.getElementById('searchbar1').classList.add('d-flex');
-            document.getElementById('padding-searchbar').classList.remove('mt-3');
-            document.getElementById('psb').classList.remove('mb-2');
-            document.getElementById('psb2').classList.remove('mb-2');
-            document.querySelectorAll('.nav-link').forEach(function(navLink) {
-                navLink.removeAttribute('data-bs-toggle');
-                navLink.removeAttribute('data-bs-target');
-                navLink.removeAttribute('aria-expanded');
-                navLink.removeAttribute('aria-controls');
-            });
-            var searchBtn = document.getElementById('searchbtn');
-            searchBtn.removeAttribute('data-bs-toggle');
-            searchBtn.removeAttribute('data-bs-target');
-            searchBtn.removeAttribute('aria-expanded');
-            searchBtn.removeAttribute('aria-controls');
         }
     }
     handleScreenSizeChange();
