@@ -58,15 +58,15 @@
                     showCancelButton: true,
                     confirmButtonText: "Confirm",
                     cancelButtonText: "Cancel",
-                    preConfirm: (value) => {
-                        if (!/^\d{4}$/.test(value)) {
+                    // preConfirm: (value) => {
+                    //     if (!/^\d{4}$/.test(value)) {
 
-                            return Promise.reject("Please enter a 4-digit numeric value");
+                    //         return Promise.reject("Please enter a 4-digit numeric value");
 
-                        } else {
-                            return value;
-                        }
-                    },
+                    //     } else {
+                    //         return value;
+                    //     }
+                    // },
                 }).then((result) => {
                     if (result.isConfirmed) {
                         const phoneNumber = result.value;
