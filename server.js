@@ -89,9 +89,10 @@ app.get("/", (req, res) => {
         con.query(
             "select name,name_th from roomstype group by name order by price asc",
             (err, roomstype) => {
-                con.query("select * from payment", (err, payment_type) => {
-                    res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type });
-
+                con.query("select * from payment ", (err, payment_type) => {
+                    con.query("select * from service ", (err, services) => {
+                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services });
+                    });
                 });
             }
         );
