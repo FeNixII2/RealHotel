@@ -25,6 +25,62 @@
 
 <script>
     function room_code_checking() {
+        var code = document.getElementById("id_numcheckbooking").value
 
+        fetch("/get_booking_code", {
+            method: "post",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                code
+            })
+        }).then((response) => response.json()).then((body) => {
+            var reserv = body.result
+            console.log(reserv.length);
+            if (reserv.length > 0) {
+                Swal.fire({
+                    title: "Enter the last 4 digits of your phone number:",
+                    input: "text",
+                    inputAttributes: {
+                        placeholder: "Last 4 digits",
+                        inputmode: "numeric",
+                        pattern: "[0-9]{4}",
+                        minLength: 4,
+                        maxLength: 4,
+                    },
+                    customClass: {
+                        container: "mt-5",
+                    },
+                    position: "top",
+                    showCancelButton: true,
+                    confirmButtonText: "Confirm",
+                    cancelButtonText: "Cancel",
+                    preConfirm: (value) => {
+                        if (!/^\d{4}$/.test(value)) {
+
+                            return Promise.reject("Please enter a 4-digit numeric value");
+
+                        } else {
+                            return value;
+                        }
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const phoneNumber = result.value;
+                        console.log("Confirmed with phone number:", phoneNumber);
+                        // Perform further actions with the phone number
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        console.log("Cancelled");
+                        // Perform further actions for cancellation
+                    }
+                });
+
+            } else {
+
+            }
+        })
     }
 </script>

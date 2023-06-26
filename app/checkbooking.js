@@ -1,6 +1,12 @@
 module.exports = function (app, con, moment, transporter) {
     app.post("/get_booking_code", (req, res) => {
-
+        var { code } = req.body
+        con.query(`select reserved_id from reserved where reserved_id ='${code}' `, (err, result) => {
+            if (err) throw err
+            if (result.length > 0) {
+                res.send({ result })
+            }
+        })
     })
 
     // app.post("/checkbooking", (req, res) => {
