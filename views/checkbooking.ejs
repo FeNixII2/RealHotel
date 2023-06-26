@@ -11,10 +11,77 @@
                     <input class="form-control me-2" type="text" id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก" aria-label="Search" title="กรุณากรอกรหัสห้องพัก" required>
                     <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                 </form>
+                <div class="card mt-3">
+                    <div class="container">
+                        <div class="pt-3">
+                            <center>
+                                <h1>ข้อมูลการจอง</h1>
+                            </center>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">รหัสการจอง</label>
+                            </div>
+                            <div class="col-6 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label">SF17416231002</label>
+                            </div>
+                            <div class="col-6 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">เลขห้อง</label>
+                            </div>
+                            <div class="col-6 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label">SF17416231002</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">ประเภทห้อง</label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label"></label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">สถานะ</label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label"></label>
+                            </div>
+                        </div>
 
-                <div id="card-booking"></div>
-
-
+                        <div class="row">
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">เช็คอิน</label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label"></label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
+                                <label class="col-form-label">เช็คเอาท์</label>
+                            </div>
+                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
+                                <label class="col-form-label"></label>
+                            </div>
+                        </div>
+                        <div class="pt-3">
+                            <center>
+                                <h1>ข้อมูลผู้จอง</h1>
+                            </center>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                รหัสลูกค้า
+                            </div>
+                            <div class="col-sm-12">
+                                ชื่อ-สกุล
+                            </div>
+                            <div class="col-sm-12">
+                                เบอร์โทรศัพท์
+                            </div>
+                            <div class="col-sm-12">
+                                อีเมลล์
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer-component></footer-component>
@@ -39,7 +106,6 @@
             })
         }).then((response) => response.json()).then((body) => {
             var reserv = body.result
-            console.log(reserv.length);
             if (reserv.length > 0) {
                 Swal.fire({
                     title: "Enter the last 4 digits of your phone number:",
@@ -70,8 +136,35 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         const phoneNumber = result.value;
-                        console.log("Confirmed with phone number:", phoneNumber);
-                        // Perform further actions with the phone number
+                        fetch("/get_reserv_info", {
+                                method: "post",
+                                headers: {
+                                    Accept: "application/json",
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    code,
+                                    phoneNumber
+                                })
+                            })
+                            .then((response) => response.json())
+                            .then((body) => {
+                                var reserv_info = body.reserv_info[0];
+                                console.log(reserv_info);
+                                if (reserv_info == 'underfined') {
+                                    Swal.fire({
+                                        title: "เบอร์โทรศัพท์ไม่ถูกต้อง",
+                                        customClass: {
+                                            container: "mt-5",
+                                        },
+                                        position: "top",
+                                    })
+                                } else {
+
+                                }
+
+                            });
+
                     } else if (result.dismiss === Swal.DismissReason.cancel) {
                         console.log("Cancelled");
                         // Perform further actions for cancellation
