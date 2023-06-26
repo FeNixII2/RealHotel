@@ -38,6 +38,11 @@ h6 {
 
 .img-fluid {
     object-fit: cover;
+    height: 20rem;
+}
+
+.img-fluid-att {
+    object-fit: cover;
     height: 15rem;
 }
 
@@ -74,13 +79,13 @@ a {
     background-size: cover;
 }
 
-.media-custom a {
+.hover-a-room a {
     color: #1cc3b2;
     transition: 0.3s;
 }
 
-.media-custom:hover a {
-    color: white;
+.hover-a-room:hover a {
+    color: #1cc3b2;
     transition: 0.3s;
 }
 
@@ -91,40 +96,60 @@ a {
 }
 
 .media-custom:hover {
+    box-shadow: 10px 10px 20px 2px rgb(138, 138, 138);
+    margin-top: -5px;
+    background-color: #0e2737;
+    color: white;
+    transition: 0.3s;
+}
+
+.recservice {
+    color: white;
+    background-color: #0e2737;
+}
+
+.media-custom:hover {
     background-color: #0e2737;
     color: white;
     transition: 0.3s;
 }
 
 .media-custom:hover .boxatt a {
-    background-color: rgb(255, 124, 37);
-    border-color: rgb(255, 124, 37);
     color: white;
     transition: 0.3s;
 }
 
-.row-service:hover i {
-    color: #0d6efd;
-    transition: 0.2s;
+.row-service i {
+    color: #1cc3b2;
 }
 
-.row-service:hover p {
-    color: #0e2737;
+.row-service:hover .text-service {
+    color: #1cc3b2;
     transition: 0.2s;
 }
 
 .reccontact i {
-    color: #0d6efd;
+    color: #1cc3b2;
     transition: 0.2s;
 }
 
-.reccontact:hover i {
-    color: rgb(255, 124, 37);
+.reccontact:hover .reccontact-text {
+    color: #1cc3b2;
     transition: 0.2s;
 }
 
 .my-custom-class {
     margin-top: 0px;
+}
+
+.recservice .img-fluid {
+    object-fit: cover;
+    height: 30rem;
+}
+
+.recservice2 .img-fluid {
+    object-fit: cover;
+    height: 30rem;
 }
 
 
@@ -279,5 +304,11 @@ a {
         text-align: center;
         justify-content: center;
         justify-items: center;
+    }
+    .recservice .img-fluid {
+        height: 20rem;
+    }
+    .recservice2 .img-fluid {
+        height: 20rem;
     }
 }
