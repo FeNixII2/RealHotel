@@ -1,29 +1,31 @@
 <section id="booking" style="position: relative;">
     <div class="backgroundpage-image"></div>
 
-    <div class="setcontainer pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100">
+    <div
+        class="setcontainer pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100">
         <div class="container pt-2">
 
-            <div id="my-cards" class="mt-5"></div>
-
-
-
-
-            <div class="modal fade modal-lg" id="facilitymodal" tabindex="-1" aria-labelledby="facilitymodalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="facilitymodalLabel">สิ่งอำนวยความสะดวก</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                        </div>
-                        <div class="modal-body" id="body_facility">
-
-                        </div>
+            <div class="card mt-5 p-4 box-date">
+                <div class=" row py-3 ">
+                    <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-6" id="psb">
+                        <label for="checkin" class="no-select  form-label">เช็คอิน:</label>
+                        <input type="text" id="checkin" name="checkin"
+                            class="form-control" />
                     </div>
+                    <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-6" id="psb2">
+                        <label for="checkout" class="no-select form-label">เช็คเอาท์:</label>
+                        <input type="text" id="checkout" name="checkout"
+                            class="form-control " />
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
+                        <button type="button"
+                            class="btn btn-secondary w-100 py-2" id="searchbtn"
+                            onclick="booking_search(),showSection('booking')">ค้นหา</button></div>
                 </div>
+
             </div>
 
+            <div id="my-cards" class="mt-5"></div>
 
         </div>
         <!-- footer -->
@@ -31,11 +33,7 @@
         <!-- footer -->
     </div>
 
-
-
-
 </section>
-
 
 <script>
     window.addEventListener('load', function() {
@@ -98,7 +96,7 @@
 
 
                                     const cardDiv = document.createElement('div');
-                                    cardDiv.setAttribute('class', 'setcard-recroom p-card-booking cardbookingall mb-5');
+                                    cardDiv.setAttribute('class', 'card setcard-recroom p-card-booking cardbookingall mb-5');
                                     const row = document.createElement('div');
                                     row.setAttribute('class', 'row g-0');
                                     const col1 = document.createElement('div');
@@ -134,7 +132,7 @@
                                                 img_active.setAttribute('class', 'carousel-item active');
                                                 var img_src = document.createElement('img');
                                                 img_src.setAttribute('src', sub_imgroom[u].img);
-                                                img_src.setAttribute('class', 'w-100');
+                                                img_src.setAttribute('class', 'w-100 img-radius');
 
 
                                             } else {
