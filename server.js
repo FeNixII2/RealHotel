@@ -64,8 +64,7 @@ let transporter = nodemailer.createTransport({
 
 app.get("/", (req, res) => {
     con.query("SELECT mr.*,imr.img from main_roomtype AS mr LEFT JOIN  img_main_roomtype AS imr ON mr.id = imr.main_roomtype_id ", (err, datarooms) => {
-        // console.log(datarooms);
-
+        if (err) throw err
         const recroom_img = datarooms.map(item => ({
             name: item.name,
             img: item.img
@@ -83,19 +82,16 @@ app.get("/", (req, res) => {
         // Convert the grouped data object back to an array
         const recroom_type = Object.values(recroom_data);
 
-        // console.log(recroom_img);
-        // console.log(recroom_type);
-
-        con.query(
-            "select name,name_th from roomstype group by name order by price asc",
-            (err, roomstype) => {
-                con.query("select * from payment ", (err, payment_type) => {
-                    con.query("select * from service ", (err, services) => {
-                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services });
-                    });
+        con.query("select name,name_th from roomstype group by name order by price asc", (err, roomstype) => {
+            if (err) throw err
+            con.query("select * from payment ", (err, payment_type) => {
+                if (err) throw err
+                con.query("select * from service ", (err, services) => {
+                    if (err) throw err
+                    res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services });
                 });
-            }
-        );
+            });
+        });
     });
 });
 //js file include
