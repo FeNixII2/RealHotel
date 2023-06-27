@@ -137,16 +137,16 @@
                     if (result.isConfirmed) {
                         const phoneNumber = result.value;
                         fetch("/get_reserv_info", {
-                                method: "post",
-                                headers: {
-                                    Accept: "application/json",
-                                    "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify({
-                                    code,
-                                    phoneNumber
-                                })
+                            method: "post",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                code,
+                                phoneNumber
                             })
+                        })
                             .then((response) => response.json())
                             .then((body) => {
                                 var reserv_info = body.reserv_info[0];
