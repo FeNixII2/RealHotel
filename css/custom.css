@@ -1,5 +1,6 @@
 body {
-    background: #f1f1f1;
+    /* f1f1f1 */
+    background: white;
     font-family: Kanit;
 }
 
@@ -152,22 +153,6 @@ a {
     height: 30rem;
 }
 
-
-/* @media (max-width: 575.98px) {
-    .carousel-item {
-        height: 250px;
-    }
-    .cardbookingall .carousel-item {
-        height: 250px;
-    }
-    .cardbooking .carousel-item {
-        height: 250px;
-    }
-    .bt_listbooking {
-        margin-bottom: 0.5rem;
-    }
-} */
-
 .p-card-booking {
     padding: 0.5rem;
 }
@@ -217,6 +202,10 @@ a {
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
 }
 
+.text-sky {
+    color: #1cc3b2;
+}
+
 .btn-recroom {
     color: white;
     background-color: #1cc3b2;
@@ -247,6 +236,20 @@ a {
     border-radius: 1%;
 }
 
+.btn-sky {
+    background-color: #1cc3b2;
+    color: white;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.btn-sky:hover {
+    background-color: white;
+    color: #1cc3b2;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
 @media (min-width: 992px) {
     /* Desktop */
     .setimg-h-recroom img {
@@ -273,6 +276,14 @@ a {
 
 .navbar-position {
     justify-content: end;
+}
+
+.cardcontact {
+    padding: 3rem;
+}
+
+.shadow-info {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 767px) {
@@ -310,5 +321,12 @@ a {
     }
     .recservice2 .img-fluid {
         height: 20rem;
+    }
+    .cardcontact {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .boxtact .first {
+        margin-top: 1.5rem;
     }
 }

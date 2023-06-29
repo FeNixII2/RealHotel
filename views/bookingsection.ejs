@@ -89,7 +89,7 @@
                                 if (available_room[j].id_typeroom == room_type[i].id) {
 
 
-                                    console.log(room_type[i]);
+
                                     // console.log(room_type[i].id + " " + room_type[i].name);
                                     var imgcount = 0
                                         // console.log(room_type[i].id + " " + room_type[i].name_th + " " + room_type[i].bed);
@@ -118,7 +118,7 @@
                                         // console.log(room_type[i].id + " same id " + sub_imgroom[u].id);
                                         if (room_type[i].id == sub_imgroom[u].id) {
 
-                                            console.log("imgcount: " + imgcount)
+                                            // console.log("imgcount: " + imgcount)
                                             if (imgcount == 0) {
                                                 var create_bottom_button = document.createElement('button');
                                                 create_bottom_button.setAttribute('type', 'button');
@@ -398,11 +398,13 @@
                                     button.textContent = 'จองห้องนี้';
                                     button.value = room_type[i].id
                                     button.onclick = function(i, j, event) {
+                                        reserv_modal(available_room[j], room_type[i]);
+                                        console.log(document.getElementById('con_reserv').value);
                                         button.href = '/#bookinfo'
                                         showSection('bookinfo')
                                         const roomtypeLabel = document.getElementById('roomtype-label');
                                         roomtypeLabel.textContent = room_type[i].name_th + ' ' + room_type[i].bed;
-                                        reserv_modal(available_room[j], room_type[i]);
+
                                     }.bind(this, i, j, event);
 
                                     btn_confirm.appendChild(button);
@@ -471,13 +473,14 @@
         // console.log('Number of days: ' + diffDays);
 
 
+        document.getElementById('total-price').innerHTML = (roomtype.price * (diffDays - 1))
+        document.getElementById('total-price').value = (roomtype.price * (diffDays - 1))
 
-
-
-        document.getElementById('total-price').innerHTML = " " + (roomtype.price * (diffDays - 1))
-            // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
+        // document.getElementById('exampleModalLabel').innerHTML = 'ยืนยันการจองห้อง ' + roomtype.name_th + ' ' + roomtype.bed
 
         document.getElementById('con_reserv').value = roomtype.id
+
+        // console.log('Number of days: ' + diffDays);
     }
 
     function confirm() {
@@ -489,6 +492,7 @@
         var checkin = document.getElementById('checkin').value
         var checkout = document.getElementById('checkout').value
         var room_type = document.getElementById('con_reserv').value
+        var totalprice = document.getElementById('total-price').value
 
 
         const radioButtons = document.getElementsByName('myGroup');
@@ -538,7 +542,8 @@
                             payment,
                             checkin,
                             checkout,
-                            room_type
+                            room_type,
+                            totalprice
                         })
                     }).then((response) => response.json()).then((body) => {
                         Swal.fire({

@@ -90,10 +90,12 @@ app.get("/", (req, res) => {
             "select name,name_th from roomstype group by name order by price asc",
             (err, roomstype) => {
                 con.query("select * from payment ", (err, payment_type) => {
-                    con.query("select * from service ", (err, services) => {
-                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services });
+                    con.query("SELECT room_service.roomtype_id AS room_id, room_service.service_id, service.name ,service.price ,service.iconclass , service.iconname  FROM room_service LEFT JOIN service ON  service.id = room_service.service_id ORDER BY room_service.roomtype_id ASC ,room_service.service_id asc", (err, services) => {
+
+                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services, });
                     });
                 });
+
             }
         );
     });
