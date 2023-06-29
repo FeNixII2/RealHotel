@@ -80,9 +80,7 @@
                             <input type="email"
                                 class="form-control  p-3 shadow-info fs-5"
                                 id="email" name="email"
-                                placeholder="กรอกอีเมลล์"
-                                pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                                required>
+                                placeholder="กรอกอีเมลล์" required>
                         </div>
 
                         <div class="col-lg-12 my-custom-class mb-3">
@@ -103,168 +101,86 @@
                             <div class="ms-2  ">บริการเสริม</div>
                         </div>
 
-                        <div class="box-service row gy-2">
-
-                            <%
-
-                            for(i=0;i<services.length;i++){
-                                if(services[i].room_id==1) {
-                                %>
-
-                                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-
-                                    <div
-                                        class="card pt-5 text-center p-3 shadow-info"
-                                        onclick="toggleCheckbox(<%= services[i].service_id %>)">
-                                        <i class="<%=services[i].iconclass%>"></i>
-                                        <div class="servicename">
-                                            <%= services[i].name %>
-                                        </div>
-                                        <div class="serviceprice"
-                                            id="serviceprice<%=services[i].service_id %>">
-
-                                        </div>
-                                        <div
-                                            class="d-flex justify-content-center">
-                                            <input class="form-check-input"
-                                                type="checkbox" value
-                                                id="flexCheckDefault<%=services[i].service_id %>"
-                                                onclick="stopPropagation(event,<%= services[i].service_id %>)">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <script>
-                                var checkbox = document.getElementById('flexCheckDefault<%= services[i].service_id %>');
-
-                                document.getElementById('serviceprice<%= services[i].service_id %>').innerHTML = <%=services[i].price%>;
-                                document.getElementById('serviceprice<%= services[i].service_id %>').value = <%=services[i].price%>;
-                            </script>
-                                <%
-                                }else{ %>
-
-                                <%
-                                }
-                                } %>
-                            </div>
-                        </div>
-
-                        <div class="fs-5 mb-3">
-                            <div class="textpaymeant fs-5 d-flex mb-1">
-                                <i
-                                    class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
-                                <div class="ms-2 ">รูปแบบการชำระเงิน</div>
-                            </div>
-
-                            <% var payment_type_left=payment_type.slice(0,
-                            Math.ceil(payment_type.length / 2)); var
-                            payment_type_right=payment_type.slice(Math.ceil(payment_type.length
-                            / 2)); %>
-
-                            <div class="payment-s row">
-                                <div class="col-6 col-sm-6 col-md-6 text-left">
-                                    <% for(var i=0;i<
-                                    payment_type_left.length;i++){ %>
-                                    <div
-                                        class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input me-3"
-                                            type="radio" id="option<%=i%>"
-                                            name="myGroup"
-                                            value="<%=payment_type_left[i].id%>">
-                                        <label class="form-check-label"
-                                            for="option<%=i%>">
-                                            <%=payment_type_left[i].pay_type%>
-                                        </label>
-                                    </div>
-                                    <%}%>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 text-right">
-                                    <% for(var i=0;i<
-                                    payment_type_right.length;i++){ %>
-                                    <div
-                                        class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input me-3 "
-                                            type="radio"
-                                            id="option<%=payment_type_right[i].pay_type%>"
-                                            name="myGroup"
-                                            value="<%=payment_type_right[i].id%>">
-                                        <label class="form-check-label "
-                                            for="option<%=payment_type_right[i].pay_type%>">
-                                            <%=payment_type_right[i].pay_type%>
-                                        </label>
-                                    </div>
-                                    <%}%>
-                                </div>
-                            </div>
+                        <div id="service_block" class="box-service row gy-2">
 
                         </div>
+                    </div>
 
-                        <div class="textprice fs-5 d-flex mb-3 ">
+                    <div class="fs-5 mb-3">
+                        <div class="textpaymeant fs-5 d-flex mb-1">
                             <i
-                                class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
-                            <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
-                            <b>
-                                <div class="total-price " id="total-price"
-                                    style="color: red;">0</div>
-                            </b>
-                            <div class="ms-2 me-2">บาท</div>
+                                class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
+                            <div class="ms-2 ">รูปแบบการชำระเงิน</div>
                         </div>
 
-                        <script>
-                    function toggleCheckbox(id) {
-                        console.log(document.getElementById('con_reserv').value);
-                        var checkbox = document.getElementById('flexCheckDefault' + id);
-                        var serviceprice = document.getElementById('serviceprice' + id).value;
-                        // console.log(serviceprice);
-                        checkbox.checked = !checkbox.checked;
-                        if (checkbox.checked) {
-                            document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
-                                // console.log("total:   " + document.getElementById('total-price').value);
-                            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
-                        } else {
-                            document.getElementById('total-price').value = document.getElementById('total-price').value - serviceprice
-                                // console.log("total:   " + document.getElementById('total-price').value);
-                            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
-                        }
+                        <% var payment_type_left=payment_type.slice(0,
+                        Math.ceil(payment_type.length / 2)); var
+                        payment_type_right=payment_type.slice(Math.ceil(payment_type.length
+                        / 2)); %>
 
-                        // console.log("service:   " + serviceprice);
-                    }
+                        <div class="payment-s row">
+                            <div class="col-6 col-sm-6 col-md-6 text-left">
+                                <% for(var i=0;i<
+                                payment_type_left.length;i++){ %>
+                                <div
+                                    class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input me-3"
+                                        type="radio" id="option<%=i%>"
+                                        name="myGroup"
+                                        value="<%=payment_type_left[i].id%>">
+                                    <label class="form-check-label"
+                                        for="option<%=i%>">
+                                        <%=payment_type_left[i].pay_type%>
+                                    </label>
+                                </div>
+                                <%}%>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 text-right">
+                                <% for(var i=0;i<
+                                payment_type_right.length;i++){ %>
+                                <div
+                                    class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input me-3 "
+                                        type="radio"
+                                        id="option<%=payment_type_right[i].pay_type%>"
+                                        name="myGroup"
+                                        value="<%=payment_type_right[i].id%>">
+                                    <label class="form-check-label "
+                                        for="option<%=payment_type_right[i].pay_type%>">
+                                        <%=payment_type_right[i].pay_type%>
+                                    </label>
+                                </div>
+                                <%}%>
+                            </div>
+                        </div>
 
-                    function stopPropagation(event, id) {
-                        event.stopPropagation();
-                        var checkbox = document.getElementById('flexCheckDefault' + id);
-                        var serviceprice = document.getElementById('serviceprice' + id).value;
-                        console.log(serviceprice);
+                    </div>
 
-                        if (checkbox.checked) {
-                            document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
-                                // console.log("total:   " + document.getElementById('total-price').value);
-                            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
-                        } else {
-                            document.getElementById('total-price').value = document.getElementById('total-price').value - serviceprice
-                                // console.log("total:   " + document.getElementById('total-price').value);
-                            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
-                        }
+                    <div class="textprice fs-5 d-flex mb-3 ">
+                        <i
+                            class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
+                        <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
+                        <b>
+                            <div class="total-price " id="total-price"
+                                style="color: red;">0</div>
+                        </b>
+                        <div class="ms-2 me-2">บาท</div>
+                    </div>
 
-                        // console.log("service:   " + serviceprice);
-                    }
-                </script>
+                    <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
 
-                        <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
-
-                        <div class="col-lg-12 ">
-                            <button type="submit"
-                                class="btn btn-sky fs-4 w-100 p-3"
-                                id="con_reserv">ยืนยันการจอง</button>
-                            <!-- <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง
+                    <div class="col-lg-12 ">
+                        <button type="submit" class="btn btn-sky fs-4 w-100 p-3"
+                            id="con_reserv">ยืนยันการจอง</button>
+                        <!-- <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง
                     </div> -->
-                        </div>
-                    </form>
+                    </div>
+                </form>
 
-                </div>
             </div>
         </div>
-        <!-- footer -->
-        <footer-component></footer-component>
-        <!-- footer -->
-    </section>
+    </div>
+    <!-- footer -->
+    <footer-component></footer-component>
+    <!-- footer -->
+</section>

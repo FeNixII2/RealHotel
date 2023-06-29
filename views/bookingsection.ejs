@@ -480,7 +480,79 @@
 
         document.getElementById('con_reserv').value = roomtype.id
 
-        // console.log('Number of days: ' + diffDays);
+        var service = <%-JSON.stringify(services)%>;
+        const filteredData = service.filter(item => item.room_id === roomtype.id);
+        var service_block = document.getElementById('service_block');
+        service_block.innerHTML = ''
+
+        for (let i = 0; i < filteredData.length; i++) {
+            var html = `
+            <div class="card pt-5 text-center p-3 shadow-info" onclick="toggleCheckbox(${filteredData[i].service_id},${filteredData[i].price})">
+                <i class="${filteredData[i].iconclass}"></i>
+                <div class="servicename">
+                    ${filteredData[i].name}
+                </div>
+                <div class="serviceprice"
+                id="serviceprice${filteredData[i].service_id }" value="${filteredData[i].price}">
+                ${filteredData[i].price }
+                </div>
+                <div class="d-flex justify-content-center">
+                 <input class="form-check-input" type="checkbox"  id="flexCheckDefault${filteredData[i].service_id}"
+                 onclick="stopPropagation(event,${filteredData[i].service_id },${filteredData[i].price})">
+                </div>
+
+        </div>`
+
+            var checkbox = document.getElementById('flexCheckDefault' + filteredData[i].service_id);
+
+            var html_div = document.createElement('div');
+            html_div.setAttribute('class', 'col-6 col-sm-6 col-md-4 col-lg-4')
+
+            html_div.innerHTML = html;
+            service_block.appendChild(html_div);
+
+
+        }
+    }
+
+    function toggleCheckbox(id, price) {
+
+
+        console.log(document.getElementById('con_reserv').value);
+        var checkbox = document.getElementById('flexCheckDefault' + id);
+        var serviceprice = price;
+        console.log('get:   ' + price);
+        checkbox.checked = !checkbox.checked;
+        if (checkbox.checked) {
+            document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
+                // console.log("total:   " + document.getElementById('total-price').value);
+            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
+        } else {
+            document.getElementById('total-price').value = document.getElementById('total-price').value - serviceprice
+                // console.log("total:   " + document.getElementById('total-price').value);
+            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
+        }
+
+        console.log("service:   " + serviceprice);
+    }
+
+    function stopPropagation(event, id, price) {
+        event.stopPropagation();
+        var checkbox = document.getElementById('flexCheckDefault' + id);
+        var serviceprice = price;
+        // console.log(serviceprice);
+
+        if (checkbox.checked) {
+            document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
+                // console.log("total:   " + document.getElementById('total-price').value);
+            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
+        } else {
+            document.getElementById('total-price').value = document.getElementById('total-price').value - serviceprice
+                // console.log("total:   " + document.getElementById('total-price').value);
+            document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
+        }
+
+        // console.log("service:   " + serviceprice);
     }
 
     function confirm() {

@@ -107,7 +107,8 @@ module.exports = function (app, con, moment, transporter) {
             if (err) throw err
             var reserved_custom_date = currentDate.format('DMYYHmm')
             var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
-            con.query("insert into reserved (num_room,id_typeroom,checkin,checkout,cus_id, more_info, payment,reserved_id,total_price,status) values (?,?,?,?,?,?,?,?,?,0) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment, reserved_custom_id, totalprice], (err, result) => {
+            var booking_date = currentDate.format('DD-MM-YYYY')
+            con.query("insert into reserved (num_room,id_typeroom,checkin,checkout,cus_id, more_info, payment,reserved_id,total_price,date,status) values (?,?,?,?,?,?,?,?,?,?,0) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment, reserved_custom_id, totalprice, booking_date], (err, result) => {
                 if (err) throw err
                 var detail = 'ได้ทำการชำระเงินสำหรับห้อง ' + num_room[0].num_room + ' แล้ว'
                 con.query("insert into payment_log values ('',?,?,?) ", [detail, cus_id, formattedDate], (err, result) => {
