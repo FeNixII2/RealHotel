@@ -64,8 +64,7 @@ let transporter = nodemailer.createTransport({
 
 app.get("/", (req, res) => {
     con.query("SELECT mr.*,imr.img from main_roomtype AS mr LEFT JOIN  img_main_roomtype AS imr ON mr.id = imr.main_roomtype_id ", (err, datarooms) => {
-        // console.log(datarooms);
-
+        if (err) throw err
         const recroom_img = datarooms.map(item => ({
             name: item.name,
             img: item.img
@@ -91,11 +90,9 @@ app.get("/", (req, res) => {
             (err, roomstype) => {
                 con.query("select * from payment ", (err, payment_type) => {
                     con.query("SELECT room_service.roomtype_id AS room_id, room_service.service_id, service.name ,service.price ,service.iconclass , service.iconname  FROM room_service LEFT JOIN service ON  service.id = room_service.service_id ORDER BY room_service.roomtype_id ASC ,room_service.service_id asc", (err, services) => {
-
-                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services, });
+                        res.render("mainpage.ejs", { recroom_type, recroom_img, roomstype, payment_type, services });
                     });
                 });
-
             }
         );
     });

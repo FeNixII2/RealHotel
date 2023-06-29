@@ -5,7 +5,6 @@ class Footer extends HTMLElement {
     // style="background-color: #e0e0e0;"
     connectedCallback() {
         this.innerHTML = `
-
         <footer class="footer bg-dark text-white text-center mt-auto py-5" style="width: 100vw;">
         <div class="container">
             <ul class="nav justify-content-center border-bottom pb-5 mb-3">

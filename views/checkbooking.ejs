@@ -5,97 +5,102 @@
         class="container pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100"
         style="background-color: rgba(255, 255, 255, 0.6);">
         <div class="container">
-            <div class="checkbooking-section pb-5">
 
-                <div
-                    class="textcheck  pt-4 fs-3 d-flex justify-content-center mb-4">ตรวจสอบการจองห้องพัก</div>
+            <div class="textcheck  pt-4 fs-3 d-flex justify-content-center mb-4">ตรวจสอบการจองห้องพัก</div>
 
-                <form class="d-flex" action="javascript:room_code_checking()">
-                    <input class="form-control me-2" type="text"
-                        id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก"
-                        aria-label="Search" title="กรุณากรอกรหัสห้องพัก"
-                        required>
-                    <button class="btn btn-outline-success" type="submit">ค้นหา</button>
-                </form>
-                <div class="card mt-3">
-                    <div class="container">
-                        <div class="pt-3">
-                            <center>
-                                <h1>ข้อมูลการจอง</h1>
-                            </center>
+            <form class="d-flex" action="javascript:room_code_checking()">
+                <input class="form-control me-2" type="text"
+                    id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก"
+                    aria-label="Search" title="กรุณากรอกรหัสห้องพัก" required>
+                <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+            </form>
+            <div class="card mt-3" id="check_card" style="display: none;">
+                <div class="container">
+                    <div class="pt-3">
+                        <center>
+                            <h1>ข้อมูลการจอง</h1>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">รหัสการจอง :</label>
                         </div>
-                        <div class="row">
-                            <div
-                                class="col-6 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">รหัสการจอง</label>
-                            </div>
-                            <div class="col-6 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label">SF17416231002</label>
-                            </div>
-                            <div
-                                class="col-6 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">เลขห้อง</label>
-                            </div>
-                            <div class="col-6 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label">SF17416231002</label>
-                            </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-reserv_id" class="col-form-label"></label>
                         </div>
-                        <div class="row">
-                            <div
-                                class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">ประเภทห้อง</label>
-                            </div>
-                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label"></label>
-                            </div>
-                            <div
-                                class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">สถานะ</label>
-                            </div>
-                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label"></label>
-                            </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">เลขห้อง :</label>
                         </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-room_number" class="col-form-label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">ประเภทห้อง :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-room_type" class="col-form-label"></label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">สถานะ :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-status" class="col-form-label"></label>
+                        </div>
+                    </div>
 
-                        <div class="row">
-                            <div
-                                class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">เช็คอิน</label>
-                            </div>
-                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label"></label>
-                            </div>
-                            <div
-                                class="col-3 col-lg-6 col-md-6 col-sm-3 text-end">
-                                <label class="col-form-label">เช็คเอาท์</label>
-                            </div>
-                            <div class="col-3 col-lg-6 col-md-6 col-sm-3">
-                                <label class="col-form-label"></label>
-                            </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">เช็คอิน :</label>
                         </div>
-                        <div class="pt-3">
-                            <center>
-                                <h1>ข้อมูลผู้จอง</h1>
-                            </center>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-checkin" class="col-form-label"></label>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                รหัสลูกค้า
-                            </div>
-                            <div class="col-sm-12">
-                                ชื่อ-สกุล
-                            </div>
-                            <div class="col-sm-12">
-                                เบอร์โทรศัพท์
-                            </div>
-                            <div class="col-sm-12">
-                                อีเมลล์
-                            </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">เช็คเอาท์ :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-checkout" class="col-form-label"></label>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <center>
+                            <h1>ข้อมูลผู้จอง</h1>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">รหัสลูกค้า :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-cus-id" class="col-form-label"></label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">ชื่อ-สกุล :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-fullname" class="col-form-label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">เบอร์โทรศัพท์ :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-p-num" class="col-form-label"></label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
+                            <label class="col-form-label">อีเมลล์ :</label>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
+                            <label id="check-email" class="col-form-label"></label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <footer-component></footer-component>
     </div>
 
@@ -171,7 +176,17 @@
                                         position: "top",
                                     })
                                 } else {
-
+                                    document.getElementById('check-reserv_id').innerHTML = reserv_info.reserved_id
+                                    document.getElementById('check-room_number').innerHTML = reserv_info.num_room
+                                    document.getElementById('check-room_type').innerHTML = reserv_info.name + `(${reserv_info.name_th})`
+                                    document.getElementById('check-status').innerHTML = reserv_info.status
+                                    document.getElementById('check-checkin').innerHTML = reserv_info.checkin
+                                    document.getElementById('check-checkout').innerHTML = reserv_info.checkout
+                                    document.getElementById('check-cus-id').innerHTML = reserv_info.cus_id
+                                    document.getElementById('check-fullname').innerHTML = `${reserv_info.f_name} ${reserv_info.l_name}`
+                                    document.getElementById('check-p-num').innerHTML = reserv_info.p_num
+                                    document.getElementById('check-email').innerHTML = reserv_info.email
+                                    document.getElementById('check_card').style.display = 'block'
                                 }
 
                             });
