@@ -78,7 +78,7 @@ module.exports = function (app, con, moment, transporter) {
 
 
     app.post('/confirm_booking_room', (req, res) => {
-        var { firstName, p_number, email, lastName, more_info, payment, checkin, checkout, room_type, totalprice } = req.body
+        var { firstName, p_number, email, lastName, more_info, payment, checkin, checkout, room_type, totalprice, country, checkboxData } = req.body
         con.query("select id from customer where f_name = ? and l_name = ? and p_num = ? and email = ?", [firstName, lastName, p_number, email], (err, cus_id) => {
             if (err) throw err
             if (cus_id.length != 0) {
@@ -87,10 +87,10 @@ module.exports = function (app, con, moment, transporter) {
                     res.send({ reserved_custom_id })
                 });
             } else if (cus_id.length == 0) {
-                con.query("insert into customer values ('',?,?,?,?)", [firstName, lastName, p_number, email], (err, cus_id) => {
+                con.query("insert into customer values ('',?,?,?,?,?)", [firstName, lastName, p_number, email, country], (err, cus_id) => {
                     var cus_id = cus_id.insertId
                     if (err) throw err
-                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, totalprice, function (reserved_custom_id) {
+                    reserv(more_info, payment, checkin, checkout, room_type, cus_id, totalprice, checkboxData, function (reserved_custom_id) {
                         // console.log("Reserved custom ID:", reserved_custom_id);
                         res.send({ reserved_custom_id })
                     });
@@ -100,7 +100,9 @@ module.exports = function (app, con, moment, transporter) {
         })
     })
 
-    function reserv(more_info, payment, checkin, checkout, room_type, cus_id, totalprice, callback) {
+    function reserv(more_info, payment, checkin, checkout, room_type, cus_id, totalprice, checkboxData, callback) {
+        console.log(checkboxData);
+
         const currentDate = moment();
         const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
         con.query(" SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN ( SELECT num_room  FROM reserved WHERE id_typeroom = ? AND (checkin BETWEEN ? AND ? OR checkout BETWEEN ? AND ? OR (checkin <= ? AND checkout >= ?))) LIMIT 1 ", [room_type, room_type, checkin, checkout, checkin, checkout, checkin, checkout], (err, num_room) => {
@@ -108,14 +110,29 @@ module.exports = function (app, con, moment, transporter) {
             var reserved_custom_date = currentDate.format('DMYYHmm')
             var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
             var booking_date = currentDate.format('DD-MM-YYYY')
+
+
             con.query("insert into reserved (num_room,id_typeroom,checkin,checkout,cus_id, more_info, payment,reserved_id,total_price,date,status) values (?,?,?,?,?,?,?,?,?,?,0) ", [num_room[0].num_room, room_type, checkin, checkout, cus_id, more_info, payment, reserved_custom_id, totalprice, booking_date], (err, result) => {
                 if (err) throw err
                 var detail = 'ได้ทำการชำระเงินสำหรับห้อง ' + num_room[0].num_room + ' แล้ว'
                 con.query("insert into payment_log values ('',?,?,?) ", [detail, cus_id, formattedDate], (err, result) => {
                     if (err) throw err
+
+                    checkboxData.forEach(function (data) {
+                        var checkboxId = data.id;
+                        var sql = "INSERT INTO reserved_service (reserved_id, service_id ) VALUES (?, ?)";
+                        var values = [reserved_custom_id, checkboxId];
+                        con.query(sql, values, function (err, result) {
+                            if (err) {
+                                console.error('Error inserting data: ' + err.stack);
+                                return;
+                            }
+                        });
+                    });
                     callback(reserved_custom_id);
                 })
             })
+
         })
     }
 }

@@ -399,7 +399,7 @@
                                     button.value = room_type[i].id
                                     button.onclick = function(i, j, event) {
                                         reserv_modal(available_room[j], room_type[i]);
-                                        console.log(document.getElementById('con_reserv').value);
+                                        // console.log(document.getElementById('con_reserv').value);
                                         button.href = '/#bookinfo'
                                         showSection('bookinfo')
                                         const roomtypeLabel = document.getElementById('roomtype-label');
@@ -497,7 +497,7 @@
                 ${filteredData[i].price }
                 </div>
                 <div class="d-flex justify-content-center">
-                 <input class="form-check-input" type="checkbox"  id="flexCheckDefault${filteredData[i].service_id}"
+                 <input class="form-check-input" type="checkbox"  id="flexCheckDefault${filteredData[i].service_id}" value="${filteredData[i].service_id}"
                  onclick="stopPropagation(event,${filteredData[i].service_id },${filteredData[i].price})">
                 </div>
 
@@ -512,16 +512,15 @@
             service_block.appendChild(html_div);
 
 
+
+
         }
     }
 
     function toggleCheckbox(id, price) {
 
-        console.log("country:   " + document.getElementById('sc').value);
-        console.log(document.getElementById('con_reserv').value);
         var checkbox = document.getElementById('flexCheckDefault' + id);
         var serviceprice = price;
-        console.log('get:   ' + price);
         checkbox.checked = !checkbox.checked;
         if (checkbox.checked) {
             document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
@@ -533,7 +532,6 @@
             document.getElementById('total-price').innerHTML = document.getElementById('total-price').value
         }
 
-        console.log("service:   " + serviceprice);
     }
 
     function stopPropagation(event, id, price) {
@@ -556,6 +554,30 @@
     }
 
     function confirm() {
+
+        var serviceBlock = document.getElementById('service_block');
+        var checkboxes = serviceBlock.querySelectorAll('input[type="checkbox"]');
+        var checkboxData = [];
+
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                var checkboxId = checkbox.value;
+                var isChecked = checkbox.checked;
+                var checkboxInfo = {
+                    id: checkboxId,
+                    checked: isChecked
+                };
+                checkboxData.push(checkboxInfo);
+            }
+        });
+
+        console.log(checkboxData);
+
+
+
+
+
+
         var firstName = document.getElementById('firstName').value
         var p_number = document.getElementById('p_number').value
         var email = document.getElementById('email').value
@@ -565,10 +587,22 @@
         var checkout = document.getElementById('checkout').value
         var room_type = document.getElementById('con_reserv').value
         var totalprice = document.getElementById('total-price').value
+        var country = document.getElementById('namecountry').value
 
+        var radioButtons = document.getElementsByName('myGroup');
 
-        const radioButtons = document.getElementsByName('myGroup');
-        if (!firstName || !p_number || !email || !lastName || !checkin || !checkout || !room_type) {
+        let payment;
+
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                payment = radioButtons[i].value;
+
+                break;
+            }
+        }
+        // console.log("pay:   " + payment);
+
+        if (!firstName || !p_number || !email || !lastName || !checkin || !checkout || !room_type || country == "none" || !payment) {
             Swal.fire({
                 title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
                 backdrop: true,
@@ -589,14 +623,7 @@
                 confirmButtonText: 'ใช่'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    let payment;
 
-                    for (let i = 0; i < radioButtons.length; i++) {
-                        if (radioButtons[i].checked) {
-                            payment = radioButtons[i].value;
-                            break;
-                        }
-                    }
 
                     fetch("/confirm_booking_room", {
                         method: "post",
@@ -615,7 +642,9 @@
                             checkin,
                             checkout,
                             room_type,
-                            totalprice
+                            totalprice,
+                            country,
+                            checkboxData
                         })
                     }).then((response) => response.json()).then((body) => {
                         Swal.fire({

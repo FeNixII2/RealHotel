@@ -84,14 +84,16 @@
                         </div>
 
                         <div class="col-md-6 my-custom-class mb-3">
+                            <div class="d-flex mb-1">
+                                <div class="text-danger fs-4">*</div>
+                                <div class>คุณมาจากประเทศ</div>
+                            </div>
                             <select class="form-select p-3 shadow-info fs-5"
-                                aria-label="Default select example" id="sc">
-                                <option selected value="none">คุณมาจากประเทศ</option>
+                                aria-label="Default select example"
+                                id="namecountry" required>
+                                <option selected value="none">ประเทศ</option>
                                 <% for(i=0;i<listcountry.length;i++) { %>
 
-                                    <script>
-                                        console.log('<%= listcountry[i].value%>');
-                                    </script>
                                     <option value="<%= listcountry[i].value%>"><%=
                                         listcountry[i].value%></option>
 
