@@ -83,104 +83,125 @@
                                 placeholder="กรอกอีเมลล์" required>
                         </div>
 
-                        <div class="col-lg-12 my-custom-class mb-3">
-                            <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
-                                <div class>คำขอเพิ่มเติม</div>
+                        <div class="col-md-6 my-custom-class mb-3">
+                            <select class="form-select p-3 shadow-info fs-5"
+                                aria-label="Default select example" id="sc">
+                                <option selected value="none">คุณมาจากประเทศ</option>
+                                <% for(i=0;i<listcountry.length;i++) { %>
+
+                                    <script>
+                                        console.log('<%= listcountry[i].value%>');
+                                    </script>
+                                    <option value="<%= listcountry[i].value%>"><%=
+                                        listcountry[i].value%></option>
+
+                                    <%
+
+                                    }%>
+
+                                </select>
                             </div>
-                            <textarea class="form-control p-3 shadow-info fs-5"
-                                name="more_info" id="more_info" rows="3"
-                                placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
-                        </div>
-                    </div>
 
-                    <div class="fs-5 mb-3">
-                        <div class=" d-flex mb-1">
-                            <i
-                                class="fa-solid fa-note-sticky d-flex align-self-center text-sky "></i>
-                            <div class="ms-2  ">บริการเสริม</div>
-                        </div>
-
-                        <div id="service_block" class="box-service row gy-2">
-
-                        </div>
-                    </div>
-
-                    <div class="fs-5 mb-3">
-                        <div class="textpaymeant fs-5 d-flex mb-1">
-                            <i
-                                class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
-                            <div class="ms-2 ">รูปแบบการชำระเงิน</div>
-                        </div>
-
-                        <% var payment_type_left=payment_type.slice(0,
-                        Math.ceil(payment_type.length / 2)); var
-                        payment_type_right=payment_type.slice(Math.ceil(payment_type.length
-                        / 2)); %>
-
-                        <div class="payment-s row">
-                            <div class="col-6 col-sm-6 col-md-6 text-left">
-                                <% for(var i=0;i<
-                                payment_type_left.length;i++){ %>
-                                <div
-                                    class="form-check d-flex justify-content-center">
-                                    <input class="form-check-input me-3"
-                                        type="radio" id="option<%=i%>"
-                                        name="myGroup"
-                                        value="<%=payment_type_left[i].id%>">
-                                    <label class="form-check-label"
-                                        for="option<%=i%>">
-                                        <%=payment_type_left[i].pay_type%>
-                                    </label>
+                            <div class="col-lg-12 my-custom-class mb-3">
+                                <div class="d-flex mb-1">
+                                    <div class="text-danger fs-4">*</div>
+                                    <div class>คำขอเพิ่มเติม</div>
                                 </div>
-                                <%}%>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-6 text-right">
-                                <% for(var i=0;i<
-                                payment_type_right.length;i++){ %>
-                                <div
-                                    class="form-check d-flex justify-content-center">
-                                    <input class="form-check-input me-3 "
-                                        type="radio"
-                                        id="option<%=payment_type_right[i].pay_type%>"
-                                        name="myGroup"
-                                        value="<%=payment_type_right[i].id%>">
-                                    <label class="form-check-label "
-                                        for="option<%=payment_type_right[i].pay_type%>">
-                                        <%=payment_type_right[i].pay_type%>
-                                    </label>
-                                </div>
-                                <%}%>
+                                <textarea
+                                    class="form-control p-3 shadow-info fs-5"
+                                    name="more_info" id="more_info" rows="3"
+                                    placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
                             </div>
                         </div>
 
-                    </div>
+                        <div class="fs-5 mb-3">
+                            <div class=" d-flex mb-1">
+                                <i
+                                    class="fa-solid fa-note-sticky d-flex align-self-center text-sky "></i>
+                                <div class="ms-2  ">บริการเสริม</div>
+                            </div>
 
-                    <div class="textprice fs-5 d-flex mb-3 ">
-                        <i
-                            class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
-                        <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
-                        <b>
-                            <div class="total-price " id="total-price"
-                                style="color: red;">0</div>
-                        </b>
-                        <div class="ms-2 me-2">บาท</div>
-                    </div>
+                            <div id="service_block" class="box-service row gy-2">
 
-                    <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
+                            </div>
+                        </div>
 
-                    <div class="col-lg-12 ">
-                        <button type="submit" class="btn btn-sky fs-4 w-100 p-3"
-                            id="con_reserv">ยืนยันการจอง</button>
-                        <!-- <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง
+                        <div class="fs-5 mb-3">
+                            <div class="textpaymeant fs-5 d-flex mb-1">
+                                <i
+                                    class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
+                                <div class="ms-2 ">รูปแบบการชำระเงิน</div>
+                            </div>
+
+                            <% var payment_type_left=payment_type.slice(0,
+                            Math.ceil(payment_type.length / 2)); var
+                            payment_type_right=payment_type.slice(Math.ceil(payment_type.length
+                            / 2)); %>
+
+                            <div class="payment-s row">
+                                <div class="col-6 col-sm-6 col-md-6 text-left">
+                                    <% for(var i=0;i<
+                                    payment_type_left.length;i++){ %>
+                                    <div
+                                        class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input me-3"
+                                            type="radio" id="option<%=i%>"
+                                            name="myGroup"
+                                            value="<%=payment_type_left[i].id%>">
+                                        <label class="form-check-label"
+                                            for="option<%=i%>">
+                                            <%=payment_type_left[i].pay_type%>
+                                        </label>
+                                    </div>
+                                    <%}%>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 text-right">
+                                    <% for(var i=0;i<
+                                    payment_type_right.length;i++){ %>
+                                    <div
+                                        class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input me-3 "
+                                            type="radio"
+                                            id="option<%=payment_type_right[i].pay_type%>"
+                                            name="myGroup"
+                                            value="<%=payment_type_right[i].id%>">
+                                        <label class="form-check-label "
+                                            for="option<%=payment_type_right[i].pay_type%>">
+                                            <%=payment_type_right[i].pay_type%>
+                                        </label>
+                                    </div>
+                                    <%}%>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="textprice fs-5 d-flex mb-3 ">
+                            <i
+                                class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
+                            <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
+                            <b>
+                                <div class="total-price " id="total-price"
+                                    style="color: red;">0</div>
+                            </b>
+                            <div class="ms-2 me-2">บาท</div>
+                        </div>
+
+                        <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
+
+                        <div class="col-lg-12 ">
+                            <button type="submit"
+                                class="btn btn-sky fs-4 w-100 p-3"
+                                id="con_reserv">ยืนยันการจอง</button>
+                            <!-- <div button type="button" class="btn btn-primary fs-5" onclick="confirm()" id="con_reserv">ยืนยันการจอง
                     </div> -->
-                    </div>
-                </form>
+                        </div>
+                    </form>
 
+                </div>
             </div>
         </div>
-    </div>
-    <!-- footer -->
-    <footer-component></footer-component>
-    <!-- footer -->
-</section>
+        <!-- footer -->
+        <footer-component></footer-component>
+        <!-- footer -->
+    </section>
