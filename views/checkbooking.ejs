@@ -1,97 +1,252 @@
 <section id="checkbooking" style="position: relative;">
-    <div class="backgroundpage-image"></div>
+    <!-- <div class="backgroundpage-image"></div> -->
 
-    <div class="container pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100" style="background-color: rgba(255, 255, 255, 0.6);">
-        <div class="container">
+    <div
+        class="container pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100">
 
-            <div class="textcheck  pt-4 fs-3 d-flex justify-content-center mb-4">ตรวจสอบการจองห้องพัก</div>
+        <div
+            class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center">
+            <div class="textcheck  pt-4 fs-3 d-flex justify-content-center mb-3">ตรวจสอบการจองห้องพัก</div>
 
-            <form class="d-flex" action="javascript:room_code_checking()">
-                <input class="form-control me-2" type="text" id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก" aria-label="Search" title="กรุณากรอกรหัสห้องพัก" required>
+            <form class="d-flex w-100" action="javascript:room_code_checking()">
+                <input class="form-control p-3 shadow-info me-2" type="text"
+                    id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก"
+                    aria-label="Search" title="กรุณากรอกรหัสห้องพัก" required>
                 <button class="btn btn-outline-success" type="submit">ค้นหา</button>
             </form>
-            <div class="card mt-3" id="check_card" style="display: none;">
+            <div class="card my-4" id="check_card" style="display: none;">
                 <div class="container">
                     <div class="pt-3">
-                        <center>
-                            <h1>ข้อมูลการจอง</h1>
-                        </center>
+
+                        <div class="fs-3 text-center py-2">ข้อมูลการจอง</div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">รหัสการจอง :</label>
+                    <div class="row fs-5 d-flex justify-content-center">
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-6 ">
+                            <div class=" ">
+                                <label class="col-form-label">รหัสการจอง</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-reserv_id" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-reserv_id" class="col-form-label"></label>
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ประเภทห้อง</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-room_type" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">เลขห้อง :</label>
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-6 ">
+                            <div class>
+                                <label class="col-form-label">เลขห้อง</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-room_number" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-room_number" class="col-form-label"></label>
+
+                        <div class="col-12 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">เตียง</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="info_bed" disabled readonly>
+
+                            </div>
                         </div>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">เช็คอิน</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-checkin" disabled readonly>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">เช็คเอาท์</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-checkout" disabled readonly>
+
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ขนาดห้อง</label>
+                            </div>
+                            <div class="d-flex">
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="info_roomsize" disabled readonly>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">จำนวนเข้าพักสูงสุด
+                                </label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="info_countcustomer" disabled readonly>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ส่วนเสริม</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="info_extional" disabled readonly>
+
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">จ่ายด้วย</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="info_pay" disabled readonly>
+
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">ประเภทห้อง :</label>
+                    <div class="fs-5 col-form-label">บริการเสริม</div>
+                    <div class id="showservice">
+                    </div>
+                    <div class="row fs-5">
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ราคาห้อง</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="roomprice" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-room_type" class="col-form-label"></label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">สถานะ :</label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-status" class="col-form-label"></label>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ราคารวม</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="roompricetotal" disabled readonly>
+
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">เช็คอิน :</label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-checkin" class="col-form-label"></label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">เช็คเอาท์ :</label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-checkout" class="col-form-label"></label>
-                        </div>
-                    </div>
                     <div class="pt-3">
-                        <center>
-                            <h1>ข้อมูลผู้จอง</h1>
-                        </center>
+
+                        <div class="fs-3 text-center py-2">ข้อมูลผู้จอง</div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">รหัสลูกค้า :</label>
+                    <div class="row fs-5">
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">รหัสลูกค้า</label>
+                            </div>
+                            <div class>
+                                <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-cus-id" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-cus-id" class="col-form-label"></label>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">ชื่อ-สกุล</label>
+                            </div>
+                            <div class> <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-fullname" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">ชื่อ-สกุล :</label>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">เบอร์โทรศัพท์</label>
+                            </div>
+                            <div class> <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-p-num" disabled readonly>
+
+                            </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-fullname" class="col-form-label"></label>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">อีเมลล์</label>
+                            </div>
+                            <div class> <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="check-email" disabled readonly>
+
+                            </div>
                         </div>
+                        <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class>
+                                <label class="col-form-label">มาจากประเทศ</label>
+                            </div>
+                            <div class> <input class="form-control shadow-info"
+                                    type="text" value="Disabled readonly input"
+                                    aria-label="Disabled input example"
+                                    id="fromcountry" disabled readonly>
+
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">เบอร์โทรศัพท์ :</label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-p-num" class="col-form-label"></label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6 text-end">
-                            <label class="col-form-label">อีเมลล์ :</label>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 col-md-6">
-                            <label id="check-email" class="col-form-label"></label>
-                        </div>
+                    <div class="row  d-flex justify-content-center fs-3 py-2">
+
+                        <label id="check-status"
+                            class="col-form-label text-center"></label>
+
                     </div>
                 </div>
             </div>
@@ -120,7 +275,7 @@
             var reserv = body.result
             if (reserv.length > 0) {
                 Swal.fire({
-                    title: "Enter the last 4 digits of your phone number:",
+                    title: "ใส่เลข 4 ตัวท้ายของเบอร์โทรศัพท์เพื่อยืนยัน",
                     input: "text",
                     inputAttributes: {
                         placeholder: "Last 4 digits",
@@ -147,13 +302,17 @@
                                 },
                                 body: JSON.stringify({
                                     code,
-                                    phoneNumber
+                                    phoneNumber,
+
                                 })
                             })
                             .then((response) => response.json())
                             .then((body) => {
                                 var reserv_info = body.reserv_info[0];
+                                var showservice = body.showservice;
                                 console.log(reserv_info);
+                                console.log(showservice);
+
                                 if (reserv_info == undefined) {
                                     Swal.fire({
                                         title: "เบอร์โทรศัพท์ไม่ถูกต้อง",
@@ -163,16 +322,47 @@
                                         position: "top",
                                     })
                                 } else {
-                                    document.getElementById('check-reserv_id').innerHTML = reserv_info.reserved_id
-                                    document.getElementById('check-room_number').innerHTML = reserv_info.num_room
-                                    document.getElementById('check-room_type').innerHTML = reserv_info.name + `(${reserv_info.name_th})`
-                                    document.getElementById('check-status').innerHTML = reserv_info.status
-                                    document.getElementById('check-checkin').innerHTML = reserv_info.checkin
-                                    document.getElementById('check-checkout').innerHTML = reserv_info.checkout
-                                    document.getElementById('check-cus-id').innerHTML = reserv_info.cus_id
-                                    document.getElementById('check-fullname').innerHTML = `${reserv_info.f_name} ${reserv_info.l_name}`
-                                    document.getElementById('check-p-num').innerHTML = reserv_info.p_num
-                                    document.getElementById('check-email').innerHTML = reserv_info.email
+
+                                    document.getElementById('check-reserv_id').value = reserv_info.reserved_id
+                                    document.getElementById('check-room_number').value = reserv_info.num_room
+                                    document.getElementById('check-room_type').value = reserv_info.name + `(${reserv_info.name_th})`
+                                    document.getElementById('check-status').innerHTML = reserv_info.status_name
+                                    document.getElementById('check-checkin').value = reserv_info.checkin
+                                    document.getElementById('check-checkout').value = reserv_info.checkout
+                                    document.getElementById('check-cus-id').value = reserv_info.cus_id
+                                    document.getElementById('check-fullname').value = `${reserv_info.f_name} ${reserv_info.l_name}`
+                                    document.getElementById('check-p-num').value = reserv_info.p_num
+                                    document.getElementById('check-email').value = reserv_info.email
+                                    document.getElementById('roomprice').value = reserv_info.price + " บาท"
+                                    document.getElementById('roompricetotal').value = reserv_info.total_price + " บาท"
+                                    document.getElementById('fromcountry').value = reserv_info.country
+                                    document.getElementById('info_bed').value = reserv_info.bed
+                                    document.getElementById('info_roomsize').value = reserv_info.size + " ตารางเมตร"
+                                    document.getElementById('info_countcustomer').value = reserv_info.count_humen + " คน"
+                                    document.getElementById('info_extional').value = reserv_info.extional
+                                    document.getElementById('info_pay').value = reserv_info.pay_type
+
+                                    var service_element = document.getElementById('showservice');
+                                    service_element.innerHTML = ''
+
+                                    for (let i = 0; i < showservice.length; i++) {
+                                        var html = `
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                            <label class="col-form-label me-2">${showservice[i].name}</label>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex">
+                            <div class="me-2">${showservice[i].price}</div>
+                            <div class="">บาท</div>
+
+                        </div>
+                                        `
+                                        var htmldiv = document.createElement('div');
+                                        htmldiv.setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-12 d-flex align-items-center')
+
+                                        htmldiv.innerHTML = html;
+                                        service_element.appendChild(htmldiv);
+                                    }
+
                                     document.getElementById('check_card').style.display = 'block'
                                 }
 
