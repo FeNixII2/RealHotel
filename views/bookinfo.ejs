@@ -4,28 +4,41 @@
 
         <div class="row justify-content-center">
             <!-- style="box-shadow:  0px 0px 10px 0.1px rgb(138, 138, 138);background-color: white;" -->
-            <div class="col-lg-8 mt-3  mb-5">
-                <div class="py-4 text-center px-0 fs-1 fw-semibold"></div>
-                <div class="mb-3">
-                    <div class=" d-flex">
-                        <i
-                            class="fa-solid fa-door-closed d-flex align-self-center text-sky "></i>
-                        <div class="ms-2 ">รายละเอียดห้องพัก</div>
-                    </div>
+            <div class="card col-lg-8   py-4 mt-5 mb-4">
+                <div class=" text-center px-0 fs-1 fw-semibold"></div>
 
-                    <div class="rooms-label  mb-1">
-                        ประเภท:
-                        <label id="roomtype-label"></label>
+                <div class=" d-flex">
+                    <i
+                        class="fa-solid fa-door-closed d-flex align-self-center text-sky "></i>
+                    <div class="ms-2 mb-1">รายละเอียดห้องพัก</div>
+                </div>
+                <div class="rooms-label row ">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 mb-3">
+                        <div class="mb-1">ห้องที่เลือก</div>
+                        <input class="form-control bg-white p-3 shadow-info"
+                            type="text" id="roomtype-label"
+                            aria-label="Disabled input example" disabled
+                            readonly>
                     </div>
-                    <div class="row ">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-1">
-                            เช็คอิน:
-                            <label id="checkin-label"></label>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
-                            เช็คเอ้าท์:
-                            <label id="checkout-label"></label>
-                        </div>
+                </div>
+                <div class="row ">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
+
+                        <div class="mb-1">เช็คอิน</div>
+                        <input class="form-control bg-white p-3 shadow-info"
+                            type="text" id="checkin-label"
+                            aria-label="Disabled input example" disabled
+                            readonly>
+
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
+                        <div class="mb-1">เช็คเอ้าท์</div>
+
+                        <input class="form-control bg-white p-3 shadow-info"
+                            type="text" id="checkout-label"
+                            aria-label="Disabled input example" disabled
+                            readonly>
+
                     </div>
                 </div>
 
@@ -106,7 +119,7 @@
 
                             <div class="col-lg-12 my-custom-class mb-3">
                                 <div class="d-flex mb-1">
-                                    <div class="text-danger fs-4">*</div>
+
                                     <div class>คำขอเพิ่มเติม</div>
                                 </div>
                                 <textarea class="form-control p-3 shadow-info "
@@ -179,15 +192,15 @@
 
                         </div>
 
-                        <div class="textprice  d-flex mb-3 ">
+                        <div class="textprice  d-flex mb-3 d-flex  ">
                             <i
                                 class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
-                            <div class="ms-2 me-2">ราคารวมทั้งสิ้น</div>
+                            <div class="ms-2 me-2 d-flex align-self-center">ราคารวมทั้งสิ้น</div>
                             <b>
-                                <div class="total-price " id="total-price"
+                                <div class="total-price fs-3" id="total-price"
                                     style="color: red;">0</div>
                             </b>
-                            <div class="ms-2 me-2">บาท</div>
+                            <div class="ms-2 me-2 d-flex align-self-center">บาท</div>
                         </div>
 
                         <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->

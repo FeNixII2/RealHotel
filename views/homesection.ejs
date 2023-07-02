@@ -1,624 +1,587 @@
-<section id="home" class="mt-5" style="position: relative;">
+<section id="home" class="pt-5" style="position: relative;">
     <!-- <div class="backgroundpage-image"></div> -->
 
-    <div class>
-        <!-- <div class="parallax d-flex align-items-center"> -->
-        <!-- welcome -->
+    <!-- <div class="parallax d-flex align-items-center"> -->
+    <!-- welcome -->
 
-        <div class="px-4 pt-5 text-center">
-            <img class="d-block mx-auto mb-4" src="hotel.png" alt width="72"
-                height="57" />
-            <h1 class="display-5 fw-bold">
-                <div class>โรงแรมบีเอส</div>
-                <div class>ยินดีต้อนรับ</div>
-            </h1>
-            <div class="col-lg-6 mx-auto">
-                <div class="lead">
-                    โรงแรมบีเอส ปราจีนบุรี ตั้งอยู่ใจกลาง อำเภอเมืองปราจีนบุรี
-                    มีพนักงานต้อนรับตลอด 24 ชั่วโมง
-                    ทุกห้องพักถูกออกแบบให้มีความสะดวกสบาย เหมาะกับการพักผ่อน
-                    มีเครื่องใช้ไฟฟ้าครบครัน พร้อมทั้งอินเตอร์เน็ตความเร็วสูง
-                </div>
+    <div class="px-4 pt-5 text-center">
+        <img class="d-block mx-auto mb-4" src="hotel.png" alt width="72"
+            height="57" />
+        <h1 class="display-5 fw-bold">
+            <div class>โรงแรมบีเอส</div>
+            <div class>ยินดีต้อนรับ</div>
+        </h1>
+        <div class="col-lg-6 mx-auto">
+            <div class="lead">
+                โรงแรมบีเอส ปราจีนบุรี ตั้งอยู่ใจกลาง อำเภอเมืองปราจีนบุรี
+                มีพนักงานต้อนรับตลอด 24 ชั่วโมง
+                ทุกห้องพักถูกออกแบบให้มีความสะดวกสบาย เหมาะกับการพักผ่อน
+                มีเครื่องใช้ไฟฟ้าครบครัน พร้อมทั้งอินเตอร์เน็ตความเร็วสูง
             </div>
         </div>
-        <!-- welcome -->
-        <!-- </div> -->
+    </div>
+    <!-- welcome -->
+    <!-- </div> -->
 
-        <div class="d-flex justify-content-center fs-1 fw-semibold my-5">
-            ห้องพักและบริการ
+    <div class="d-flex justify-content-center fs-1 fw-semibold my-5">
+        ห้องพักและบริการ
+    </div>
+
+    <!-- rooms -->
+    <div class="container">
+        <div id="home-recroom"></div>
+        <div class="row hover-a-room gy-3">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
+
+                <div class="setcard-recroom d-block  h-100"
+                    style="border-radius: 6px;overflow: hidden;">
+                    <a href="#booking" onclick="sign_room('Standard')"
+                        class=" d-block"><img src="standard.jpg"
+                            alt="Image placeholder" class="img-fluid w-100"></a>
+                    <div class="p-3">
+                        <span class="meta-post">เริ่มต้นที่, ฿450/คืน</span>
+                        <h2 class="mt-0 mb-3 "><a href="#booking"
+                                onclick="sign_room('Standard')"
+                                class="text-room-home">Standard
+                                (ธรรมดา)</a></h2>
+                        <p>เป็นห้องพักแบบมาตรฐานทั่วไป
+                            มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน
+                            ห้องน้ำ ทีวี แอร์.</p>
+                        <a href="#booking"
+                            class=" btn btn-recroom fw-semibold fs-5 "
+                            onclick="sign_room('Standard')">จองเลย</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12"
+                style="border-radius: 6px;overflow: hidden;">
+                <div class="setcard-recroom  d-block  h-100 p-2">
+                    <a href="#booking" onclick="sign_room('Superior')"
+                        class=" d-block"><img src="superior.jpeg"
+                            alt="Image placeholder" class="img-fluid w-100"></a>
+                    <div class="media-body h-100">
+                        <span class="meta-post">เริ่มต้นที่, ฿550/คืน</span>
+                        <h2 class="mt-0"><a href="#booking"
+                                onclick="sign_room('Superior')"
+                                class="text-room-home">Superior
+                                (ซูพีเรีย)</a></h2>
+                        <p>เป็นห้องพักที่มีขนาดกว้างกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย
+                            มีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น.</p>
+                        <a href="#booking"
+                            class=" btn btn-recroom fw-semibold fs-5 "
+                            onclick="sign_room('Superior')">จองเลย</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class=" media-custom d-block mb-4 h-100 p-2">
+                    <a href="#booking" onclick="sign_room('Deluxe')"
+                        class="mb-4 d-block"><img src="deluxe.jpeg"
+                            alt="Image placeholder" class="img-fluid w-100"></a>
+                    <div class="p-3">
+                        <span class="meta-post">เริ่มต้นที่, ฿750/คืน</span>
+                        <h2 class="mt-0 mb-3 c-textroom"><a href="#booking"
+                                onclick="sign_room('Deluxe')">Deluxe
+                                (ดีลักซ์)</a></h2>
+                        <p>เป็นห้องที่หรูหราขึ้นมา มีการตกแต่งที่สวยงาม
+                            เตียงขนาดใหญ่ พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน.
+                        </p>
+                        <a href="#booking" onclick="sign_room('Deluxe')">จองเลย</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class=" media-custom d-block mb-4 h-100 p-2">
+                    <a href="#booking" onclick="sign_room('Suite')"
+                        class="mb-4 d-block"><img src="Suite.jpeg"
+                            alt="Image placeholder" class="img-fluid w-100"></a>
+                    <div class="media-body">
+                        <span class="meta-post">เริ่มต้นที่, ฿1000/คืน</span>
+                        <h2 class="mt-0 mb-3"><a href="#booking"
+                                onclick="sign_room('Suite')">Suite
+                                (สวีท)</a></h2>
+                        <p>เป็นห้องพักที่มีห้องนั่งเล่น
+                            สิ่งอำนวยความสะดวกต่างๆครบครัน พื้นที่กว้างมากกว่า
+                            มีการตกแต่งที่หรูหรา.
+                        </p>
+                        <a href="#booking" onclick="sign_room('Suite')">จองเลย</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- rooms -->
-        <div class="container">
-            <div class="row hover-a-room gy-3">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
-
-                    <div class="media-custom d-block mb-4 h-100 p-2">
-                        <a href="#booking" onclick="sign_room('Standard')"
-                            class="mb-4 d-block"><img src="standard.jpg"
-                                alt="Image placeholder" class="img-fluid w-100"></a>
-                        <div class="media-body">
-                            <span class="meta-post">เริ่มต้นที่, ฿450/คืน</span>
-                            <h2 class="mt-0 mb-3"><a href="#booking"
-                                    onclick="sign_room('Standard')">Standard
-                                    (ธรรมดา)</a></h2>
-                            <p>เป็นห้องพักแบบมาตรฐานทั่วไป
-                                มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน
-                                ห้องน้ำ ทีวี แอร์.</p>
-                            <a href="#booking" onclick="sign_room('Standard')">จองเลย</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class=" media-custom d-block mb-4 h-100 p-2">
-                        <a href="#booking" onclick="sign_room('Superior')"
-                            class="mb-4 d-block"><img src="superior.jpeg"
-                                alt="Image placeholder" class="img-fluid w-100"></a>
-                        <div class="media-body h-100">
-                            <span class="meta-post">เริ่มต้นที่, ฿550/คืน</span>
-                            <h2 class="mt-0"><a href="#booking"
-                                    onclick="sign_room('Superior')">Superior
-                                    (ซูพีเรีย)</a></h2>
-                            <p>เป็นห้องพักที่มีขนาดกว้างกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย
-                                มีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น.</p>
-                            <a href="#booking" onclick="sign_room('Superior')">จองเลย</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class=" media-custom d-block mb-4 h-100 p-2">
-                        <a href="#booking" onclick="sign_room('Deluxe')"
-                            class="mb-4 d-block"><img src="deluxe.jpeg"
-                                alt="Image placeholder" class="img-fluid w-100"></a>
-                        <div class="media-body">
-                            <span class="meta-post">เริ่มต้นที่, ฿750/คืน</span>
-                            <h2 class="mt-0 mb-3 c-textroom"><a href="#booking"
-                                    onclick="sign_room('Deluxe')">Deluxe
-                                    (ดีลักซ์)</a></h2>
-                            <p>เป็นห้องที่หรูหราขึ้นมา มีการตกแต่งที่สวยงาม
-                                เตียงขนาดใหญ่
-                                พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน.
-                            </p>
-                            <a href="#booking" onclick="sign_room('Deluxe')">จองเลย</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class=" media-custom d-block mb-4 h-100 p-2">
-                        <a href="#booking" onclick="sign_room('Suite')"
-                            class="mb-4 d-block"><img src="Suite.jpeg"
-                                alt="Image placeholder" class="img-fluid w-100"></a>
-                        <div class="media-body">
-                            <span class="meta-post">เริ่มต้นที่, ฿1000/คืน</span>
-                            <h2 class="mt-0 mb-3"><a href="#booking"
-                                    onclick="sign_room('Suite')">Suite
-                                    (สวีท)</a></h2>
-                            <p>เป็นห้องพักที่มีห้องนั่งเล่น
-                                สิ่งอำนวยความสะดวกต่างๆครบครัน
-                                พื้นที่กว้างมากกว่า มีการตกแต่งที่หรูหรา.</p>
-                            <a href="#booking" onclick="sign_room('Suite')">จองเลย</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- rooms -->
-            <div class="row  mt-5">
-                <div
-                    class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center p-2">
-                    <div class="row-service"
-                        style="height: 150px; width: 150px;">
-                        <div
-                            class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
-                            style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
-                            <i class="fa-solid fa-taxi fa-3x mb-3"></i>
-                            <div class="text-service">Transportion</div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center  p-2">
-                    <div class="row-service"
-                        style="height: 150px; width: 150px;">
-                        <div
-                            class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
-                            style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
-                            <i
-                                class="fa-solid fa-cart-flatbed-suitcase fa-3x mb-3"></i>
-                            <div class="text-service">Reiseservice</div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center  p-2">
-                    <div class="row-service"
-                        style="height: 150px; width: 150px;">
-                        <div
-                            class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
-                            style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
-                            <i
-                                class="fa-solid fa-martini-glass-citrus fa-3x mb-3"></i>
-                            <div class="text-service">Restaurant</div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center p-2 ">
-                    <div class="row-service"
-                        style="height: 150px; width: 150px;">
-                        <div
-                            class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
-                            style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
-                            <i class="fa-solid fa-spa fa-3x mb-3"></i>
-                            <div class="text-service">Spa Relaxtion</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- service -->
+        <div class="row  mt-5">
             <div
-                class="container col-12 col-sm-10 col-md-10 col-lg-10 py-5 px-3">
-                <div class="row flex-lg-row-reverse align-items-center g-5 ">
-                    <div class="col-lg-6">
-                        <img src="prefront.jpg"
-                            class="d-block mx-lg-auto img-block1"
-                            alt="Bootstrap Themes" width="700" height="500"
-                            loading="lazy" style="border-radius: 8px;" />
-                    </div>
-                    <div class="col-lg-6">
-                        <h1 class="display-5 fw-bold fs-2 mb-3">
-                            บริการดีทุกระดับประทับใจ
-                        </h1>
-                        <p class="lead">
-                            ทางเราให้บริการด้วยความเต็มใจ
-                            พร้อมให้คุณได้สมผัสบรรยากาศการพักผ่อนที่ประทับใจ
-                            มีสิ่งอำนวยความสะดวกครบครัน
-                            และที่พักของเรายังใกล้กับสถานที่ท่องเที่ยวมากมาย
-                            คุณสามารถเดินทางไปในระยะเวลาที่สั้น
-                            และเพลิดเพลินกับการท่องเที่ยว
-                        </p>
-                        <div
-                            class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button"
-                                class="btn btn btn-secondary btn-lg px-4 me-md-2"
-                                href="#contact" onclick="showSection('contact')">เกี่ยวกับเรา</button>
-                            <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">เกี่ยวกับเรา</button> -->
-                        </div>
+                class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center p-2">
+                <div class="row-service" style="height: 150px; width: 150px;">
+                    <div
+                        class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
+                        style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
+                        <i class="fa-solid fa-taxi fa-3x mb-3"></i>
+                        <div class="text-service">Transportion</div>
                     </div>
                 </div>
             </div>
-            <!-- service -->
-        </div>
-
-        <!-- แนะนำอาหาร -->
-        <div class="recservice d-flex justify-content-center align-items-center">
-            <div class=" row w-100">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
-                    <div id="carouselExampleDark"
-                        class="carousel carousel-dark slide"
-                        data-bs-ride="carousel">
-                        <div class="carousel-inner ">
-                            <div class="carousel-item active"
-                                data-bs-interval="5000">
-                                <img src="bf1.jpg" class=" w-100 img-fluid"
-                                    alt="..." />
-                                <div class="carousel-caption d-none d-md-block"
-                                    style="background-color: rgba(255, 255, 255, 0.8)">
-                                    <h5>อาหารเช้าเบา ๆ สไตล์ยุโรป</h5>
-                                    <p>
-                                        ประกอบด้วย ผลไม้ เบเกอรี่ ขนมปัง ซีเรียล
-                                        แยม กาแฟ น้ำผลไม้ โยเกิร์ตหรือเนื้อ
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <img src="bf2.jpg" class=" w-100 img-fluid"
-                                    alt="..." />
-                                <div class="carousel-caption d-none d-md-block"
-                                    style="background-color: rgba(255, 255, 255, 0.8)">
-                                    <h5>อาหารเช้าจัดหนักสไตล์อังกฤษ</h5>
-                                    <p>
-                                        ประกอบด้วย ไส้กรอก ขนมปังปิ้ง ถั่ว เบคอน
-                                        ไข่ และผักอย่างมะเขือเทศ เห็ดกับชา
-                                        กาแฟหรือน้ำผลไม้
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <img src="bf3.jpg" class="w-100 img-fluid"
-                                    alt="..." />
-                                <div class="carousel-caption d-none d-md-block"
-                                    style="background-color: rgba(255, 255, 255, 0.8)">
-                                    <h5>อาหารเช้าแบบอเมริกันที่คนไทยคุ้นเคย</h5>
-                                    <p>
-                                        ประกอบด้วย ไข่ดาว ไข่คน ไข่ต้ม ไข่ลวก
-                                        ไส้กรอก และเบคอน ขนมปังปิ้งกับเนยหรือแยม
-                                        ซีเรียล
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="5000">
-                                <img src="bf4.jpg" class=" w-100 img-fluid"
-                                    alt="..." />
-                                <div class="carousel-caption d-none d-md-block"
-                                    style="background-color: rgba(255, 255, 255, 0.8)">
-                                    <h5>อาหารเช้าโรงแรม แบบ Buffet และ Local
-                                        Breakfast
-                                    </h5>
-                                    <p>
-                                        มีอาหารให้เลือกมากมาย
-                                        ไม่ว่าจะเป็นเบเกอรี่ ไข่ เบคอน ไส้กรอก
-                                        อาหารจำพวกเนื้อสัตว์ ผักต่าง ๆ
-                                        ไปจนถึงเครื่องดื่ม
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <div
+                class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center  p-2">
+                <div class="row-service" style="height: 150px; width: 150px;">
+                    <div
+                        class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
+                        style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
+                        <i class="fa-solid fa-cart-flatbed-suitcase fa-3x mb-3"></i>
+                        <div class="text-service">Reiseservice</div>
                     </div>
                 </div>
-                <div
-                    class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column">
-                    <div class="fs-2 fw-semibold">อาหารเช้าหลากหลาย</div>
-                    <div class="p_reccomend">
-                        อาหารหลากหลายตามความต้องการ ไม่ว่าจะเป็น ไข่ เนื้อ
-                        ขนมปัง ผักและผลไม้ต่างๆ รวมทั้งยังมีเมนูอีกมากมาย
+            </div>
+            <div
+                class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center  p-2">
+                <div class="row-service" style="height: 150px; width: 150px;">
+                    <div
+                        class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
+                        style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
+                        <i class="fa-solid fa-martini-glass-citrus fa-3x mb-3"></i>
+                        <div class="text-service">Restaurant</div>
                     </div>
-                    <div class>ให้บริการ 08:00 - 18:00</div>
+                </div>
+            </div>
+            <div
+                class="col-lg-3 col-md-3 col-sm-3 col-6 d-flex align-items-center justify-content-center p-2 ">
+                <div class="row-service" style="height: 150px; width: 150px;">
+                    <div
+                        class="d-block mb-4 h-100  d-flex flex-column align-items-center justify-content-center"
+                        style="background-color: white;box-shadow: 0 2px 14px 5px rgba(20, 20, 20, 0.05);">
+                        <i class="fa-solid fa-spa fa-3x mb-3"></i>
+                        <div class="text-service">Spa Relaxtion</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- แนะนำอาหาร -->
-        <!-- แนะนำสปา -->
-        <div class="recservice2 row ">
-            <div
-                class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column ">
-                <div class="fs-2 fw-semibold">บริการสปานวด</div>
+        <!-- service -->
+        <div class="container col-12 col-sm-10 col-md-10 col-lg-10 py-5 px-3">
+            <div class="row flex-lg-row-reverse align-items-center g-5 ">
+                <div class="col-lg-6">
+                    <img src="prefront.jpg"
+                        class="d-block mx-lg-auto img-block1"
+                        alt="Bootstrap Themes" width="700" height="500"
+                        loading="lazy" style="border-radius: 8px;" />
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold fs-2 mb-3">
+                        บริการดีทุกระดับประทับใจ
+                    </h1>
+                    <p class="lead">
+                        ทางเราให้บริการด้วยความเต็มใจ
+                        พร้อมให้คุณได้สมผัสบรรยากาศการพักผ่อนที่ประทับใจ
+                        มีสิ่งอำนวยความสะดวกครบครัน
+                        และที่พักของเรายังใกล้กับสถานที่ท่องเที่ยวมากมาย
+                        คุณสามารถเดินทางไปในระยะเวลาที่สั้น
+                        และเพลิดเพลินกับการท่องเที่ยว
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button"
+                            class="btn btn btn-secondary btn-lg px-4 me-md-2"
+                            href="#contact" onclick="showSection('contact')">เกี่ยวกับเรา</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">เกี่ยวกับเรา</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- service -->
+    </div>
+
+    <!-- แนะนำอาหาร -->
+    <div class="recservice d-flex justify-content-center align-items-center">
+
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide"
+                data-bs-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="bf1.jpg" class=" w-100 img-fluid" alt="..." />
+
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="bf2.jpg" class=" w-100 img-fluid" alt="..." />
+
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="bf3.jpg" class="w-100 img-fluid" alt="..." />
+
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="bf4.jpg" class=" w-100 img-fluid" alt="..." />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column ">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-6">
+                <div class="fs-3">บริการอาหารเช้า</div>
+                <div class="p_reccomend">
+                    อาหารหลากหลายตามความต้องการ ไม่ว่าจะเป็น ไข่ เนื้อ ขนมปัง
+                    ผักและผลไม้ต่างๆ รวมทั้งยังมีเมนูอีกมากมาย
+                    อาหารหลากหลายตามความต้องการ ไม่ว่าจะเป็น ไข่ เนื้อ ขนมปัง
+                    ผักและผลไม้ต่างๆ รวมทั้งยังมีเมนูอีกมากมาย
+                </div>
+                <div class>ให้บริการ 08:00 - 18:00</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- แนะนำอาหาร -->
+    <!-- แนะนำสปา -->
+    <div class="recservice2 d-flex justify-content-center align-items-center ">
+        <div
+            class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column ">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-6">
+                <div class="fs-3">บริการสปานวด</div>
                 <div class="p_reccomend">
                     ผ่อนคลายด้วยบริการนวดจากเรา ช่วยให้คุณได้พักผ่อนร่างกาย
                     บำบัดอาการปวดเมื่อยกล้ามเนื้อ หลับสบายยิ่งขึ้น
                 </div>
                 <div class>ให้บริการ 17:00 - 21:00</div>
             </div>
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
 
-                <div id="carouselExampleDark"
-                    class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner ">
-                        <div class="carousel-item active"
-                            data-bs-interval="5000">
-                            <img src="spa1.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="spa2.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="spa3.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="spa4.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide"
+                data-bs-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="spa1.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
                     </div>
-
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="spa2.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="spa3.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="spa4.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
                 </div>
 
             </div>
 
         </div>
-        <!-- แนะนำสปา -->
-        <!-- แนะนำฟิตเนส -->
-        <div class="recservice row ">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
 
-                <div id="carouselExampleDark"
-                    class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner ">
-                        <div class="carousel-item active"
-                            data-bs-interval="5000">
-                            <img src="fit1.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="fit2.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="fit3.webp" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="fit4.jpg" class="d-block w-100 img-fluid"
-                                alt="..." />
-                        </div>
+    </div>
+    <!-- แนะนำสปา -->
+    <!-- แนะนำฟิตเนส -->
+    <div class="recservice d-flex justify-content-center align-items-center ">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide"
+                data-bs-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="fit1.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
                     </div>
-
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="fit2.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="fit3.webp" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="fit4.jpg" class="d-block w-100 img-fluid"
+                            alt="..." />
+                    </div>
                 </div>
 
             </div>
-            <div
-                class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column">
-                <div class="fs-2 fw-semibold">ฟิตเนสออกกำลังกาย</div>
+
+        </div>
+        <div
+            class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center flex-column">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-6">
+                <div class="fs-3 text-sky">บริการฟิตเนส</div>
                 <div class="p_reccomend">
                     ออกกำลังกายด้วยอุปกรณ์ที่ครบครันให้คุณได้เล่น
                     พร้อมเทรนเนอร์ที่คอยแนะนำช่วยเหลือ
                     และให้คำปรึกษาเกี่ยวกับร่างกาย
                 </div>
-                <div class>ให้บริการ 08:00 - 20:00</div>
+                <div class="d-flex">ให้บริการ
+                    <div class="text-sky ms-2">08:00 - 20:00</div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <!-- แนะนำฟิตเนส -->
+    <!-- แนะนำฟิตเนส -->
 
-        <!-- <div class="parallax2 d-flex align-items-center"></div> -->
+    <!-- <div class="parallax2 d-flex align-items-center"></div> -->
 
-        <!-- <div class>
+    <!-- <div class>
             <img src="testsocial.jpg" alt class="w-100">
         </div> -->
 
-        <div class>
-            <div class="py-4 d-flex justify-content-center fs-2 fw-semibold">
-                สถานที่ท่องเที่ยว
-            </div>
-
-            <div class="container set-a-att">
-                <!-- attraction -->
-                <div class="row gy-2">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="  media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction1.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu">วัดร่องขุ่น</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ 08:00-17:00</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        18 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="  media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction2.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu">สิงห์ปาร์ค
-                                        เชียงราย</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ 08:00-18:00</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        31 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class=" media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction3.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu">สวนแม่ฟ้าหลวง</a></h2>
-                                <div class>แม่ฟ้าหลวง,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ 07:00-18:00</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        21 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class=" media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction3.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu">ตลาดแม่สาย</a></h2>
-                                <div class>แม่สาย,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ ตลอดทั้งวัน</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50 c-white">
-                                        <a
-                                            href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        73 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- attraction -->
-                <div
-                    class="mt-4 mb-4 d-flex justify-content-center fs-2 fw-semibold">
-                    เคเฟ่สุดชิล
-                </div>
-                <!-- attraction -->
-                <div class="row gy-2 mt-1 pb-3 ">
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction5.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu">Woodbrick
-                                        CAFE</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ 08:30-17:00
-                                </div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        12 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class=" media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction6.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu">Seasons
-                                        bake haus</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ จันทร์-อาทิตย์
-                                </div>
-                                <div class="mb-3">เวลาทำการ 09:00-18:00
-                                </div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        7 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class=" media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction7.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu">Lofthouse
-                                        Cafe</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ ทุกวัน
-                                    (หยุดทุกวันอังคาร)
-                                </div>
-                                <div class="mb-3">เวลาทำการ 09:00-17:00</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง</a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        15 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="  media-custom d-block mb-4 h-100 p-2">
-                            <a
-                                href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu"
-                                class="mb-4 d-block"><img src="attraction7.jpg"
-                                    alt="Image placeholder"
-                                    class="img-fluid-att w-100"></a>
-                            <div class="media-body">
-                                <h2 class="c-textroom"><a
-                                        href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu">The
-                                        Wanderer</a></h2>
-                                <div class>เมืองเชียงราย,เชียงราย</div>
-                                <div class>เปิดให้บริการ ทุกวัน
-                                    (หยุดทุกวันพฤหัสบดี)
-                                </div>
-                                <div class="mb-3">เวลาทำการ ตลอดทั้งวัน</div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a
-                                            href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu"
-                                            class=" btn btn-primary">ขอเส้นทาง
-                                        </a>
-                                    </div>
-                                    <div
-                                        class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        27 กม.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- attraction -->
+    <div class>
+        <div class="py-4 d-flex justify-content-center fs-2 fw-semibold">
+            สถานที่ท่องเที่ยว
         </div>
 
-    </div>
-    <!-- footer -->
-    <footer-component></footer-component>
-    <!-- footer -->
+        <div class="container set-a-att">
+            <!-- attraction -->
+            <div class="row gy-2">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="  media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction1.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu">วัดร่องขุ่น</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ 08:00-17:00</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Wat+Rong+Khun+-+White+Temple/@19.8232669,99.7601336,17z/data=!4m14!1m7!3m6!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!2sWat+Rong+Khun+-+White+Temple!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj!3m5!1s0x30d7b7dfce59940f:0x2afcd50d8eacb7a3!8m2!3d19.8232669!4d99.7627085!16s%2Fm%2F02rvrrj?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    18 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="  media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction2.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu">สิงห์ปาร์ค
+                                    เชียงราย</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ 08:00-18:00</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Singha+Park+Chiang+Rai/@19.8530809,99.7404465,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70feb0e464e53:0xeeb653eaf54e130e!8m2!3d19.8530809!4d99.7430214!16s%2Fg%2F11b637_5y8?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    31 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class=" media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction3.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu">สวนแม่ฟ้าหลวง</a></h2>
+                            <div class>แม่ฟ้าหลวง,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ 07:00-18:00</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Doi+Tung+Palace,+Mae+Fa+Luang/@20.31062,99.7903483,14z/data=!4m10!1m2!2m1!1z4Liq4Lin4LiZ4LmB4Lih4LmI4Lif4LmJ4Liy4Lir4Lil4Lin4LiH!3m6!1s0x30d6f0d53c208a97:0x8422778f7dafe7b1!8m2!3d20.2871919!4d99.8095193!15sCifguKrguKfguJnguYHguKHguYjguJ_guYnguLLguKvguKXguKfguIeSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F12hhgwqcz?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    21 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</section>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class=" media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction3.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu">ตลาดแม่สาย</a></h2>
+                            <div class>แม่สาย,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ ตลอดทั้งวัน</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50 c-white">
+                                    <a
+                                        href="https://www.google.com/maps/search/%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%B2%E0%B8%A2/@20.3581897,99.7960451,12z/data=!3m1!4b1?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    73 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- attraction -->
+            <div
+                class="mt-4 mb-4 d-flex justify-content-center fs-2 fw-semibold">
+                เคเฟ่สุดชิล
+            </div>
+            <!-- attraction -->
+            <div class="row gy-2 mt-1 pb-3 ">
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction5.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu">Woodbrick
+                                    CAFE</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ 08:30-17:00
+                            </div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Woodbrick+cafe/@19.9278393,99.8332813,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706ed987d543f:0x689af859e19ca59d!8m2!3d19.9278394!4d99.8381522!16s%2Fg%2F11d_8dj00q?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    12 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class=" media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction6.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu">Seasons
+                                    bake haus</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ จันทร์-อาทิตย์
+                            </div>
+                            <div class="mb-3">เวลาทำการ 09:00-18:00
+                            </div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Seasons+Bake+Haus/@20.0055527,99.8842933,17z/data=!3m1!4b1!4m6!3m5!1s0x30d701909a657051:0xb4b25d6580607d4!8m2!3d20.0055527!4d99.8868682!16s%2Fg%2F11sm7bcb8v?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    7 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class=" media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction7.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu">Lofthouse
+                                    Cafe</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ ทุกวัน (หยุดทุกวันอังคาร)
+                            </div>
+                            <div class="mb-3">เวลาทำการ 09:00-17:00</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/Loft+house+cafe/@19.8571623,99.8403171,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70910df462303:0xb49eba07c754d48f!8m2!3d19.8571623!4d99.842892!16s%2Fg%2F11rbf4glv0?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง</a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    15 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="  media-custom d-block mb-4 h-100 p-2">
+                        <a
+                            href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu"
+                            class="mb-4 d-block"><img src="attraction7.jpg"
+                                alt="Image placeholder"
+                                class="img-fluid-att w-100"></a>
+                        <div class="media-body">
+                            <h2 class="c-textroom"><a
+                                    href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu">The
+                                    Wanderer</a></h2>
+                            <div class>เมืองเชียงราย,เชียงราย</div>
+                            <div class>เปิดให้บริการ ทุกวัน (หยุดทุกวันพฤหัสบดี)
+                            </div>
+                            <div class="mb-3">เวลาทำการ ตลอดทั้งวัน</div>
+                            <div class="boxatt mt-auto row">
+                                <div class="w-50">
+                                    <a
+                                        href="https://www.google.com/maps/place/The+Wanderer/@19.9190021,99.82777,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7068bc6e61c17:0xf72217ab3674995!8m2!3d19.9190021!4d99.8303449!16s%2Fg%2F11clwpxmsm?hl=en&entry=ttu"
+                                        class=" btn btn-primary">ขอเส้นทาง
+                                    </a>
+                                </div>
+                                <div
+                                    class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                    27 กม.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- attraction -->
+
+        <!-- footer -->
+        <footer-component></footer-component>
+        <!-- footer -->
+
+    </section>

@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 // database connect setup
 const con = mysql.createConnection({
     // host: "25.19.244.218",
-    host: "localhost",
+    host: "192.168.0.82",
     user: "root",
     password: "",
     database: "hotel",
@@ -105,3 +105,4 @@ require("./app/empty.js")(app, con);
 require("./app/bookingsection.js")(app, con, moment, transporter); //js ของหน้า bookingsection
 require("./app/roomsection.js")(app, con); //js ของหน้า roomsection
 require("./app/checkbooking.js")(app, con); //js ของหน้า checkbooking
+require("./app/contact.js")(app, con, moment); //js ของหน้า contact

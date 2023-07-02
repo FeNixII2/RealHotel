@@ -1,6 +1,6 @@
 body {
     /* f1f1f1 */
-    background: white;
+    background: rgba(255, 255, 255, 0.685);
     font-family: Kanit;
 }
 
@@ -24,6 +24,7 @@ h6 {
 }
 
 .media-custom {
+    border-radius: 6px;
     background: #fff;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -80,12 +81,12 @@ a {
     background-size: cover;
 }
 
-.hover-a-room a {
+.hover-a-room .text-room-home {
     color: #1cc3b2;
     transition: 0.3s;
 }
 
-.hover-a-room:hover a {
+.hover-a-room:hover .text-room-home {
     color: #1cc3b2;
     transition: 0.3s;
 }
@@ -209,6 +210,7 @@ a {
 .btn-recroom {
     color: white;
     background-color: #1cc3b2;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 .btn-recroom:hover {

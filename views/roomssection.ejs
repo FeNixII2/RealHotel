@@ -10,65 +10,66 @@
 
             <% for (var i = 0; i < recroom_type.length; i++) { %>
 
-                <div class=" setcard-recroom mb-5 ">
-                    <div class="row p-2">
-                        <div class="col-lg-7 col-md-6 col-sm-12 col-12">
-                            <div class="setimg-h-recroom">
-                                <div id="carouselExampleIndicators<%= i%>" class="carousel slide carousel-fade" data-bs-ride="true">
-                                    <div class="carousel-indicators">
 
-                                        <% var count = 0
+                <div class="row setcard-recroom mb-5" style="border-radius: 6px;overflow: hidden;">
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-12 px-0">
+                        <div class="setimg-h-recroom">
+                            <div id="carouselExampleIndicators<%= i%>" class="carousel slide carousel-fade" data-bs-ride="true">
+                                <div class="carousel-indicators">
+
+                                    <% var count = 0
                                         for(var j = 0; j < recroom_img.length; j++){
 
                                             if(recroom_type[i].name == recroom_img[j].name){
                                                 %>
-                                            <% if( count == 0){ %>
-                                                <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" class="active" aria-current="true" aria-label="Slide <%= count %>"></button>
-                                                <%}else{%>
-                                                    <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" aria-label="Slide <%= count %>"></button>
-                                                    <%}
+                                        <% if( count == 0){ %>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" class="active" aria-current="true" aria-label="Slide <%= count %>"></button>
+                                            <%}else{%>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide-to="<%= count %>" aria-label="Slide <%= count %>"></button>
+                                                <%}
                                                     count +=1;
                                                     %>
-                                                        <%}%>
-                                                            <% } count = 0 %>
+                                                    <%}%>
+                                                        <% } count = 0 %>
 
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <% var imgcount = 0
+                                </div>
+                                <div class="carousel-inner">
+                                    <% var imgcount = 0
                                         for(var j = 0; j < recroom_img.length; j++){
                                             if(recroom_type[i].name == recroom_img[j].name){
                                                 %>
-                                            <% if( imgcount == 0){ %>
-                                                <div class="carousel-item active">
+                                        <% if( imgcount == 0){ %>
+                                            <div class="carousel-item active">
+                                                <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
+                                            </div>
+                                            <%}else{%>
+                                                <div class="carousel-item">
                                                     <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
                                                 </div>
-                                                <%}else{%>
-                                                    <div class="carousel-item">
-                                                        <img src="<%= recroom_img[j].img%>" class="d-block w-100 imgrecroom  " alt="...">
-                                                    </div>
-                                                    <%}
+                                                <%}
                                                     imgcount +=1;
                                                     %>
-                                                        <%}%>
-                                                            <% } imgcount = 0 %>
+                                                    <%}%>
+                                                        <% } imgcount = 0 %>
 
 
 
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide="prev">
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                       <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%=i%>" data-bs-slide="next">
                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                       <span class="visually-hidden">Next</span>
                                     </button>
-                                </div>
-
-
                             </div>
+
+
                         </div>
-                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 d-flex flex-column justify-content-center p-body-recroom">
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-12 d-flex flex-column justify-content-center p-body-recroom p-5">
+                        <div class="">
 
 
                             <div class=" fs-2 fw-semibold ">
@@ -134,7 +135,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-auto d-flex  pt-5">
+                                <div class="d-flex justify-content-end pt-5">
                                     <a href="#booking" class=" btn btn-recroom fw-semibold fs-5 " onclick="sign_room('<%= recroom_type[i].name %>')">
                                 จองห้องพัก
                             </a>
@@ -144,6 +145,7 @@
 
                         </div>
                     </div>
+
                 </div>
 
                 <%}%>

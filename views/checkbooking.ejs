@@ -11,23 +11,23 @@
             <form class="d-flex w-100" action="javascript:room_code_checking()">
                 <input class="form-control p-3 shadow-info me-2" type="text"
                     id="id_numcheckbooking" placeholder="กรอกรหัสห้องพัก"
-                    aria-label="Search" title="กรุณากรอกรหัสห้องพัก" required>
-                <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                    aria-label="Search" required title="Please enter your name">
+                <button class="btn btn-recroom" type="submit">ค้นหา</button>
             </form>
             <div class="card my-4" id="check_card" style="display: none;">
                 <div class="container">
                     <div class="pt-3">
 
-                        <div class="fs-3 text-center py-2">ข้อมูลการจอง</div>
+                        <div class="fs-5 py-1">ข้อมูลการจอง</div>
 
                     </div>
-                    <div class="row fs-5 d-flex justify-content-center">
+                    <div class="row  d-flex justify-content-center">
                         <div class="col-12 col-lg-6 col-md-6 col-sm-6 ">
                             <div class=" ">
                                 <label class="col-form-label">รหัสการจอง</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-reserv_id" disabled readonly>
@@ -39,7 +39,7 @@
                                 <label class="col-form-label">ประเภทห้อง</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-room_type" disabled readonly>
@@ -51,7 +51,7 @@
                                 <label class="col-form-label">เลขห้อง</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-room_number" disabled readonly>
@@ -64,7 +64,7 @@
                                 <label class="col-form-label">เตียง</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="info_bed" disabled readonly>
@@ -76,7 +76,7 @@
                                 <label class="col-form-label">เช็คอิน</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-checkin" disabled readonly>
@@ -88,7 +88,7 @@
                                 <label class="col-form-label">เช็คเอาท์</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-checkout" disabled readonly>
@@ -101,7 +101,7 @@
                                 <label class="col-form-label">ขนาดห้อง</label>
                             </div>
                             <div class="d-flex">
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="info_roomsize" disabled readonly>
@@ -114,7 +114,7 @@
                                 </label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="info_countcustomer" disabled readonly>
@@ -126,7 +126,7 @@
                                 <label class="col-form-label">ส่วนเสริม</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="info_extional" disabled readonly>
@@ -139,7 +139,7 @@
                                 <label class="col-form-label">จ่ายด้วย</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="info_pay" disabled readonly>
@@ -148,16 +148,16 @@
                         </div>
 
                     </div>
-                    <div class="fs-5 col-form-label">บริการเสริม</div>
+                    <div class=" col-form-label">บริการเสริม</div>
                     <div class id="showservice">
                     </div>
-                    <div class="row fs-5">
+                    <div class="row ">
                         <div class="col-6 col-lg-6 col-md-6 col-sm-6">
                             <div class>
                                 <label class="col-form-label">ราคาห้อง</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="roomprice" disabled readonly>
@@ -169,7 +169,7 @@
                                 <label class="col-form-label">ราคารวม</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="roompricetotal" disabled readonly>
@@ -180,16 +180,16 @@
 
                     <div class="pt-3">
 
-                        <div class="fs-3 text-center py-2">ข้อมูลผู้จอง</div>
+                        <div class="fs-5 py-1">ข้อมูลผู้จอง</div>
 
                     </div>
-                    <div class="row fs-5">
+                    <div class="row ">
                         <div class="col-6 col-lg-6 col-md-6 col-sm-6">
                             <div class>
                                 <label class="col-form-label">รหัสลูกค้า</label>
                             </div>
                             <div class>
-                                <input class="form-control shadow-info"
+                                <input class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-cus-id" disabled readonly>
@@ -200,7 +200,8 @@
                             <div class>
                                 <label class="col-form-label">ชื่อ-สกุล</label>
                             </div>
-                            <div class> <input class="form-control shadow-info"
+                            <div class> <input
+                                    class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-fullname" disabled readonly>
@@ -211,7 +212,8 @@
                             <div class>
                                 <label class="col-form-label">เบอร์โทรศัพท์</label>
                             </div>
-                            <div class> <input class="form-control shadow-info"
+                            <div class> <input
+                                    class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-p-num" disabled readonly>
@@ -222,7 +224,8 @@
                             <div class>
                                 <label class="col-form-label">อีเมลล์</label>
                             </div>
-                            <div class> <input class="form-control shadow-info"
+                            <div class> <input
+                                    class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="check-email" disabled readonly>
@@ -233,7 +236,8 @@
                             <div class>
                                 <label class="col-form-label">มาจากประเทศ</label>
                             </div>
-                            <div class> <input class="form-control shadow-info"
+                            <div class> <input
+                                    class="form-control shadow-info bg-white"
                                     type="text" value="Disabled readonly input"
                                     aria-label="Disabled input example"
                                     id="fromcountry" disabled readonly>
@@ -242,12 +246,10 @@
                         </div>
 
                     </div>
-                    <div class="row  d-flex justify-content-center fs-3 py-2">
-
-                        <label id="check-status"
-                            class="col-form-label text-center"></label>
-
+                    <div class="fs-5 py-1 d-flex pb-3">สถานะ
+                        <div id="check-status" class="ms-2"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -259,6 +261,7 @@
 
 <script>
     function room_code_checking() {
+
         var code = document.getElementById("id_numcheckbooking").value
 
         fetch("/get_booking_code", {
@@ -273,21 +276,19 @@
             })
         }).then((response) => response.json()).then((body) => {
             var reserv = body.result
+            console.log("reserv" + reserv);
             if (reserv.length > 0) {
                 Swal.fire({
-                    title: "ใส่เลข 4 ตัวท้ายของเบอร์โทรศัพท์เพื่อยืนยัน",
+                    title: "ใส่เลข 4 ตัวท้ายของเบอร์โทรศัพท์",
                     input: "text",
                     inputAttributes: {
-                        placeholder: "Last 4 digits",
+                        placeholder: "4 ตัวท้ายของเบอร์โทร เช่น 5991",
                         inputmode: "numeric",
                         pattern: "[0-9]{4}",
                         minLength: 4,
                         maxLength: 4,
                     },
-                    customClass: {
-                        container: "mt-5",
-                    },
-                    position: "top",
+
                     showCancelButton: true,
                     confirmButtonText: "Confirm",
                     cancelButtonText: "Cancel",
@@ -316,10 +317,7 @@
                                 if (reserv_info == undefined) {
                                     Swal.fire({
                                         title: "เบอร์โทรศัพท์ไม่ถูกต้อง",
-                                        customClass: {
-                                            container: "mt-5",
-                                        },
-                                        position: "top",
+
                                     })
                                 } else {
 
@@ -375,8 +373,7 @@
                 });
 
             } else {
-
-
+                Swal.fire('ไม่มีรหัสการจองนี้')
             }
         })
     }
