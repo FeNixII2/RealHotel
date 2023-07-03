@@ -117,7 +117,7 @@ module.exports = function (app, con, moment, transporter) {
 
 
                 if (err) throw err
-                con.query(`insert into payment_log (reserv_code,total_price,payment_type,status,cus_id) values ('${reserved_custom_id}','${totalprice}','${payment}','1','${cus_id}')`, (err, result) => {
+                con.query(`insert into payment_log (reserv_code,total_price,payment_type,status,cus_id,date) values ('${reserved_custom_id}','${totalprice}','${payment}','1','${cus_id}','${booking_date}')`, (err, result) => {
                     if (err) throw err
                     checkboxData.forEach(function (data) {
                         var checkboxId = data.id;
