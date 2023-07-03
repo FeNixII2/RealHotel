@@ -29,24 +29,30 @@
 
     <!-- rooms -->
     <div class="container">
-        <div id="home-recroom"></div>
-        <div class="row hover-a-room gy-3">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
 
-                <div class="setcard-recroom d-block  h-100"
+        <dive class="row hover-a-room gy-3 justify-content-center">
+            <% for (var i = 0; i < recroom_type.length; i++) { %>
+            <div class="col-lg-6 col-md-5 col-sm-6 col-12 ">
+
+                <div class="setcard-recroom d-block p-3  h-100"
                     style="border-radius: 6px;overflow: hidden;">
+                    <h2 class="mt-0 mb-3 ">
+                        <a href="#booking" onclick="sign_room('Standard')"
+                            class="text-room-home">
+                            <%= recroom_type[i].name %>
+                            (
+                            <%= recroom_type[i].name_th %>)</a>
+                    </h2>
                     <a href="#booking" onclick="sign_room('Standard')"
                         class=" d-block"><img src="standard.jpg"
                             alt="Image placeholder" class="img-fluid w-100"></a>
-                    <div class="p-3">
-                        <span class="meta-post">เริ่มต้นที่, ฿450/คืน</span>
-                        <h2 class="mt-0 mb-3 "><a href="#booking"
-                                onclick="sign_room('Standard')"
-                                class="text-room-home">Standard
-                                (ธรรมดา)</a></h2>
-                        <p>เป็นห้องพักแบบมาตรฐานทั่วไป
-                            มีสิ่งอำนวนความสะดวกเท่าที่จำเป็น เช่น เตียงนอน
-                            ห้องน้ำ ทีวี แอร์.</p>
+                    <div class>
+                        <span class="meta-post">เริ่มต้นที่, ฿
+                            <%= recroom_type[i].price_start %>/คืน</span>
+
+                        <p>
+                            <%= recroom_type[i].details %>
+                        </p>
                         <a href="#booking"
                             class=" btn btn-recroom fw-semibold fs-5 "
                             onclick="sign_room('Standard')">จองเลย</a>
@@ -55,62 +61,9 @@
                 </div>
 
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12"
-                style="border-radius: 6px;overflow: hidden;">
-                <div class="setcard-recroom  d-block  h-100 p-2">
-                    <a href="#booking" onclick="sign_room('Superior')"
-                        class=" d-block"><img src="superior.jpeg"
-                            alt="Image placeholder" class="img-fluid w-100"></a>
-                    <div class="media-body h-100">
-                        <span class="meta-post">เริ่มต้นที่, ฿550/คืน</span>
-                        <h2 class="mt-0"><a href="#booking"
-                                onclick="sign_room('Superior')"
-                                class="text-room-home">Superior
-                                (ซูพีเรีย)</a></h2>
-                        <p>เป็นห้องพักที่มีขนาดกว้างกว่าแบบสแตนดาร์ดขึ้นมาเล็กน้อย
-                            มีสิ่งอำนวยความสะดวกเพิ่มขึ้น 1-2 ชิ้น.</p>
-                        <a href="#booking"
-                            class=" btn btn-recroom fw-semibold fs-5 "
-                            onclick="sign_room('Superior')">จองเลย</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                <div class=" media-custom d-block mb-4 h-100 p-2">
-                    <a href="#booking" onclick="sign_room('Deluxe')"
-                        class="mb-4 d-block"><img src="deluxe.jpeg"
-                            alt="Image placeholder" class="img-fluid w-100"></a>
-                    <div class="p-3">
-                        <span class="meta-post">เริ่มต้นที่, ฿750/คืน</span>
-                        <h2 class="mt-0 mb-3 c-textroom"><a href="#booking"
-                                onclick="sign_room('Deluxe')">Deluxe
-                                (ดีลักซ์)</a></h2>
-                        <p>เป็นห้องที่หรูหราขึ้นมา มีการตกแต่งที่สวยงาม
-                            เตียงขนาดใหญ่ พร้อมทั้งมีสิ่งอำนวยความสะดวกครบครัน.
-                        </p>
-                        <a href="#booking" onclick="sign_room('Deluxe')">จองเลย</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                <div class=" media-custom d-block mb-4 h-100 p-2">
-                    <a href="#booking" onclick="sign_room('Suite')"
-                        class="mb-4 d-block"><img src="Suite.jpeg"
-                            alt="Image placeholder" class="img-fluid w-100"></a>
-                    <div class="media-body">
-                        <span class="meta-post">เริ่มต้นที่, ฿1000/คืน</span>
-                        <h2 class="mt-0 mb-3"><a href="#booking"
-                                onclick="sign_room('Suite')">Suite
-                                (สวีท)</a></h2>
-                        <p>เป็นห้องพักที่มีห้องนั่งเล่น
-                            สิ่งอำนวยความสะดวกต่างๆครบครัน พื้นที่กว้างมากกว่า
-                            มีการตกแต่งที่หรูหรา.
-                        </p>
-                        <a href="#booking" onclick="sign_room('Suite')">จองเลย</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+            <%}%>
+        </dive>
 
         <!-- rooms -->
         <div class="row  mt-5">
@@ -585,3 +538,6 @@
         <!-- footer -->
 
     </section>
+
+    <script>
+</script>
