@@ -4,220 +4,163 @@
 
         <div class="d-flex justify-content-center">
             <!-- style="box-shadow:  0px 0px 10px 0.1px rgb(138, 138, 138);background-color: white;" -->
-            <div class="card col-lg-8 p-3  mt-5 mb-4">
+            <div class="card col-lg-10 p-3  mt-5 mb-4 ">
+
                 <div class=" text-center px-0 fs-1 fw-semibold"></div>
 
                 <div class=" d-flex">
-                    <i
-                        class="fa-solid fa-door-closed d-flex align-self-center text-sky "></i>
+                    <i class="fa-solid fa-door-closed d-flex align-self-center text-sky "></i>
                     <div class="ms-2 mb-1">รายละเอียดห้องพัก</div>
                 </div>
                 <div class="rooms-label row ">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
                         <div class="mb-1">ห้องที่เลือก</div>
-                        <input class="form-control bg-white p-3 shadow-info"
-                            type="text" id="roomtype-label"
-                            aria-label="Disabled input example" disabled
-                            readonly>
+                        <input class="form-control bg-white p-3 shadow-info" type="text" id="roomtype-label" aria-label="Disabled input example" disabled readonly>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
-
                         <div class="mb-1">เช็คอิน</div>
-                        <input class="form-control bg-white p-3 shadow-info"
-                            type="text" id="checkin-label"
-                            aria-label="Disabled input example" disabled
-                            readonly>
-
+                        <input class="form-control bg-white p-3 shadow-info" type="text" id="checkin-label" aria-label="Disabled input example" disabled readonly>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3">
                         <div class="mb-1">เช็คเอ้าท์</div>
-
-                        <input class="form-control bg-white p-3 shadow-info"
-                            type="text" id="checkout-label"
-                            aria-label="Disabled input example" disabled
-                            readonly>
-
+                        <input class="form-control bg-white p-3 shadow-info" type="text" id="checkout-label" aria-label="Disabled input example" disabled readonly>
                     </div>
                 </div>
 
                 <div class>
                     <div class="  d-flex ">
-                        <i
-                            class="fa-solid fa-user d-flex align-self-center text-sky "></i>
+                        <i class="fa-solid fa-user d-flex align-self-center text-sky "></i>
                         <div class="ms-2 ">ข้อมูลผู้เข้าพัก</div>
                     </div>
-
-                    <form class="row" action="javascript:confirm()">
+                    <form class="row" id="form_bookinginfo" action="javascript:confirm()" novalidate>
                         <div class="col-md-6 my-custom-class mb-3">
                             <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
                                 <div class>ชื่อ</div>
+                                <div class="text-danger fs-4">*</div>
                             </div>
-                            <input type="text"
-                                class="form-control p-3 shadow-info "
-                                id="firstName" name="firstName"
-                                placeholder="กรอกชื่อ" required>
+                            <input type="text" class="form-control p-3 shadow-info " id="firstName" name="firstName" placeholder="กรอกชื่อ" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-3">
                             <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
                                 <div class>นามสกุล</div>
+                                <div class="text-danger fs-4">*</div>
                             </div>
-                            <input type="text"
-                                class="form-control p-3 shadow-info "
-                                id="lastName" name="lastName"
-                                placeholder="กรอกนามสกุล" required>
+                            <input type="text" class="form-control p-3 shadow-info " id="lastName" name="lastName" placeholder="กรอกนามสกุล" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-3">
                             <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
                                 <div class>เบอร์โทรศัพท์</div>
+                                <div class="text-danger fs-4">*</div>
                             </div>
 
-                            <input type="tel"
-                                class="form-control p-3 shadow-info "
-                                id="p_number" name="p_number"
-                                placeholder="กรอกโทรศัพท์" pattern="0[0-9]{9}"
-                                minlength="10" maxlength="10"
-                                title="กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"
-                                required>
+                            <input type="tel" class="form-control p-3 shadow-info " id="p_number" name="p_number" placeholder="กรอกโทรศัพท์" minlength="10" maxlength="10" title="กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง" required>
                         </div>
                         <div class="col-md-6 my-custom-class mb-3">
                             <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
                                 <div class>อีเมลล์</div>
+                                <div class="text-danger fs-4">*</div>
+
                             </div>
 
-                            <input type="email"
-                                class="form-control  p-3 shadow-info "
-                                id="email" name="email"
-                                placeholder="กรอกอีเมลล์" required>
+                            <input type="email" class="form-control  p-3 shadow-info " id="email" name="email" placeholder="กรอกอีเมลล์" required>
                         </div>
 
                         <div class="col-md-6 my-custom-class mb-3">
                             <div class="d-flex mb-1">
-                                <div class="text-danger fs-4">*</div>
                                 <div class>คุณมาจากประเทศ</div>
-                            </div>
-                            <select class="form-select p-3 shadow-info "
-                                aria-label="Default select example"
-                                id="namecountry" required>
-                                <option selected value="none">Country</option>
-                                <% for(i=0;i<listcountry.length;i++) { %>
+                                <div class="text-danger fs-4">*</div>
 
+                            </div>
+                            <select class="form-select p-3 shadow-info " id="namecountry" name="namecountry" required>
+                                <option selected value="">Country</option>
+                                <% for(i=0;i<listcountry.length;i++) { %>
                                     <option value="<%= listcountry[i].nameENG%>"><%=
                                         listcountry[i].nameENG%></option>
-
                                     <%
-
                                     }%>
-
                                 </select>
-                            </div>
-
-                            <div class="col-lg-12 my-custom-class mb-3">
-                                <div class="d-flex mb-1">
-
-                                    <div class>คำขอเพิ่มเติม</div>
-                                </div>
-                                <textarea class="form-control p-3 shadow-info "
-                                    name="more_info" id="more_info" rows="3"
-                                    placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
-                            </div>
                         </div>
 
-                        <div class=" mb-3">
-                            <div class=" d-flex mb-1">
-                                <i
-                                    class="fa-solid fa-note-sticky d-flex align-self-center text-sky "></i>
-                                <div class="ms-2  ">บริการเสริม</div>
-                            </div>
+                        <div class="col-lg-12 my-custom-class mb-3">
+                            <div class="d-flex mb-1">
 
-                            <div id="service_block" class="box-service row gy-2">
-
+                                <div class>คำขอเพิ่มเติม</div>
                             </div>
+                            <textarea class="form-control p-3 shadow-info " name="more_info" id="more_info" rows="3" placeholder="กรอกข้อมูลเพิ่มเติม.."></textarea>
                         </div>
+                </div>
 
-                        <div class=" mb-3">
-                            <div class="textpaymeant  d-flex mb-1">
-                                <i
-                                    class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
-                                <div class="ms-2 ">รูปแบบการชำระเงิน</div>
-                            </div>
+                <div class=" mb-3">
+                    <div class=" d-flex mb-1">
+                        <i class="fa-solid fa-note-sticky d-flex align-self-center text-sky "></i>
+                        <div class="ms-2  ">บริการเสริม</div>
+                    </div>
+                    <div id="service_block" class="box-service row gy-2">
+                    </div>
+                </div>
 
-                            <% var payment_type_left=payment_type.slice(0,
+                <div class=" mb-3">
+                    <div class="textpaymeant  d-flex mb-1">
+                        <i class="text-sky  fa-solid fa-money-check-dollar d-flex align-self-center"></i>
+                        <div class="ms-2 ">รูปแบบการชำระเงิน</div>
+                    </div>
+
+                    <% var payment_type_left=payment_type.slice(0,
                             Math.ceil(payment_type.length / 2)); var
                             payment_type_right=payment_type.slice(Math.ceil(payment_type.length
                             / 2)); %>
 
-                            <div class="payment-s row">
-                                <div class="col-6 col-sm-6 col-md-6 text-left">
-                                    <% for(var i=0;i<
+                        <div class="payment-s row">
+                            <div class="col-6 col-sm-6 col-md-6 text-left">
+                                <% for(var i=0;i<
                                     payment_type_left.length;i++){ %>
-                                    <div
-                                        class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input me-3"
-                                            type="radio" id="option<%=i%>"
-                                            name="myGroup"
-                                            value="<%=payment_type_left[i].id%>">
-                                        <div class="text-danger fs-4">*</div>
-                                        <label class="form-check-label"
-                                            for="option<%=i%>">
+                                    <div class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input me-3" type="radio" id="option<%=i%>" name="myGroup" value="<%=payment_type_left[i].id%>" checked="true">
+                                        <label class="form-check-label" for="option<%=i%>">
                                             <%=payment_type_left[i].pay_type%>
                                         </label>
                                     </div>
                                     <%}%>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 text-right">
-                                    <% for(var i=0;i<
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 text-right">
+                                <% for(var i=0;i<
                                     payment_type_right.length;i++){ %>
-                                    <div
-                                        class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input me-3 "
-                                            type="radio"
-                                            id="option<%=payment_type_right[i].pay_type%>"
-                                            name="myGroup"
-                                            value="<%=payment_type_right[i].id%>">
-                                        <div class="text-danger fs-4">*</div>
-                                        <label class="form-check-label "
-                                            for="option<%=payment_type_right[i].pay_type%>">
+                                    <div class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input me-3 " type="radio" id="option<%=payment_type_right[i].pay_type%>" name="myGroup" value="<%=payment_type_right[i].id%>">
+                                        <label class="form-check-label " for="option<%=payment_type_right[i].pay_type%>">
                                             <%=payment_type_right[i].pay_type%>
                                         </label>
                                     </div>
                                     <%}%>
-                                </div>
                             </div>
-
                         </div>
+                </div>
 
-                        <div class="textprice  d-flex mb-3 d-flex  ">
-                            <i
-                                class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
-                            <div class="ms-2 me-2 d-flex align-self-center">ราคารวมทั้งสิ้น</div>
-                            <b>
+                <div class="textprice  d-flex mb-3 d-flex  ">
+                    <i class="fa-solid fa-coins d-flex align-self-center text-sky "></i>
+                    <div class="ms-2 me-2 d-flex align-self-center">ราคารวมทั้งสิ้น</div>
+                    <b>
                                 <div class="total-price fs-3" id="total-price"
                                     style="color: red;">0</div>
                             </b>
-                            <div class="ms-2 me-2 d-flex align-self-center">บาท</div>
-                        </div>
-
-                        <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
-
-                        <div class="col-lg-12 ">
-                            <button type="submit"
-                                class="btn btn-sky fs-4 w-100 p-3"
-                                id="con_reserv">ยืนยันการจอง</button>
-                            <!-- <div button type="button" class="btn btn-primary " onclick="confirm()" id="con_reserv">ยืนยันการจอง
-                    </div> -->
-                        </div>
-                    </form>
-
+                    <div class="ms-2 me-2 d-flex align-self-center">บาท</div>
                 </div>
+
+                <!-- <button onclick="confirm()" id="con_reserv">ยืนยันการจอง</button> -->
+
+                <div class="col-lg-12 ">
+                    <button type="submit" class="btn btn-sky fs-4 w-100 p-3" id="con_reserv" name="con_reserv">ยืนยันการจอง</button>
+                    <!-- <div button type="button" class="btn btn-primary " onclick="confirm()" id="con_reserv">ยืนยันการจอง
+                    </div> -->
+                </div>
+                </form>
+
             </div>
         </div>
-        <!-- footer -->
-        <footer-component></footer-component>
-        <!-- footer -->
-    </section>
+    </div>
+    <!-- footer -->
+    <footer-component></footer-component>
+    <!-- footer -->
+</section>
