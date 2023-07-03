@@ -109,7 +109,6 @@ module.exports = function (app, con, moment, transporter) {
         const currentDate = moment();
         const formattedDate = currentDate.format('DD/MM/YYYY HH:mm');
         con.query("SELECT num_room FROM rooms WHERE id_typeroom = ? AND num_room NOT IN (SELECT num_room FROM reserved WHERE id_typeroom = ? AND checkin BETWEEN ? AND ? AND checkout BETWEEN ? AND ? AND status NOT IN(4,5)) LIMIT 1", [room_type, room_type, checkin, checkout, checkin, checkout], (err, num_room) => {
-
             if (err) throw err
             var reserved_custom_date = currentDate.format('DMYYHmm')
             var reserved_custom_id = 'SF' + cus_id + reserved_custom_date
@@ -118,10 +117,8 @@ module.exports = function (app, con, moment, transporter) {
 
 
                 if (err) throw err
-                var detail = 'ได้ทำการชำระเงินสำหรับห้อง ' + num_room[0].num_room + ' แล้ว'
-                con.query("insert into payment_log values ('',?,?,?) ", [detail, cus_id, formattedDate], (err, result) => {
+                con.query(`insert into payment_log (reserv_code,total_price,payment_type,status,cus_id) values ('${reserved_custom_id}','${totalprice}','${payment}','1','${cus_id}')`, (err, result) => {
                     if (err) throw err
-
                     checkboxData.forEach(function (data) {
                         var checkboxId = data.id;
                         var sql = "INSERT INTO reserved_service (reserved_id, service_id ) VALUES (?, ?)";
