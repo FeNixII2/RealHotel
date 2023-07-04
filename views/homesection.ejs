@@ -5,11 +5,7 @@
     <!-- welcome -->
 
 
-
-
-
-    <div class="px-4 pt-5 text-center">
-        <img class="d-block mx-auto mb-4" src="hotel.png" alt width="72" height="57" />
+        <div class="px-4 pt-5 text-center"> <img class="d-block mx-auto mb-4" src="hotel.png" alt width="72" height="57"/>
         <h1 class="display-5 fw-bold">
             <div class>โรงแรมบีเอส</div>
             <div class>ยินดีต้อนรับ</div>
@@ -38,12 +34,13 @@
 
                                 <a href="#booking" onclick="sign_room('Standard')" class="text-room-home fs-4">
                                     <%= recroom_type[i].name %>
-                                        (
-                                        <%= recroom_type[i].name_th %>)</a>
+                                    (
+                                    <%= recroom_type[i].name_th %>)</a>
                                 <div class="meta-post">เริ่มต้นที่
                                     <%= recroom_type[i].price_start %>฿/คืน</div>
 
-                                <a href="#booking" onclick="sign_room('Standard')" class="d-block " style="overflow: hidden;border-radius: 6px;transition: 0.5s all ease-in-out;"><img src="standard.jpg" alt="Image placeholder" class="img-fluid w-100 my-2" style="border-radius: 6px;"></a>
+                                <a href="#booking" onclick="sign_room('Standard')" class="d-block " style="overflow: hidden;border-radius: 6px;transition: 0.5s all ease-in-out;">
+                                    <img src="<%= recroom_type[i].img_room %>" alt="Image placeholder" class="img-fluid w-100 my-2" style="border-radius: 6px;"></a>
                                 <div class>
 
                                     <p>
@@ -56,7 +53,7 @@
 
                         </div>
 
-                        <%}%>
+                    <%}%>
                 </dive>
 
                 <!-- rooms -->
@@ -99,7 +96,7 @@
                 <!-- service -->
                 <div class="row flex-lg-row-reverse align-items-center my-5 ">
                     <div class="col-lg-6">
-                        <img src="prefront.jpg" class="d-block mx-lg-auto img-block1" alt="Bootstrap Themes" width="700" height="500" loading="lazy" style="border-radius: 8px;" />
+                        <img src="prefront.jpg" class="d-block mx-lg-auto img-block1" alt="Bootstrap Themes" width="700" height="500" loading="lazy" style="border-radius: 8px;"/>
                     </div>
                     <div class="col-lg-6 mt-4">
                         <h1 class="display-5 fw-bold fs-2 mb-3">
@@ -120,25 +117,26 @@
         </div>
     </div>
 
+
     <!-- แนะนำอาหาร -->
     <div class="recservice d-flex justify-content-center align-items-center">
         <div class="col-6 col-sm-6 col-md-6 col-lg-6 px-0">
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="bf1.jpg" class=" w-100 img-fluid" alt="..." />
+                        <img src="bf1.jpg" class=" w-100 img-fluid" alt="..."/>
 
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="bf2.jpg" class=" w-100 img-fluid" alt="..." />
+                        <img src="bf2.jpg" class=" w-100 img-fluid" alt="..."/>
 
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="bf3.jpg" class="w-100 img-fluid" alt="..." />
+                        <img src="bf3.jpg" class="w-100 img-fluid" alt="..."/>
 
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="bf4.jpg" class=" w-100 img-fluid" alt="..." />
+                        <img src="bf4.jpg" class=" w-100 img-fluid" alt="..."/>
 
                     </div>
                 </div>
@@ -179,16 +177,16 @@
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="spa1.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="spa1.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="spa2.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="spa2.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="spa3.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="spa3.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="spa4.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="spa4.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                 </div>
 
@@ -205,16 +203,16 @@
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="fit1.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="fit1.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="fit2.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="fit2.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="fit3.webp" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="fit3.webp" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <img src="fit4.jpg" class="d-block w-100 img-fluid" alt="..." />
+                        <img src="fit4.jpg" class="d-block w-100 img-fluid" alt="..."/>
                     </div>
                 </div>
 
@@ -239,95 +237,101 @@
     <!-- <div class="parallax2 d-flex align-items-center"></div> -->
 
     <!-- <div class>
-            <img src="testsocial.jpg" alt class="w-100">
-        </div> -->
+                                        <img src="testsocial.jpg" alt class="w-100">
+                                    </div> -->
 
-    <div class>
-        <div class="py-4 d-flex justify-content-center fs-2 fw-semibold">
+        <div class> <div class="py-4 d-flex justify-content-center fs-2 fw-semibold">
             สถานที่ท่องเที่ยว
         </div>
 
         <div class="container set-a-att">
-            <!-- attraction -->
-            <div class="row gy-2">
-                <% for (var i = 0; i < attraction.length; i++) { %>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="d-block mb-4 h-100 ">
-                            <a href="<%= attraction[i].link %>" class=" d-block"><img
-                                src="<%= attraction[i].img %>"
-                                alt="Image placeholder"
-                                class="img-fluid-att w-100"
-                                style="border-radius: 6px;"></a>
-                            <div class>
-                                <div class="c-textroom py-1 fs-4">
-                                    <a href="<%= attraction[i].link %>">
-                                        <%= attraction[i].name %>
-                                    </a>
-                                </div>
-                                <div class>
-                                    <%= attraction[i].sub_district %>,
-                                        <%= attraction[i].district %>
-                                </div>
-                                <div class>เปิดให้บริการ
-                                    <%= attraction[i].open_day %>
-                                </div>
-                                <div class="mb-3">เวลาทำการ
-                                    <%= attraction[i].open_time %>
-                                </div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a href="<%= attraction[i].link %>" class=" btn btn-primary">ขอเส้นทาง</a>
+            <div class="d-flex justify-content-center">
+                <div
+                    class="col-lg-10">
+                    <!-- attraction -->
+                    <div class="row gy-2">
+                        <% for (var i = 0; i < attraction.length; i++) {
+                            if(attraction[i].type=="att"){
+                            %>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="d-block mb-4 h-100 ">
+                                    <a href="<%= attraction[i].link %>" class=" d-block"><img src="<%= attraction[i].img %>" alt="Image placeholder" class="img-fluid-att w-100" style="border-radius: 6px;"></a>
+                                    <div class>
+                                        <div class="c-textroom py-1 fs-4">
+                                            <a href="<%= attraction[i].link %>">
+                                                <%= attraction[i].name %>
+                                            </a>
+                                        </div>
+                                        <div class>
+                                            <%= attraction[i].sub_district %>,
+                                            <%= attraction[i].district %>
+                                        </div>
+                                        <div class>เปิดให้บริการ
+                                            <%= attraction[i].open_day %>
+                                        </div>
+                                        <div class="mb-3">เวลาทำการ
+                                            <%= attraction[i].open_time %>
+                                        </div>
+                                        <div class="boxatt mt-auto row">
+                                            <div class="w-50">
+                                                <a href="<%= attraction[i].link %>" class=" btn btn-primary">ขอเส้นทาง</a>
+                                            </div>
+                                            <div class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                                <%= attraction[i].distance %>
+                                                กม.</div>
+                                        </div>
                                     </div>
-                                    <div class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        <%= attraction[i].distance %> กม.</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <%}%>
+                        <%} }%>
 
-            </div>
-            <!-- attraction -->
-            <div class="mt-4 mb-4 d-flex justify-content-center fs-2 fw-semibold">
-                เคเฟ่สุดชิล
-            </div>
-            <!-- attraction -->
-            <div class="row gy-2 mt-1 pb-3 ">
-                <% for (var i = 0; i < cafe.length; i++) {
+                    </div>
+                    <!-- attraction -->
+                    <div class="mt-4 mb-4 d-flex justify-content-center fs-2 fw-semibold">
+                        เคเฟ่สุดชิล
+                    </div>
+                    <!-- attraction -->
+                    <div class="row gy-2 mt-1 pb-3 ">
+                        <% for (var i = 0; i < attraction.length; i++) {
+
+                            if(attraction[i].type=="cafe"){
                     %>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="d-block mb-4 h-100">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class=" d-block mb-4 h-100">
 
-                            <img src="<%= cafe[i].img %>" class="img-fluid-att w-100" style="border-radius: 6px;">
-                            <div class>
-                                <div class="c-textroom py-1 fs-4">
-                                    <a href="<%= cafe[i].link %>">
-                                        <%= cafe[i].name %>
-                                    </a>
-                                </div>
-                                <div class>
-                                    <%= cafe[i].sub_district %>,
-                                        <%= cafe[i].district %>
-                                </div>
-                                <div class>เปิดให้บริการ
-                                    <%= cafe[i].open_day %>
-                                </div>
-                                <div class="mb-3">เวลาทำการ
-                                    <%= cafe[i].open_time %>
-                                </div>
-                                <div class="boxatt mt-auto row">
-                                    <div class="w-50">
-                                        <a href="<%= cafe[i].link %>" class=" btn btn-primary">ขอเส้นทาง</a>
+                                    <img src="<%= attraction[i].img %>" class="img-fluid-att w-100" style="border-radius: 6px;">
+                                    <div class>
+                                        <div class="c-textroom py-1 fs-4">
+                                            <a href="<%= attraction[i].link %>">
+                                                <%= attraction[i].name %>
+                                            </a>
+                                        </div>
+                                        <div class>
+                                            <%= attraction[i].sub_district %>,
+                                            <%= attraction[i].district %>
+                                        </div>
+                                        <div class>เปิดให้บริการ
+                                            <%= attraction[i].open_day %>
+                                        </div>
+                                        <div class="mb-3">เวลาทำการ
+                                            <%= attraction[i].open_time %>
+                                        </div>
+                                        <div class="boxatt mt-auto row">
+                                            <div class="w-50">
+                                                <a href="<%= attraction[i].link %>" class=" btn btn-primary">ขอเส้นทาง</a>
+                                            </div>
+                                            <div class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
+                                                <%= attraction[i].distance %>
+                                                กม.</div>
+                                        </div>
                                     </div>
-                                    <div class="w-50 d-flex justify-content-end align-items-center ">ระยะทาง
-                                        <%= cafe[i].distance %> กม.</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <%}%>
+                        <%} }%>
 
+                    </div>
+                </div>
             </div>
         </div>
         <!-- attraction -->
@@ -336,7 +340,6 @@
         <footer-component></footer-component>
         <!-- footer -->
 
-</section>
+    </section>
 
-<script>
-</script>
+    <script></script>

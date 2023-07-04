@@ -92,6 +92,10 @@ a {
     transition: 0.3s;
 }
 
+.setimg-attraction {
+    height: 350px;
+}
+
 .media-custom {
     background-color: #0e2737;
     color: white;
@@ -211,7 +215,7 @@ a {
 .setcard-recroom {
     color: white;
     background: #0e2737;
-    box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 .text-sky {
