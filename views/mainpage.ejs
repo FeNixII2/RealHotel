@@ -1,176 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jaidee Hotel</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaidee Hotel</title>
 
-        <link
-        rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-        <!-- import font -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!-- import font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <link
-        rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 
-        <!-- <icon awesome> -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0"/>
+    <!-- <icon awesome> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 
 
-        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-        <!-- css import -->
-        <link rel="stylesheet" href="bootstrap.min.css"> <link rel="stylesheet" href="bookingsection.css">
-        <link rel="stylesheet" href="bookingsection_modal.css">
-        <link
-        rel="stylesheet" href="custom.css">
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <!-- css import -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bookingsection.css">
+    <link rel="stylesheet" href="bookingsection_modal.css">
+    <link rel="stylesheet" href="custom.css">
 
 
-        <!-- js -->
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-        <script src="jquery.validate.min.js"></script>
-        <script src="additional-methods.min.js"></script>
-        <script src="jbvalidator.min.js"></script>
-        <script src="bootstrap.bundle.min.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="https://kit.fontawesome.com/4dd06c2468.js" crossorigin="anonymous"></script>
-        <script src="component.js"></script>
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="additional-methods.min.js"></script>
+    <script src="jbvalidator.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/4dd06c2468.js" crossorigin="anonymous"></script>
+    <script src="component.js"></script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class=" d-flex justify-content-center align-items-center " id="psb3">
-            <label class=" no-select mx-2 w-50 form-label" style="color:white;display: none;">ประเภท:</label>
-            <select id="roomstype" class="form-select form-control " style="width: 100%;display: none;">
-                <option value="all" selected="selected">ทั้งหมด</option>
-                <%for(var i=0 ;i<roomstype.length;i++){%>
-                    <option value="<%= roomstype[i].name %>">
-                        <%= roomstype[i].name_th %>
-                    </option>
+    <div class=" d-flex justify-content-center align-items-center " id="psb3">
+        <label class=" no-select mx-2 w-50 form-label" style="color:white;display: none;">ประเภท:</label>
+        <select id="roomstype" class="form-select form-control " style="width: 100%;display: none;">
+            <option value="all" selected="selected">ทั้งหมด</option>
+            <%for(var i=0 ;i<roomstype.length;i++){%>
+                <option value="<%= roomstype[i].name %>">
+                    <%= roomstype[i].name_th %>
+                </option>
                 <%}%>
-            </select>
-        </div>
+        </select>
+    </div>
 
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand fs-4" href="#home" onclick="showSection('home')">Hotel BS</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4" href="#home" onclick="showSection('home')">Hotel BS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav text-center fs-5">
-                        <a class="nav-link active" aria-current="page" href="#home" onclick="showSection('home')">หน้าหลัก</a>
-                        <a class="nav-link" href="#rooms" onclick="showSection('rooms')">จองห้องพัก</a>
-                        <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking')">ตรวจสอบห้องพัก</a>
-                        <a class="nav-link" href="#contact" onclick="showSection('contact')">Contact</a>
-                    </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav text-center fs-5">
+                    <a class="nav-link active" aria-current="page" href="#home" onclick="showSection('home')">หน้าหลัก</a>
+                    <a class="nav-link" href="#rooms" onclick="showSection('rooms')">จองห้องพัก</a>
+                    <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking')">ตรวจสอบห้องพัก</a>
+                    <a class="nav-link" href="#contact" onclick="showSection('contact')">Contact</a>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <main>
+    <main>
 
-            <%- include('homesection.ejs') %>
+        <%- include('homesection.ejs') %>
             <%- include('roomssection.ejs') %>
-            <%- include('bookingsection.ejs') %>
-            <%- include('checkbooking.ejs') %>
-            <%- include('contact.ejs') %>
-            <%- include('bookinfo.ejs') %>
+                <%- include('bookingsection.ejs') %>
+                    <%- include('checkbooking.ejs') %>
+                        <%- include('contact.ejs') %>
+                            <%- include('bookinfo.ejs') %>
 
-        </main>
+    </main>
 
 
-    </body>
+</body>
 
-    <script type="text/javascript">
-        // fix show section when you refresh webpage
-        $(document).ready(function () {
-            let validator = $('#form_bookinginfo').jbvalidator({validFeedBackClass: 'valid-feedbak', invalidFeedBackClass: 'invalid-feedback', validClass: 'is-valid', invalidClass: 'is-invalid'});
-
-            let validatorcheckbooking = $('#check_booking').jbvalidator({validFeedBackClass: 'valid-feedbak', invalidFeedBackClass: 'invalid-feedback', validClass: 'is-valid', invalidClass: 'is-invalid'});
-
+<script type="text/javascript">
+    // fix show section when you refresh webpage
+    $(document).ready(function () {
+        let validator = $('#form_bookinginfo').jbvalidator({
+            validFeedBackClass: 'valid-feedbak',
+            invalidFeedBackClass: 'invalid-feedback',
+            validClass: 'is-valid',
+            invalidClass: 'is-invalid'
         });
 
-
-        window.addEventListener('load', function () {
-
-            let hash = location.hash; // get current hash location
-            let id = hash.substring(1); // remove # from location
-            if (id != (null || '' || "")) {
-                document.querySelectorAll('section').forEach(function (element) {
-                    element.style.display = 'none';
-                });
-                showSection(id)
-            } else {
-                showSection('home')
-            }
+        let validatorcheckbooking = $('#check_booking').jbvalidator({
+            validFeedBackClass: 'valid-feedbak',
+            invalidFeedBackClass: 'invalid-feedback',
+            validClass: 'is-valid',
+            invalidClass: 'is-invalid'
         });
 
-        // JavaScript function to show a specific section
-        function showSection(id) { // hide all sections
-            $(".is-invalid").removeClass("is-invalid");
-            var form = document.getElementById('form_bookinginfo');
-            var formcheckbooking = document.getElementById('check_booking');
-            form.reset();
-            formcheckbooking.reset();
+    });
 
+
+    window.addEventListener('load', function () {
+
+        let hash = location.hash; // get current hash location
+        let id = hash.substring(1); // remove # from location
+        if (id != (null || '' || "")) {
             document.querySelectorAll('section').forEach(function (element) {
                 element.style.display = 'none';
             });
-            // show the selected section
-            document.getElementById(id).style.display = 'block';
+            showSection(id)
+        } else {
+            showSection('home')
         }
+    });
 
-        window.addEventListener('hashchange', handleHashChange);
+    // JavaScript function to show a specific section
+    function showSection(id) { // hide all sections
+        $(".is-invalid").removeClass("is-invalid");
+        var form = document.getElementById('form_bookinginfo');
+        var formcheckbooking = document.getElementById('check_booking');
+        form.reset();
+        formcheckbooking.reset();
 
-        function handleHashChange() { // Get the updated hash value
-            var newHash = window.location.hash.substring(1);
+        document.querySelectorAll('section').forEach(function (element) {
+            element.style.display = 'none';
+        });
+        // show the selected section
+        document.getElementById(id).style.display = 'block';
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    function handleHashChange() { // Get the updated hash value
+        var newHash = window.location.hash.substring(1);
 
 
-            // Perform actions based on the new hash value
-            // For example, you can show/hide content or trigger specific functionality
-            showSection(newHash)
+        // Perform actions based on the new hash value
+        // For example, you can show/hide content or trigger specific functionality
+        showSection(newHash)
+    }
+
+
+    // set room id
+    function sign_room(id) {
+        document.getElementById("roomstype").value = id;
+        showSection('booking');
+        booking_search();
+    }
+
+    // closecollapse when click our
+    function handleScreenSizeChange() {
+        if (window.innerWidth <= 576) {
+            document.addEventListener('click', function (event) {
+                var targetElement = event.target;
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+
+                if (navbarCollapse.classList.contains('show') && !navbarToggler.contains(targetElement) && !navbarCollapse.contains(targetElement)) {
+                    navbarToggler.click();
+                }
+
+                if (targetElement.classList.contains('nav-link')) {
+                    navbarToggler.click();
+                }
+            });
         }
+    }
+    handleScreenSizeChange();
+    window.addEventListener('resize', handleScreenSizeChange);
+</script>
 
+</html>
+</body>
 
-        // set room id
-        function sign_room(id) {
-            document.getElementById("roomstype").value = id;
-            showSection('booking');
-            booking_search();
-        }
-
-        // closecollapse when click our
-        function handleScreenSizeChange() {
-            if (window.innerWidth <= 576) {
-                document.addEventListener('click', function (event) {
-                    var targetElement = event.target;
-                    var navbarToggler = document.querySelector('.navbar-toggler');
-                    var navbarCollapse = document.querySelector('.navbar-collapse');
-
-                    if (navbarCollapse.classList.contains('show') && ! navbarToggler.contains(targetElement) && ! navbarCollapse.contains(targetElement)) {
-                        navbarToggler.click();
-                    }
-
-                    if (targetElement.classList.contains('nav-link')) {
-                        navbarToggler.click();
-                    }
-                });
-            }
-        }
-        handleScreenSizeChange();
-        window.addEventListener('resize', handleScreenSizeChange);
-    </script>
-
-</html></body></html>
+</html>
