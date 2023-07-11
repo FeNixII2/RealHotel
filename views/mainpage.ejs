@@ -73,7 +73,7 @@
                         <a class="nav-link active" aria-current="page" href="#home" onclick="showSection('home')">หน้าหลัก</a>
                         <a class="nav-link" href="#rooms" onclick="showSection('rooms')">จองห้องพัก</a>
                         <a class="nav-link" href="#checkbooking" onclick="showSection('checkbooking')">ตรวจสอบห้องพัก</a>
-                        <a class="nav-link" href="#contact" onclick="showSection('contact')">Contact</a>
+                        <a class="nav-link" href="#contact" onclick="showSection('contact')">เกี่ยวกับเรา</a>
                     </div>
                 </div>
             </div>
@@ -100,6 +100,7 @@
 
             let validatorcheckbooking = $('#check_booking').jbvalidator({validFeedBackClass: 'valid-feedbak', invalidFeedBackClass: 'invalid-feedback', validClass: 'is-valid', invalidClass: 'is-invalid'});
 
+            let validatorcheckcontact = $('#check_contact').jbvalidator({validFeedBackClass: 'valid-feedbak', invalidFeedBackClass: 'invalid-feedback', validClass: 'is-valid', invalidClass: 'is-invalid'});
         });
 
 
@@ -122,8 +123,10 @@
             $(".is-invalid").removeClass("is-invalid");
             var form = document.getElementById('form_bookinginfo');
             var formcheckbooking = document.getElementById('check_booking');
+            var formcheckcontact = document.getElementById('check_contact');
             form.reset();
             formcheckbooking.reset();
+            formcheckcontact.reset();
 
             document.querySelectorAll('section').forEach(function (element) {
                 element.style.display = 'none';
