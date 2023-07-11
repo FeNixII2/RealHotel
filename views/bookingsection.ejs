@@ -1,5 +1,4 @@
-<section
-    id="booking" style="position: relative">
+<section id="booking" style="position: relative">
     <!-- <div class="backgroundpage-image"></div> -->
 
     <div class="setcontainer pt-5 d-flex flex-column justify-content-between align-items-center min-vh-100">
@@ -10,11 +9,11 @@
                         <div class="row py-3">
                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3" id="psb">
                                 <label for="checkin" class="no-select form-label">เช็คอิน</label>
-                                <input type="text" id="checkin" name="checkin" class="form-control"/>
+                                <input type="text" id="checkin" name="checkin" class="form-control" />
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3" id="psb2">
                                 <label for="checkout" class="no-select form-label">เช็คเอาท์</label>
-                                <input type="text" id="checkout" name="checkout" class="form-control"/>
+                                <input type="text" id="checkout" name="checkout" class="form-control" />
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <button type="button" class="btn btn-secondary w-100 py-2" id="searchbtn" onclick="booking_search(),showSection('booking')">
@@ -62,9 +61,11 @@
                 "Content-Type": "application/json"
             },
 
-            body: JSON.stringify(
-                {checkin, checkout, roomtype}
-            )
+            body: JSON.stringify({
+                checkin,
+                checkout,
+                roomtype
+            })
         }).then((response) => response.json()).then((body) => {
             var available_room = body.count_available_rooms
             var room_type = body.roomtype
@@ -82,9 +83,9 @@
             if (success == true) {
                 if (available_room.length > 0) {
 
-                    for (i = 0; i < room_type.length; i ++) {
+                    for (i = 0; i < room_type.length; i++) {
 
-                        for (j = 0; j < available_room.length; j ++) {
+                        for (j = 0; j < available_room.length; j++) {
                             if (available_room[j].count_available_rooms != 0) {
                                 if (available_room[j].id_typeroom == room_type[i].id) { // console.log(room_type[i].id + " " + room_type[i].name);
                                     var imgcount = 0
@@ -140,7 +141,8 @@
                                                 var img_src = document.createElement('img');
                                                 img_src.setAttribute('src', sub_imgroom[u].img);
                                                 img_src.setAttribute('class', 'w-100');
-                                            } imgcount = imgcount + 1;
+                                            }
+                                            imgcount = imgcount + 1;
                                             bottom_button.appendChild(create_bottom_button);
                                             img_active.appendChild(img_src);
                                             img_carousel.appendChild(img_active);
@@ -321,7 +323,8 @@
                                         // console.log("roomtype[" + c + "].name: " + allfacility[c].name);
 
                                         // }
-                                    }row_facilitiesaa.appendChild(row_facilities);
+                                    }
+                                    row_facilitiesaa.appendChild(row_facilities);
                                     row_facilitiesaa.appendChild(row_facilities_more);
 
                                     var cantrefunded = document.createElement('div');
@@ -448,47 +451,36 @@
 
         document.getElementById('con_reserv').value = roomtype.id
 
-        var service = <%-JSON.stringify(services) %>;
+        var service = <% -JSON.stringify(services) %>;
         const filteredData = service.filter(item => item.room_id === roomtype.id);
         var service_block = document.getElementById('service_block');
         service_block.innerHTML = ''
 
         for (let i = 0; i < filteredData.length; i++) {
             var html = `
-          <div class="card pt-5 text-center p-3 shadow-info" onclick="toggleCheckbox(${
-                filteredData[i].service_id
-            },${
-                filteredData[i].price
-            })">
-              <i class="${
-                filteredData[i].iconclass
-            }"></i>
+          <div class="card pt-5 text-center p-3 shadow-info" onclick="toggleCheckbox(${filteredData[i].service_id
+                },${filteredData[i].price
+                })">
+              <i class="${filteredData[i].iconclass
+                }"></i>
               <div class="servicename">
-                  ${
-                filteredData[i].name
-            }
+                  ${filteredData[i].name
+                }
               </div>
               <div class="serviceprice"
-              id="serviceprice${
-                filteredData[i].service_id
-            }" value="${
-                filteredData[i].price
-            }">
-              ${
-                filteredData[i].price
-            }
+              id="serviceprice${filteredData[i].service_id
+                }" value="${filteredData[i].price
+                }">
+              ${filteredData[i].price
+                }
               </div>
               <div class="d-flex justify-content-center">
-               <input class="form-check-input" type="checkbox"  id="flexCheckDefault${
-                filteredData[i].service_id
-            }" value="${
-                filteredData[i].service_id
-            }"
-               onclick="stopPropagation(event,${
-                filteredData[i].service_id
-            },${
-                filteredData[i].price
-            })">
+               <input class="form-check-input" type="checkbox"  id="flexCheckDefault${filteredData[i].service_id
+                }" value="${filteredData[i].service_id
+                }"
+               onclick="stopPropagation(event,${filteredData[i].service_id
+                },${filteredData[i].price
+                })">
               </div>
 
       </div>`
@@ -509,7 +501,7 @@
 
         var checkbox = document.getElementById('flexCheckDefault' + id);
         var serviceprice = price;
-        checkbox.checked = ! checkbox.checked;
+        checkbox.checked = !checkbox.checked;
         if (checkbox.checked) {
             document.getElementById('total-price').value = serviceprice + document.getElementById('total-price').value
             // console.log("total:   " + document.getElementById('total-price').value);
@@ -604,22 +596,20 @@
                         "Content-Type": "application/json"
                     },
 
-                    body: JSON.stringify(
-                        {
-                            firstName,
-                            p_number,
-                            email,
-                            lastName,
-                            more_info,
-                            payment,
-                            checkin,
-                            checkout,
-                            room_type,
-                            totalprice,
-                            country,
-                            checkboxData
-                        }
-                    )
+                    body: JSON.stringify({
+                        firstName,
+                        p_number,
+                        email,
+                        lastName,
+                        more_info,
+                        payment,
+                        checkin,
+                        checkout,
+                        room_type,
+                        totalprice,
+                        country,
+                        checkboxData
+                    })
                 }).then((response) => response.json()).then((body) => {
                     Swal.fire({
                         title: 'รบกวนรอการยืนยันห้องทางอีเมลล์',
@@ -663,7 +653,12 @@
                         checkout.value = dateStr;
                     }
                 }
-                checkout.flatpickr({locale: "th", dateFormat: "d-m-Y", minDate: selectedDates[0].fp_incr(1), defaultDate: selectedDates[0].fp_incr(1)});
+                checkout.flatpickr({
+                    locale: "th",
+                    dateFormat: "d-m-Y",
+                    minDate: selectedDates[0].fp_incr(1),
+                    defaultDate: selectedDates[0].fp_incr(1)
+                });
 
             }
         });
